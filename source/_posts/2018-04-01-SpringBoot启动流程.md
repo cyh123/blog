@@ -2,8 +2,8 @@
 title: SpringBoot启动流程
 comments: true
 date: 2018-04-01 15:42:04
-tags: SpringBoot
-categories:
+tags: Spring SpringBoot
+categories: SpringBoot
 ---
 
 # Spring Boot 启动流程详解

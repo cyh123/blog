@@ -3,7 +3,7 @@ title: Java集合ArrayList中modCount详解及subList函数要点
 comments: true
 date: 2018-04-01 15:43:03
 tags: 集合
-categories:
+categories: 集合
 ---
 
 &emsp;&emsp;因为一次在项目开发中使用ArrayList的过程中，发生了**ConcurrentModificationException**异常，于是查询了相关资料，对发生该异常的原因记录一下。

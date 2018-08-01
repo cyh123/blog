@@ -2,8 +2,8 @@
 title: SpringBean与线程安全
 comments: true
 date: 2018-04-01 15:41:10
-tags: SpringBoot
-categories:
+tags: Spring SpringBoot
+categories: SpringBoot
 ---
 
 &ensp;&ensp;&ensp;&ensp;前两天在使用spring Bean的时候，发现跑出来的数据总是存在着一些奇怪的值，这些值在当前的处理当中本该不会出现，找了半天，发现时上一个线程使用该Bean后的遗留的值。后面查看了spring Bean的相关知识后，找到了问题的原因。 使用了<font color="red">ThreadLocal——线程本地变量</font>的方式解决了问题。对问题产生的原因做一个分析和总结。

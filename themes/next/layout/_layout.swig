@@ -88,5 +88,17 @@
   {% include '_third-party/mathjax.swig' %}
   {% include '_third-party/scroll-cookie.swig' %}
   {% include '_third-party/exturl.swig' %}
+
+  
+
+  {% if theme.leancloud_visitors.enable %}
+      {% include '_third-party/analytics/lean-analytics.swig' %}
+  {%  endif %}
+
+  {% if theme.canvas_nest %}
+    <script type="text/javascript"
+    color="0,0,255" opacity='0.7' zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  {% endif %}
+  
 </body>
 </html>

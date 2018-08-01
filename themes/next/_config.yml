@@ -95,7 +95,7 @@ menu:
   主页: / || home
   关于: /about/ || user
   标签: /tags/ || tags
-  #categories: /categories/ || th
+  categories: /categories/ || th
   归档: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -378,12 +378,12 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 valine:
-  enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true
+  appid:  jtQLIeV6jE3JEz552dDc8drD-gzGzoHsz # your leancloud application appid
+  appkey: ntTvuVT0T22Vn198alyrXuKA  # your leancloud application appkey
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: Just go go # comment box placeholder
+  placeholder: 留下你的问题 # comment box placeholder
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
@@ -531,9 +531,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: jtQLIeV6jE3JEz552dDc8drD-gzGzoHsz
+  app_key: ntTvuVT0T22Vn198alyrXuKA
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
@@ -695,7 +695,7 @@ pace: false
 pace_theme: pace-theme-minimal
 
 # Canvas-nest
-canvas_nest: false
+canvas_nest: true
 
 # three_waves
 three_waves: false
@@ -713,7 +713,7 @@ canvas_sphere: false
 # zIndex: The display level of the ribbon.
 canvas_ribbon:
   enable: false
-  size: 300
+  size: 150
   alpha: 0.6
   zIndex: -1
 
