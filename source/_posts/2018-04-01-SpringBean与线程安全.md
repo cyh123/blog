@@ -31,3 +31,7 @@ categories: SpringBoot
 &ensp;&ensp;&ensp;&ensp;无状态就是一次操作，不能保存数据。无状态对象(Stateless Bean)，就是没有实例变量的对象 .不能保存数据，是不变类，是线程安全的。
 &ensp;&ensp;&ensp;&ensp;无状态的Bean适合用不变模式，技术就是单例模式，这样可以共享实例，提高性能。
 &ensp;&ensp;&ensp;&ensp;有状态的Bean，多线程环境下不安全，那么适合用Prototype原型模式。Prototype: 每次对bean的请求都会创建一个新的Bean实例。
+
+
+&emsp;&emsp;欢迎关注个人公众号：
+![个人公号](./个人公号.jpg)

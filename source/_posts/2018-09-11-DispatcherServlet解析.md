@@ -401,3 +401,7 @@ protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Ex
 &emsp;&emsp;从注释中可以看出，该方法便是根据处理器处理结果是抛出异常还是返回模型视图对象，对结果进一步做了处理。若处理器返回了模型视图对象，对视图的渲染，便是在该函数中通过调用render函数来完成的。由于对标注了@RestController的控制器，其返回的模型视图对象是null，故不会进行渲染，在这里也就不再将视图渲染的内容展开来讲了。
 
 &emsp;&emsp;至此，DispatcherServlet主要的工作大致就分析完了。想要自己一探究竟的朋友，可以自己写一个小接口，通过断点走一边流程，相信会对DispatcherServlet有更深入的理解～～
+
+
+&emsp;&emsp;欢迎关注个人公众号：
+![个人公号](./个人公号.jpg)

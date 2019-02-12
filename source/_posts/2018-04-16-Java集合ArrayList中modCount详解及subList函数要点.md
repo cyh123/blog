@@ -144,3 +144,7 @@ tableData.getValue().clear();
 tableData.getValue().addAll(newEntitys);
 ```
 &emsp;&emsp;这样的话，newEntitys就是一个ArrayList的对象而不是SubList的对象了。该情况也是第一次遇到，网上其他解释基本上都是第一种情况（即使用迭代器）发生。其实无论是第一种情况还是第二种情况，本质都是因为原集合的modCount被修改，导致与SubList的modCount或者是迭代器的expectedModCount不同导致的。
+
+
+&emsp;&emsp;欢迎关注个人公众号：
+![个人公号](./个人公号.jpg)

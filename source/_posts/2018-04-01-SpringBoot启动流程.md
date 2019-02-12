@@ -201,3 +201,7 @@ protected final SourceClass doProcessConfigurationClass(ConfigurationClass confi
 	}
 ```
 &ensp;&ensp;&ensp;&ensp;在该代码块中我们可以看到，函数首先处理由注解@PropertySource，该注解用于将我们自定义的属性文件加载到上下文环境当中。然后对@ComponentScan注解定义的包结构进行扫描，将启动类所在包下的子包中Bean文件（不包括子文件夹中的Bean文件）定义转化为BeanDefinition，如果该Bean定义的文件中也使用了@Configuration对其进行了注解，那么将会进行递归。之后，解析由注解@Import和@ImportResource注解导入的Bean定义文件，最后是直接由@Bean注解的成员函数。之后所有需要实例化的Bean都已经完成了解析，都转化为BeanDefinition，将由refresh函数中的finishBeanFactoryInitialization根据这些信息对Bean进行实例化。
+
+
+&emsp;&emsp;欢迎关注个人公众号：
+![个人公号](./个人公号.jpg)
