@@ -24,7 +24,7 @@ categories: spring
 
 ## Servlet生命周期
 &emsp;&emsp;Servlet的生命（周期）是由容器管理的，换句话说，Servlet程序员不能用代码控制其生命。
-```
+```java
 public interface Servlet {
     public void init(ServletConfig config) throws ServletException;
     
@@ -59,7 +59,7 @@ Servlet对象被销毁时，destroy方法会被调用。
 
 ## DispatcherServlet调用链
 &emsp;&emsp;Aware类主要是提供了一个能够响应容器各阶段变化的机制，在这里不是我们关注的重点，因此，我们主要来看Servlet部分的继承树。从图中我们可以看到，DispatcherServlet的祖先之一便是Servlet接口。在Servlet生命周期部分，我们提到，请求是通过Servlet的service来进行处理的，可是在DispatcherServlet中，我们并不能找到该函数的定义。其实，service方法是被定义在其父类FrameworkServlet中的，而FrameworkServlet重写了父类HttpServlet的service方法。HttpServlet的service方法定义如下：
-```
+```java
 protected void service(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException {
 
@@ -126,7 +126,7 @@ protected void service(HttpServletRequest req, HttpServletResponse resp)
     }
 ```
 &emsp;&emsp;其主要是根据请求的不同，将请求交由不同的处理函数来处理。而FrameworkServlet重写的service方法则很简单：
-```
+```java
 protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -140,7 +140,7 @@ protected void service(HttpServletRequest request, HttpServletResponse response)
 	}
 ```
 &emsp;&emsp;当请求是PATCH请求或者无法获取到请求方法类型时，则直接调用processRequest处理请求，否则，有父类HttpServlet的service来处理，而通过上面我们知道HttpServlet的service主要是根据方法类型，调用了不同的请求处理方法。比如，如果是一个Get请求，则调用的doGet方法，如果是Post请求，则调用的是doPost方法。而这几个方法在FrameworkServlet中被重载，以doGet为例：
-```
+```java
 protected final void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -151,7 +151,7 @@ protected final void doGet(HttpServletRequest request, HttpServletResponse respo
 
 ## DispatcherServlet几个重要成员
 &emsp;&emsp;在介绍DispatcherServlet处理请求的流程前，让我们先来认识几个DispatcherServlet类重要的几大组件：
-```
+```java
     // 文件上传组件
     /** MultipartResolver used by this servlet */
 	private MultipartResolver multipartResolver;
@@ -190,7 +190,7 @@ protected final void doGet(HttpServletRequest request, HttpServletResponse respo
 ```
 
 &emsp;&emsp;SpringMVC定义了一套默认的组件实现类，也就是说，即使在Spring容器中没有显示定义组件，DisoatcherServlet也会装配好一套可用的默认组件，在org/springframework/web/servlet类路径下有一个DispatcherServlet.properties配置文件，内容如下：
-```
+```java
 # Default implementation classes for DispatcherServlet's strategy interfaces.
 # Used as fallback when no matching beans are found in the DispatcherServlet context.
 # Not meant to be customized by application developers.
@@ -223,7 +223,7 @@ org.springframework.web.servlet.FlashMapManager=org.springframework.web.servlet.
 ![DispatcherServlet请求处理流程](./DispatcherServlet请求处理流程.jpg)
 &emsp;&emsp;下面，让我们以上面的图为参照，来解析一下doDispatch函数的处理逻辑
 
-```
+```java
 protected void doDispatch(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpServletRequest processedRequest = request;
 		HandlerExecutionChain mappedHandler = null;
@@ -328,7 +328,7 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
 ```
 &emsp;&emsp;在多数的场景到中，我们编写控制器，使用@RestController注解对控制器进行注解，使用@GetMapping注解标注函数，dispatcherServlet的重点，就在如何将请求分发到具体的Controller中的方法中。
 通过上面源码的讲解可以看出，其重点就在于通过请求获取处理器执行链HandlerExecutionChain（其内部主要是对处理该请求的对象方法的封装及处理器拦截器的包装）及处理器适配器HandlerAdapter。接下来我们看下获取处理器执行链HandlerExecutionChain的getHandler方法：
-```
+```java
 protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception {
 		for (HandlerMapping hm : this.handlerMappings) {
 			if (logger.isTraceEnabled()) {
@@ -352,7 +352,7 @@ protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Ex
 &emsp;&emsp;上述请求获取到的处理器对应的适配器便是RequestMappingHandlerAdapter
 ![获取HandlerAdapter](./获取HandlerAdapter.PNG)
 &emsp;&emsp;之后，便是执行HandlerExecutionChain中拦截器的前置方法，通过适配器执行处理器对请求的处理过程并返回模型视图对象，再执行HandlerExecutionChain中拦截器的后置方法。最后，便是根据处理器对请求的处理情况，对结果进行最终的解析，方法processDispatchResult：
-```
+```java
 /**
 	 * Handle the result of handler selection and handler invocation, which is
 	 * either a ModelAndView or an Exception to be resolved to a ModelAndView.

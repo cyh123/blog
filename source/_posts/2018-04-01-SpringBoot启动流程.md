@@ -11,7 +11,7 @@ categories: SpringBoot
 &ensp;&ensp;&ensp;&ensp;使用SpringBoot已经有好几个月了，一直对框架当中Bean的实例化过程有很感兴趣，比如Spring是如何去加载.class文件，并解析其中我们通过注解@Configuration, @PropertySource，@ComponentScan，@Import，@Bean等产生我们自定义的Bean的。下面我们就来看看，框架当中是如何实现Bean的加载与创建的。
 
 下面是SpringApplication函数的run函数：
-```
+```java
 public ConfigurableApplicationContext run(String... args) {
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
@@ -46,7 +46,7 @@ public ConfigurableApplicationContext run(String... args) {
 	}
 ```
 &ensp;&ensp;&ensp;&ensp;注意，在完成了context的创建之后，会调用refreshContext函数，refreshContext函数中会调用refresh函数，在该函数中又会先调用祖先类AbstractApplicationContext类的refresh函数。该函数如下：
-```
+```java
 public void refresh() throws BeansException, IllegalStateException {
 		synchronized (this.startupShutdownMonitor) {
 			// Prepare this context for refreshing.
@@ -123,7 +123,7 @@ public void refresh() throws BeansException, IllegalStateException {
 	}
 ```
 &ensp;&ensp;&ensp;&ensp;在函数调用过程当中，调用了函数invokeBeanFactoryPostProcessors，在该函数的调用流程当中，调用链为PostProcessorRegistrationDelegate ->ConfigurationClassPostProcessor -> ConfigurationClassParser,在类ConfigurationClassParser类的doProcessConfigurationClass函数中，将启动类（即@SpringBootApplication标注的类,主要是@SpringBootApplication注解中的@Configuration注解的作用）做为入口，读取我们所定义的Bean，将其转化为一个个的BeanDefinition。下面，我们来看一下该函数的定义：
-```
+```java
 protected final SourceClass doProcessConfigurationClass(ConfigurationClass configClass, SourceClass sourceClass)
 			throws IOException {
 

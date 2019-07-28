@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.7.0"
+    "version": "3.9.0"
   },
-
+  
   "scripts": {
     "toWeb": "cd .deploy_git && git remote set-url origin git@118.24.7.37:/home/git/blog/hexo.git && git push"
   },

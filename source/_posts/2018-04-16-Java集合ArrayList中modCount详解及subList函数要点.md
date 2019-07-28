@@ -44,7 +44,7 @@ tableData.getValue().addAll(newEntitys);
 ```
 &emsp;&emsp;异常在最后一步的时候抛出。可见，ConcurrentModificationException异常不仅仅是在使用迭代器的时候会出现。分析ArrayList类的subList源码我们可以发现，
 
-```
+```java
 public List<E> subList(int fromIndex, int toIndex) {
     subListRangeCheck(fromIndex, toIndex, size);
     return new SubList(this, 0, fromIndex, toIndex);
@@ -63,7 +63,7 @@ SubList(AbstractList<E> parent,int offset, int fromIndex, int toIndex) {
 ```
 &emsp;&emsp;可以看到**this.modCount = ArrayList.this.modCount**这样一句代码。而在第一个迭代器的例子中，通过iterator()函数返回的迭代器在构造当中也使用到了
 
-```
+```java
 private class Itr implements Iterator<E> {
         int cursor;       // index of next element to return
         int lastRet = -1; // index of last element returned; -1 if no such
