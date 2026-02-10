@@ -85,5 +85,5 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/<your-github-username>/<your-repo>.git
+  repo: https://github.com/cyh123/blog
   branch: gh-pages
