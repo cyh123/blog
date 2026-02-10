@@ -86,14 +86,14 @@
 <meta property="og:site_name" content="记录每一次进步">
 <meta property="og:description" content="虚拟机运行时数据区域分布及使用&emsp;&emsp;博主之前有一年多的时间使用过C++进行编程，内存的管理是个很让人头大的问题，内存的释放需要自己去delete，不然会发生内存泄漏的问题。开发过程当中内存操作不当导致的bug占了很大的比例，更不用说说，在多线程情况下对内存的管理了。自从开始使用Java之后，深感Java虚拟机自动内存管理的便利性。最近重读《深入理解Java虚拟机》一书，对本书内容">
 <meta property="og:locale">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//20170915153302333.png">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg">
+<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-01-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83%E4%B8%8E%E4%BD%BF%E7%94%A8/20170915153302333.png">
+<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-01-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83%E4%B8%8E%E4%BD%BF%E7%94%A8/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg">
 <meta property="article:published_time" content="2018-04-01T23:38:03.000Z">
-<meta property="article:modified_time" content="2026-02-10T08:49:00.457Z">
+<meta property="article:modified_time" content="2026-02-10T09:14:44.178Z">
 <meta property="article:author" content="yunhai.chen">
 <meta property="article:tag" content="java虚拟机">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cyh123.github.io/blog/.io//20170915153302333.png">
+<meta name="twitter:image" content="https://cyh123.github.io/blog/.io//2018-04-01-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83%E4%B8%8E%E4%BD%BF%E7%94%A8/20170915153302333.png">
 
 
 
@@ -411,7 +411,7 @@
 
       
         <h1 id="虚拟机运行时数据区域分布及使用"><a href="#虚拟机运行时数据区域分布及使用" class="headerlink" title="虚拟机运行时数据区域分布及使用"></a>虚拟机运行时数据区域分布及使用</h1><p>&emsp;&emsp;博主之前有一年多的时间使用过C++进行编程，内存的管理是个很让人头大的问题，内存的释放需要自己去delete，不然会发生内存泄漏的问题。开发过程当中内存操作不当导致的bug占了很大的比例，更不用说说，在多线程情况下对内存的管理了。自从开始使用Java之后，深感Java虚拟机自动内存管理的便利性。最近重读《深入理解Java虚拟机》一书，对本书内容进行一些记录。首先我们就来看看Java虚拟机的内存分布以及使用。</p>
-<h2 id="虚拟机的运行时数据区域"><a href="#虚拟机的运行时数据区域" class="headerlink" title="虚拟机的运行时数据区域"></a>虚拟机的运行时数据区域</h2><p><img src="/blog/.io//20170915153302333.png" alt="虚拟机运行时数据区域"></p>
+<h2 id="虚拟机的运行时数据区域"><a href="#虚拟机的运行时数据区域" class="headerlink" title="虚拟机的运行时数据区域"></a>虚拟机的运行时数据区域</h2><p><img src="/blog/.io//2018-04-01-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83%E4%B8%8E%E4%BD%BF%E7%94%A8/20170915153302333.png" alt="虚拟机运行时数据区域"></p>
 <h2 id="虚拟机各内存区域的使用"><a href="#虚拟机各内存区域的使用" class="headerlink" title="虚拟机各内存区域的使用"></a>虚拟机各内存区域的使用</h2><p>&emsp;&emsp;虚拟机分配的内存大致可以分为两个部分，一部分是线程私有的内存区域，一部分是进程内线程共有的内存区域。此外，还有一块直接内存，这部分内存不是虚拟机运行是数据区的一部分，也不是Java虚拟机规范中所定义的内存区域，但是这部分内存也会被使用到，比如<a href="https://en.wikipedia.org/wiki/New_I/O_(Java)">NIO</a>时会在该区域进行内存分配。</p>
 <h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>&emsp;&emsp;相信学习过计算机组成原理与汇编知识的读者都知道，在指令的执行过程当中，存在一个计数器，用来指示当前执行到了哪一条指令，其实程序计数器可以看作是当前线程执行的字节码的行号指示器，保存着当前指令的地址。由于Java虚拟机的多线程是通过线程轮流切换并分配处理器执行时间的方式来实现的，在任何一个确定时刻，一个处理器都只会执行一条线程中的指令。因此，为了线程切换后能恢复到正确的执行位置，每条线程都需要一个独立的程序计数器，个线程之间程序计数器互不影响，独立存储，我们称这类内存区域为“线程私有”的内存。</p>
 <h3 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h3><p>&emsp;&emsp;虚拟机栈描述的是Java方法执行的内存模型，每个方法在执行的同时都会创建一个栈帧用于存储局部变量表，操作数栈，动态链接，方法出口等信息。每一个方法从调用直到执行完成的过程，就对应着一个栈帧在虚拟机栈中入栈和出栈的过程。<br>&emsp;&emsp;在Java虚拟机规范中，对该区域规定了两种异常。如果线程请求的栈深度大于虚拟机所允许的深度，将抛出StackOverflowError异常；如果虚拟机可以动态国展，如果扩展是无法申请到足够的内存，就会抛出OutOfMemoryEror异常。</p>
@@ -431,7 +431,7 @@
 <p>&emsp;&emsp;该部分内容将在下一篇博客《虚拟机垃圾收集算法及垃圾收集器》中介绍</p>
 <p>&emsp;&emsp;从内存分配的角度看，线程共享的Java队中可能划分出多个线程私有的分配缓冲区（TLAB）。<br>&emsp;&emsp;如果在堆中没有内存完成实例的分配，并且堆无法再扩展时，将会抛出OutOfMemoryError异常。</p>
 <h3 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h3><p>&emsp;&emsp;直接内存并不是虚拟及运行时数据区的一部分，也不是Java虚拟机规范中定义的内存区域。在JDK1.4中加入的NIO类，引入了一种基于通道与缓冲区的I&#x2F;O方式，它何以通过Native函数库直接分配堆外内存，也就是直接内存部分。</p>
-<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/.io//%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/.io//2018-04-01-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83%E4%B8%8E%E4%BD%BF%E7%94%A8/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
 
       
     </div>
