@@ -10,7 +10,7 @@ categories: Spring
 
 # Spring Cloud
 &emsp;&emsp;Spring Cloud是一系列框架的有序集合。它利用Spring Boot的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用Spring Boot的开发风格做到一键启动和部署。Spring并没有重复制造轮子，它只是将目前各家公司开发的比较成熟、经得起实际考验的服务框架组合起来，通过Spring Boot风格进行再封装屏蔽掉了复杂的配置和实现原理，最终给开发者留出了一套简单易懂、易部署和易维护的分布式系统开发工具包。
-![SpringCloud架构](./SpringCloud架构.png)
+![SpringCloud架构](./2018-10-14-SpringCloud简介/SpringCloud架构.png)
 &emsp;&emsp;当一个Web请求到来时，系统内部的调用过程如下：
 1. 外部或者内部的非Spring Cloud项目都统一通过API网关（Zuul）来访问内部服务.
 2. 网关接收到请求后，从注册中心（Eureka）获取可用服务
@@ -39,4 +39,4 @@ Spring Boot可以离开Spring Cloud独立使用开发项目，但是Spring Cloud
 &emsp;&emsp;网上关于个Spring Cloud微服务组件的文章及书籍很多，但是很多知识只是停留在如何使用的阶段。在后面的文章当中，我将在讲解Spring Cloud各微服务功能的同时，深入去解析器内部原理，以达到知其然而知其所以然的目的。作为一个爱钻牛角尖的程序员，这也是我为什么还要写这个系列的原因。
 
 &emsp;&emsp;欢迎关注个人公众号：
-![个人公号](./个人公号.jpg)
+![个人公号](./2018-10-14-SpringCloud简介/个人公号.jpg)

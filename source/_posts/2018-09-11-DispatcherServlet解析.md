@@ -7,7 +7,7 @@ categories: spring
 ---
 &emsp;&emsp;有朋友说，你搞了这么久Java，怎么天天写的都是Java基础，现在流行微服务啊～分布式啊～恩。。。主要还是要学习的内容太多了，感觉写个一年半载也写不完，不过为了与时俱进，后面也会偶尔写点这方面的内容，就以SpringCloud全家桶作为主要介绍对象，感兴趣的朋友们快快提前关注啊～～～好了，下面进入正题～
 &emsp;&emsp;在《Tomcat服务器结构浅析（一）》中我们介绍到Web请求在到达Tomcat服务器后，经过一层层容器地查找以及地址的匹配，最后请求被交由Servlet进行处理：
-![Tomcat请求处理](./Tomcat请求处理.PNG)
+![Tomcat请求处理](./2018-09-11-DispatcherServlet解析/Tomcat请求处理.PNG)
 &emsp;&emsp;在SpringMVC框架中，占据核心位置的便是DispatcherServlet。在下面的内容中，让我们来看一下，SpringMVC是如何通过DispatcherServlet来处理请求的。
 
 # Servlet
@@ -55,7 +55,7 @@ Servlet对象被销毁时，destroy方法会被调用。
 
 # DispatcherServlet
 &emsp;&emsp;接下来，开始讲解今天的主角——``DispatcherServlet``。首先，还是让我们来看一看，DispatcherServlet的类继承图：
-![DispatcherServlet继承图](./DispatcherServlet继承图.PNG)
+![DispatcherServlet继承图](./2018-09-11-DispatcherServlet解析/DispatcherServlet继承图.PNG)
 
 ## DispatcherServlet调用链
 &emsp;&emsp;Aware类主要是提供了一个能够响应容器各阶段变化的机制，在这里不是我们关注的重点，因此，我们主要来看Servlet部分的继承树。从图中我们可以看到，DispatcherServlet的祖先之一便是Servlet接口。在Servlet生命周期部分，我们提到，请求是通过Servlet的service来进行处理的，可是在DispatcherServlet中，我们并不能找到该函数的定义。其实，service方法是被定义在其父类FrameworkServlet中的，而FrameworkServlet重写了父类HttpServlet的service方法。HttpServlet的service方法定义如下：
@@ -220,7 +220,7 @@ org.springframework.web.servlet.FlashMapManager=org.springframework.web.servlet.
 
 ## doDispatch方法
 &emsp;&emsp;接下来，我们来看下doDispatch方法是如何处理一个Web请求的。首先是一个处理路径图：
-![DispatcherServlet请求处理流程](./DispatcherServlet请求处理流程.jpg)
+![DispatcherServlet请求处理流程](./2018-09-11-DispatcherServlet解析/DispatcherServlet请求处理流程.jpg)
 &emsp;&emsp;下面，让我们以上面的图为参照，来解析一下doDispatch函数的处理逻辑
 
 ```java
@@ -344,13 +344,13 @@ protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Ex
 	}
 ```
 &emsp;&emsp;其主要的逻辑是通过处理器映射器来解析请求，并返回正确的HandlerExecutionChain,HandlerMapping接口如下：
-![HandlerMapping继承图](./HandlerMapping继承图.PNG)
+![HandlerMapping继承图](./2018-09-11-DispatcherServlet解析/HandlerMapping继承图.PNG)
 &emsp;&emsp;上述的几个实现类通过不同的策略，将请求的路径映射到对应的处理器上。当我们访问由@RestController标注的类下的接口时（此处以ConfigController下的list接口为例），其最终便是由RequestMappingHandlerMapping解析的出了HandlerExecutionChain，通过断点可以看到：
-![HandlerExecutionChain结构](./HandlerExecutionChain结构.png)
+![HandlerExecutionChain结构](./2018-09-11-DispatcherServlet解析/HandlerExecutionChain结构.png)
 &emsp;&emsp;该处理器执行链中已经包含了处理该请求的接口的一些信息，后续的工作便是使用该接口处理请求。而这些工作都是通过处理器适配器HandlerAdapter来完成。接下来看一下HandlerAdapter的继承图：
-![DispatcherServlet请求处理流程](./HandlerAdapter继承图.PNG)
+![DispatcherServlet请求处理流程](./2018-09-11-DispatcherServlet解析/HandlerAdapter继承图.PNG)
 &emsp;&emsp;上述请求获取到的处理器对应的适配器便是RequestMappingHandlerAdapter
-![获取HandlerAdapter](./获取HandlerAdapter.PNG)
+![获取HandlerAdapter](./2018-09-11-DispatcherServlet解析/获取HandlerAdapter.PNG)
 &emsp;&emsp;之后，便是执行HandlerExecutionChain中拦截器的前置方法，通过适配器执行处理器对请求的处理过程并返回模型视图对象，再执行HandlerExecutionChain中拦截器的后置方法。最后，便是根据处理器对请求的处理情况，对结果进行最终的解析，方法processDispatchResult：
 ```java
 /**
@@ -404,4 +404,4 @@ protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Ex
 
 
 &emsp;&emsp;欢迎关注个人公众号：
-![个人公号](./个人公号.jpg)
+![个人公号](./2018-09-11-DispatcherServlet解析/个人公号.jpg)
