@@ -1,37 +1,1421 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java并发编程 容器," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="同步容器类&emsp;&emsp;同步容器类包括Vector和HashTable，二者都是早期JDK的一部分，此外还包括在JDK1.2当中添加的一些功能相似的类，这些同步的封装类是由Collections.synchronizedXxx等工厂方法创建的。这些类实现线程安全的方式是：将它们的状态封装起来，并对每个公有方法都进行同步，使得每次都只有一个线程能够访问容器的状态。相较于并行容器，同步容器的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="同步容器与并发容器类简介">
+<meta property="og:url" content="https://cyh123.github.io/blog/2018/04/26/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/index.html">
+<meta property="og:site_name" content="记录每一次进步">
+<meta property="og:description" content="同步容器类&emsp;&emsp;同步容器类包括Vector和HashTable，二者都是早期JDK的一部分，此外还包括在JDK1.2当中添加的一些功能相似的类，这些同步的封装类是由Collections.synchronizedXxx等工厂方法创建的。这些类实现线程安全的方式是：将它们的状态封装起来，并对每个公有方法都进行同步，使得每次都只有一个线程能够访问容器的状态。相较于并行容器，同步容器的">
+<meta property="og:locale">
+<meta property="og:image" content="https://cyh123.github.io/blog/.io//%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E5%8C%85%E8%A3%85%E5%87%BD%E6%95%B0.PNG">
+<meta property="og:image" content="https://cyh123.github.io/blog/.io//%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png">
+<meta property="og:image" content="https://cyh123.github.io/blog/.io//%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg">
+<meta property="article:published_time" content="2018-04-26T20:28:58.000Z">
+<meta property="article:modified_time" content="2026-02-10T08:49:00.460Z">
+<meta property="article:author" content="yunhai.chen">
+<meta property="article:tag" content="java并发编程 容器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cyh123.github.io/blog/.io//%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E5%8C%85%E8%A3%85%E5%87%BD%E6%95%B0.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://cyh123.github.io/blog/2018/04/26/同步容器与并发容器类简介/"/>
+
+
+
+
+
+  <title>同步容器与并发容器类简介 | 记录每一次进步</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">记录每一次进步</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">工作生活中的每一次坑，都是程序员的一块勋章</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/blog/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/blog/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/blog/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/blog/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cyh123.github.io/blog/blog/2018/04/26/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记录每一次进步">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">同步容器与并发容器类简介</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T20:28:58+00:00">
+                2018-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">java并发编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2018/04/26/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/04/26/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/blog/2018/04/26/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/" class="leancloud_visitors" data-flag-title="同步容器与并发容器类简介">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="同步容器类"><a href="#同步容器类" class="headerlink" title="同步容器类"></a>同步容器类</h1><p>&emsp;&emsp;同步容器类包括Vector和HashTable，二者都是早期JDK的一部分，此外还包括在JDK1.2当中添加的一些功能相似的类，这些同步的封装类是由Collections.synchronizedXxx等工厂方法创建的。这些类实现线程安全的方式是：将它们的状态封装起来，并对每个公有方法都进行同步，使得每次都只有一个线程能够访问容器的状态。相较于并行容器，同步容器的实现原理其实很简单，就是对普通容器做了一层封装，并实现容器的每一个方法，在方法上实现同步。比如通过Collections类的工厂方法将一个普通的List封装成一个同步容器：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; List&lt;T&gt; <span class="title function_">synchronizedList</span><span class="params">(List&lt;T&gt; list)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (list <span class="keyword">instanceof</span> RandomAccess ?</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">SynchronizedRandomAccessList</span>&lt;&gt;(list) :</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">SynchronizedList</span>&lt;&gt;(list));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;其他包装函数<br><img src="/blog/.io//%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E5%8C%85%E8%A3%85%E5%87%BD%E6%95%B0.PNG" alt="同步容器包装函数"></p>
+<h2 id="同步容器类的问题"><a href="#同步容器类的问题" class="headerlink" title="同步容器类的问题"></a>同步容器类的问题</h2><p>&emsp;&emsp;在并发编程当中，虽然同步容器类是线程安全的，但是在某些情况下可能需要额外的客户端加锁来保护复合操作。如下面一段代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title function_">getLast</span><span class="params">(Vector list)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">lastIndex</span> <span class="operator">=</span> list.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> list.get(lastIndex);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">deleteLast</span><span class="params">(Vector list)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">lastIndex</span> <span class="operator">=</span> list.size() - <span class="number">1</span>;</span><br><span class="line">    list.remove(lastIndex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;上述两个函数中，虽然Vector是线程安全的，但是获取Vector大小与获取&#x2F;删除之间没有锁保护，当获得Vector大笑之后，如另外一个线程删除了Vector中的最末尾位置的元素，则每个函数的最后一句代码执行将报错。因此，对于复合操作，需要在符合操作上用锁来保证操作的原子性：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title function_">getLast</span><span class="params">(Vector list)</span> &#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (list) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">lastIndex</span> <span class="operator">=</span> list.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> list.get(lastIndex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">deleteLast</span><span class="params">(Vector list)</span> &#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (list) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">lastIndex</span> <span class="operator">=</span> list.size() - <span class="number">1</span>;</span><br><span class="line">        list.remove(lastIndex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;在之前的文章<a href="./../../01/Java%E9%9B%86%E5%90%88ArrayList%E4%B8%ADmodCount%E8%AF%A6%E8%A7%A3%E5%8F%8AsubList%E5%87%BD%E6%95%B0%E8%A6%81%E7%82%B9/#more">《Java集合ArrayList中modCount详解及subList函数要点》</a>中，曾经提到过<code>ConcurrentModificationException</code>异常,在对集合进行迭代操作的过程中，如果修改了原集合，将导致异常的发生。同样，如果在迭代期间modCount被其他线程修改，那么同样将发生<code>ConcurrentModificationException</code>异常。由于使用同步类容器需要保证在对容器进行复合操作及其他一些操作要进行客户端加锁，导致了实现线程安全的同步操作的保障将分散代码的各个地方，这将增加代码实现的难度以及维护的难度。正如封装对象的状态有助于维持不变性条件一样，封装对象的同步机制同样有助于确保实施同步策略以及简化维护工作。因此，更能实现该目的的并行容器，也就成了更好的选择。</p>
+<h1 id="并发容器"><a href="#并发容器" class="headerlink" title="并发容器"></a>并发容器</h1><p>&emsp;&emsp;同步容器类存在两个问题，一个问题就是上面提到的复合操作需要客户端加锁，以保证操作的正确性。另外一个就是同步容器将所有对容器状态的访问都串行化，以实现他们的线程安全性，但这种方法的代价是严重降低并发性，当多个线程竞争访问容器的锁时，吞吐量将严重降低。因此，通过并发容器代替同步容器，可以极大地提高伸缩性并降低风险。并发容器注重以下特性：</p>
+<ol>
+<li>根据具体场景进行设计，尽量避免使用锁，提高容器的并发访问性。</li>
+<li>并发容器定义了一些线程安全的复合操作。</li>
+<li>并发容器在迭代时，可以不封闭在synchronized中。但是未必每次看到的都是”最新的、当前的”数据。如果说将迭代操作包装在synchronized中，可以达到”串行”的并发安全性，那么并发容器的迭代达到了”脏读”。</li>
+</ol>
+<p>&emsp;&emsp;可以通过下图简单了解concurrent中关于容器类的接口和类：<br><img src="/blog/.io//%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png" alt="并发容器继承关系"></p>
+<h2 id="两个接口"><a href="#两个接口" class="headerlink" title="两个接口"></a>两个接口</h2><ul>
+<li><p>ConcurrentMap<br>该接口定义Map的原子操作：putIfAbsent、remove、replace</p>
+</li>
+<li><p>BlockingQueue<br>阻塞队列，不允许null值；<br>取元素时，如果队列为空则等待；存元素时，如果没有空间则等待；</p>
+</li>
+</ul>
+<p>&emsp;&emsp;阻塞队列的方法有四种形式–当操作不能立即得到满足，但可能在未来某一时刻被满足的时候，有四种不同的方式来处理：</p>
+<ul>
+<li>抛出异常</li>
+<li>返回特殊的值（null或false，取决与具体的操作）</li>
+<li>无期限地阻塞当前线程，直到该操作成功</li>
+<li>仅在指定的最大时长内阻塞，过后还不成功就放弃</li>
+</ul>
+<h2 id="实现类"><a href="#实现类" class="headerlink" title="实现类"></a>实现类</h2><p>通过上面的图可以知道，concurrent包中的并发容器主要可以四类，分别是：</p>
+<ul>
+<li>CopyOnWrite容器：CopyOnWriteArrayList、CopyOnWriteArraySet</li>
+<li>CocurrentMap的实现类：ConcurrentHashMap、ConcurrentSkipListMap</li>
+<li>阻塞队列的实现类（共七种）</li>
+<li>其他：ConcurrentLinkedQueue、ConcurrentLikedDeque、ConcurrentSkipListSet</li>
+</ul>
+<h3 id="CopyOnWrite容器"><a href="#CopyOnWrite容器" class="headerlink" title="CopyOnWrite容器"></a>CopyOnWrite容器</h3><p>&emsp;&emsp;其实现原理是，在创建CopyOnWrite容器实例时，是通过安全方式发布了一个事实不可变对象，由前一篇文章中我们知道，安全发布的事实不可变对象是线程安全的，那么在访问该对象时就不再需要进一步的同步。但是在每次修改时，都会创建并重新发布一个新的容器副本就行修改，从而实现可变性。需要注意的时，每当修改容器是都会复制底层数组，这需要一定的开销，特别是当容器的规模较大时。所以，建议仅当迭代操作远远多余修改操作时，才应该使用“写入时复制”容器。</p>
+<h4 id="CopyOnWriteArrayList（写入时复制List）"><a href="#CopyOnWriteArrayList（写入时复制List）" class="headerlink" title="CopyOnWriteArrayList（写入时复制List）"></a>CopyOnWriteArrayList（写入时复制List）</h4><p>&emsp;&emsp;CopyOnWriteArrayList用于替代同步List，其在迭代期间不需要对容器进行加锁或复制。</p>
+<h4 id="CopyOnWriteArraySet"><a href="#CopyOnWriteArraySet" class="headerlink" title="CopyOnWriteArraySet"></a>CopyOnWriteArraySet</h4><p>&emsp;&emsp;java.util.ArrayList的线程安全版本：所有的修改操作都是通过对底层数组的最新copy来实现。</p>
+<h3 id="ConcurrentMap的实现类"><a href="#ConcurrentMap的实现类" class="headerlink" title="ConcurrentMap的实现类"></a>ConcurrentMap的实现类</h3><h4 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h4><p>&emsp;&emsp;与HashMap一样，ConcurrentHashMap也是一个基于散列的Map，但它使用一种完全不同的加锁策略来提供更高的并发性和伸缩性。ConcurrentHashMap并部署在每个方法上都用同一个锁进行同步并使得只能有一个线程访问容器，而是使用一种粒度更细的锁机制来实现更大程度的共享，这种机制成为分段锁。<code>在这种机制中，任意数量的读取线程可以并发地访问Map，执行读取操作的线程和执行写入操作的线程可以并发地访问Map，并且一定数量的写入线程可以并发地修改Map。</code>，所谓分段锁，简单来说就是将数据进行分段，每一段锁用于锁容器中的一部分数据，那么当多线程访问容器里的不容数据段的数据时，线程间就不会存在锁竞争，从而可以有效地提高并发访问效率。有些方法需要跨段，比如size()，就需要按照顺序锁定所有的段，完成操作后，再按顺序释放锁。有关分段锁的应用，可以参看<a href="https://www.cnblogs.com/ITtangtang/p/3948786.html">ConcurrentHashMap分段锁技术</a>。</p>
+<h4 id="ConcurrentSkipListMap"><a href="#ConcurrentSkipListMap" class="headerlink" title="ConcurrentSkipListMap"></a>ConcurrentSkipListMap</h4><p>&emsp;&emsp;ConcurrentSkipListMap在JDK并发工具类使用范围不是很广，它是针对某一特殊需求而设计的——支持排序，同时支持搜索目标返回最接近匹配项的导航方法。ConcurrentSkipListMap使用SkipList(跳表)实现排序，而TreeMap使用红黑树。</p>
+<h3 id="阻塞队列"><a href="#阻塞队列" class="headerlink" title="阻塞队列"></a>阻塞队列</h3><p>&emsp;&emsp;阻塞队列是一个支持阻塞插入和阻塞移除的队列：当队列满时，队列会阻塞插入元素的线程，直到队列不满；当队列为空时，队列会阻塞获取元素的线程，直到队列不空。阻塞队列常用于生产者和消费者模式，生产者向队列中添加元素，消费者则从队列中取出元素。线程池当中使用阻塞队列来实现任务的排队，在这里简单介绍一下阻塞队列的几个具体实现类。</p>
+<h4 id="ArrayBlockingQueue"><a href="#ArrayBlockingQueue" class="headerlink" title="ArrayBlockingQueue"></a>ArrayBlockingQueue</h4><p>&emsp;&emsp;使用数组实现的有界阻塞队列，按照FIFO的原则对元素排序；内部使用重入锁可实现公平访问。内部使用一个重入锁来控制并发修改操作，即同一时刻，只能进行放或取中的一个操作。初始化时，必须指定容量大小。</p>
+<h4 id="LinkedBlockingQueue"><a href="#LinkedBlockingQueue" class="headerlink" title="LinkedBlockingQueue"></a>LinkedBlockingQueue</h4><p>&emsp;&emsp;使用链表实现的有界阻塞队列，按照FIFO的原则对元素排序；默认和最大长度均为Integer.MAX_VALUE，所以在使用的时候，要注意指定最大容量，否则可能会导致元素数量过多，内存溢出。内部使用两个重入锁来控制并发操作，即同一时刻，允许同时进行放和取。</p>
+<h4 id="PriorityBlockingQueue"><a href="#PriorityBlockingQueue" class="headerlink" title="PriorityBlockingQueue"></a>PriorityBlockingQueue</h4><p>&emsp;&emsp;支持优先级的无界阻塞队列，默认情况下元素按照自然顺序升序排列，可以自定义类实现compareTo()方法来指定元素的排序规则，或在初始化PriorityBlockingQueue时指定构造参数Comparator来对元素进行排序，但不能保证同优先级元素的顺序；</p>
+<h4 id="DelayQueue"><a href="#DelayQueue" class="headerlink" title="DelayQueue"></a>DelayQueue</h4><p>&emsp;&emsp;支持延时获取元素的无界阻塞队列，队列中的元素必须实现Delayed接口，在创建元素时可以指定多久才能从队列中获取当前元素，只有在延迟期满后，才能从队列中获取元素。<br>DelayQueue可以应用在缓存系统的设计（用DelayQueue保存缓存元素的有效期，使用一个线程循环查询DelayQueue，一旦能从DelayQueue中获取元素，表示缓存有效期到了）、定时任务调度等场景（ScheduledThreadPoolExecutor中的ScheduledFutureTask类就是实现的Delayed接口）</p>
+<h4 id="SyncronousQueue"><a href="#SyncronousQueue" class="headerlink" title="SyncronousQueue"></a>SyncronousQueue</h4><p>&emsp;&emsp;不存储元素的阻塞队列，每一个put操作必须等待一个take操作，否则不能继续添加元素，支持公平访问队列，非常适合传递性场景，即把生产者线程处理的数据直接传递给消费者线程，队列本身不存储任何元素。SyncronousQueue的吞吐量高于ArrayBlockingQueue和LinkedBlockingDeque。</p>
+<h4 id="LinkedTransferQueue"><a href="#LinkedTransferQueue" class="headerlink" title="LinkedTransferQueue"></a>LinkedTransferQueue</h4><p>&emsp;&emsp;使用链表实现的无界阻塞TransferQueue，当有消费者正在等待接受元素时，队列可以通过transfer()方法把生产者传入的元素立即传给消费者。</p>
+<h4 id="LinkedBlockingDeque"><a href="#LinkedBlockingDeque" class="headerlink" title="LinkedBlockingDeque"></a>LinkedBlockingDeque</h4><p>&emsp;&emsp;使用链表实现的双向阻塞队列，可以在队列的两端进行插入和移除元素。</p>
+<h3 id="其他-等补充"><a href="#其他-等补充" class="headerlink" title="其他(等补充)"></a>其他(等补充)</h3><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&emsp;&emsp;因此，在使用容器进行开发时，我们有三种选择，第一种是使用普通的容器，二是使用同步容器，三是使用并发容器。在容器的选择上，还是需要我们根据具体的业务需要，选择合适的容器来实现业务功能。</p>
+<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/.io//%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B-%E5%AE%B9%E5%99%A8/" <i class="fa fa-tag"></i> java并发编程 容器</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/04/23/Groovy%E5%AD%A6%E4%B9%A0/" rel="next" title="Groovy学习">
+                <i class="fa fa-chevron-left"></i> Groovy学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/04/29/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%BB%8B%E7%BB%8D/" rel="prev" title="线程池介绍">
+                线程池介绍 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/blog/images/me.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/blog/archives">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/blog/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/cyh123" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/9581306/yunhai" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">同步容器类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">同步容器类的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">并发容器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.1.</span> <span class="nav-text">两个接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">实现类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CopyOnWrite%E5%AE%B9%E5%99%A8"><span class="nav-number">2.2.1.</span> <span class="nav-text">CopyOnWrite容器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CopyOnWriteArrayList%EF%BC%88%E5%86%99%E5%85%A5%E6%97%B6%E5%A4%8D%E5%88%B6List%EF%BC%89"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">CopyOnWriteArrayList（写入时复制List）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CopyOnWriteArraySet"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">CopyOnWriteArraySet</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentMap%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="nav-number">2.2.2.</span> <span class="nav-text">ConcurrentMap的实现类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ConcurrentHashMap"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">ConcurrentHashMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ConcurrentSkipListMap"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">ConcurrentSkipListMap</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97"><span class="nav-number">2.2.3.</span> <span class="nav-text">阻塞队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayBlockingQueue"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">ArrayBlockingQueue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedBlockingQueue"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">LinkedBlockingQueue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PriorityBlockingQueue"><span class="nav-number">2.2.3.3.</span> <span class="nav-text">PriorityBlockingQueue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DelayQueue"><span class="nav-number">2.2.3.4.</span> <span class="nav-text">DelayQueue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SyncronousQueue"><span class="nav-number">2.2.3.5.</span> <span class="nav-text">SyncronousQueue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedTransferQueue"><span class="nav-number">2.2.3.6.</span> <span class="nav-text">LinkedTransferQueue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedBlockingDeque"><span class="nav-number">2.2.3.7.</span> <span class="nav-text">LinkedBlockingDeque</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96-%E7%AD%89%E8%A1%A5%E5%85%85"><span class="nav-number">2.2.4.</span> <span class="nav-text">其他(等补充)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yunhai.chen</span>
+
+  
+</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'jtQLIeV6jE3JEz552dDc8drD-gzGzoHsz',
+        appKey: 'ntTvuVT0T22Vn198alyrXuKA',
+        placeholder: '留下你的问题',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("jtQLIeV6jE3JEz552dDc8drD-gzGzoHsz", "ntTvuVT0T22Vn198alyrXuKA");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+      
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("jtQLIeV6jE3JEz552dDc8drD-gzGzoHsz", "ntTvuVT0T22Vn198alyrXuKA");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  
+</body>
+</html>

@@ -9,6 +9,31 @@
 ]]></content>
   </entry>
   <entry>
+    <title>HEXO基本配置</title>
+    <url>/blog/2018/03/30/%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="HEXO的使用与运行"><a href="#HEXO的使用与运行" class="headerlink" title="HEXO的使用与运行"></a>HEXO的使用与运行</h1><p>&emsp;&emsp;想要安装hexo非常简单，读者可以参考hexo官方文档的介绍，这里附上官方文档的地址：<a href="https://hexo.io/docs/index.html">hexo安装教程</a></p>
+<h1 id="与GitHub-Pages的集成"><a href="#与GitHub-Pages的集成" class="headerlink" title="与GitHub Pages的集成"></a>与GitHub Pages的集成</h1><p>&emsp;&emsp;由于目前博客系统还不是很完整，但是很想能够在互联网上进行访问，因此，这里借助GITHUB，将HEXO与GITHUB进行集成，通过GITHUB平台的GitHub Pages来支持浏览器的访问。</p>
+<p>&emsp;&emsp;首先，也是最重要的一步，就是安装一个扩展，通过命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;通过对HEXO_config.yml配置文件的修改，既可以实现我们的目的。打开配置文件，拉到最后一行，可以看到</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>在这里，我们可以配置我们的deploy信息，博主的配置如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:cyh123/yunhai.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;博主的github用户名为cyh123，所以repo那里的地址中带有博主的用户名信息。需要<code>部署自己博客的读者</code>，记得将名字那里修改为自己的github用户名。最后，将项目上传到自己的github仓库中。通过命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d -g #在部署前先生成</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;进行部署手动输入网址，博主的地址是<code>http://cyh123.github.io/</code></p>
+<p>&emsp;&emsp;在与GITHUB集成的过程当中，由于没有注意，创建仓库的过程到中没有按照GitHub Pages创建要求来命名仓库名称，导致一直失败，正确的仓库名称应该是&lt;username&gt;.github.io。其中。username为你自己GITHUB的用户名称，建议大家可以看一下GitHub Pages的用户文档，文档地址：<a href="https://help.github.com/categories/github-pages-basics/">GitHub Pages</a></p>
+<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/.io//%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MongoDb学习</title>
     <url>/blog/2018/04/01/MongoDb%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><ol>
@@ -122,31 +147,6 @@
       </categories>
       <tags>
         <tag>mongodb</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HEXO基本配置</title>
-    <url>/blog/2018/03/30/%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="HEXO的使用与运行"><a href="#HEXO的使用与运行" class="headerlink" title="HEXO的使用与运行"></a>HEXO的使用与运行</h1><p>&emsp;&emsp;想要安装hexo非常简单，读者可以参考hexo官方文档的介绍，这里附上官方文档的地址：<a href="https://hexo.io/docs/index.html">hexo安装教程</a></p>
-<h1 id="与GitHub-Pages的集成"><a href="#与GitHub-Pages的集成" class="headerlink" title="与GitHub Pages的集成"></a>与GitHub Pages的集成</h1><p>&emsp;&emsp;由于目前博客系统还不是很完整，但是很想能够在互联网上进行访问，因此，这里借助GITHUB，将HEXO与GITHUB进行集成，通过GITHUB平台的GitHub Pages来支持浏览器的访问。</p>
-<p>&emsp;&emsp;首先，也是最重要的一步，就是安装一个扩展，通过命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;通过对HEXO_config.yml配置文件的修改，既可以实现我们的目的。打开配置文件，拉到最后一行，可以看到</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>在这里，我们可以配置我们的deploy信息，博主的配置如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:cyh123/yunhai.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>&emsp;&emsp;博主的github用户名为cyh123，所以repo那里的地址中带有博主的用户名信息。需要<code>部署自己博客的读者</code>，记得将名字那里修改为自己的github用户名。最后，将项目上传到自己的github仓库中。通过命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d -g #在部署前先生成</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;进行部署手动输入网址，博主的地址是<code>http://cyh123.github.io/</code></p>
-<p>&emsp;&emsp;在与GITHUB集成的过程当中，由于没有注意，创建仓库的过程到中没有按照GitHub Pages创建要求来命名仓库名称，导致一直失败，正确的仓库名称应该是&lt;username&gt;.github.io。其中。username为你自己GITHUB的用户名称，建议大家可以看一下GitHub Pages的用户文档，文档地址：<a href="https://help.github.com/categories/github-pages-basics/">GitHub Pages</a></p>
-<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/.io//%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
