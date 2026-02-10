@@ -5,11 +5,12 @@
   "hexo": {
     "version": "3.9.0"
   },
-  
   "scripts": {
-    "toWeb": "cd .deploy_git && git remote set-url origin git@118.24.7.37:/home/git/blog/hexo.git && git push"
+    "toWeb": "echo \"Deprecated: use GitHub Actions workflow for deployment\"",
+    "clean": "hexo clean",
+    "build": "hexo generate",
+    "server": "hexo server"
   },
-
   "dependencies": {
     "hexo": "^3.2.0",
     "hexo-asset-image": "git+https://github.com/CodeFalling/hexo-asset-image.git",
