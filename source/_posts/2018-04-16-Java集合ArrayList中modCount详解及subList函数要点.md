@@ -5,9 +5,9 @@ date: 2018-04-16 15:55:27
 tags: 集合 ConcurrentModificationException
 categories: 集合
 ---
-&emsp;&emsp;因为一次在项目开发中使用ArrayList的过程中，发生了**ConcurrentModificationException**异常，于是查询了相关资料，对发生该异常的原因记录一下。
+因为一次在项目开发中使用ArrayList的过程中，发生了**ConcurrentModificationException**异常，于是查询了相关资料，对发生该异常的原因记录一下。
 
-&emsp;&emsp;所谓的ConcurrentModificationException翻译过来就是并发修改异常，网上大部分该异常出现的原因，都是在使用迭代器的时候发生的，比如：
+所谓的ConcurrentModificationException翻译过来就是并发修改异常，网上大部分该异常出现的原因，都是在使用迭代器的时候发生的，比如：
 
 ```
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class Test {
     }
 }
 ```
-&emsp;&emsp;在该例子中，我们使用迭代器进行迭代的过程中对集合进行了操作（不限于此处的添加操作，也可能是删除等），导致迭代器失效抛出该异常。但是在项目当中，本人并没有使用到迭代器，而是存在下面一段代码：
+在该例子中，我们使用迭代器进行迭代的过程中对集合进行了操作（不限于此处的添加操作，也可能是删除等），导致迭代器失效抛出该异常。但是在项目当中，本人并没有使用到迭代器，而是存在下面一段代码：
 
 ```
 List<TableEntity> tableEntities = tableData.getValue().subList(1, tableData.getValue().size());
@@ -42,7 +42,7 @@ newEntitys.addAll(entities);
 tableData.getValue().clear();
 tableData.getValue().addAll(newEntitys);
 ```
-&emsp;&emsp;异常在最后一步的时候抛出。可见，ConcurrentModificationException异常不仅仅是在使用迭代器的时候会出现。分析ArrayList类的subList源码我们可以发现，
+异常在最后一步的时候抛出。可见，ConcurrentModificationException异常不仅仅是在使用迭代器的时候会出现。分析ArrayList类的subList源码我们可以发现，
 
 ```java
 public List<E> subList(int fromIndex, int toIndex) {
@@ -50,7 +50,7 @@ public List<E> subList(int fromIndex, int toIndex) {
     return new SubList(this, 0, fromIndex, toIndex);
 }
 ```
-&emsp;&emsp;此处返回了一个SubList的对象，而在其构造函数内部，
+此处返回了一个SubList的对象，而在其构造函数内部，
 
 ```
 SubList(AbstractList<E> parent,int offset, int fromIndex, int toIndex) {
@@ -61,7 +61,7 @@ SubList(AbstractList<E> parent,int offset, int fromIndex, int toIndex) {
 	this.modCount = ArrayList.this.modCount;
 }
 ```
-&emsp;&emsp;可以看到**this.modCount = ArrayList.this.modCount**这样一句代码。而在第一个迭代器的例子中，通过iterator()函数返回的迭代器在构造当中也使用到了
+可以看到**this.modCount = ArrayList.this.modCount**这样一句代码。而在第一个迭代器的例子中，通过iterator()函数返回的迭代器在构造当中也使用到了
 
 ```java
 private class Itr implements Iterator<E> {
@@ -129,7 +129,7 @@ private class Itr implements Iterator<E> {
         }
     }
 ```
-&emsp;&emsp;可见，该异常的抛出与modCount有关,modCount属性是从AbstractList抽象类继承而来的。查看javadoc文档中的解释:
+可见，该异常的抛出与modCount有关,modCount属性是从AbstractList抽象类继承而来的。查看javadoc文档中的解释:
 >The number of times this list has been structurally modified. Structural modifications are those that change the size of the list, or otherwise perturb it in such a fashion that iterations in progress may yield incorrect results.
 This field is used by the iterator and list iterator implementation returned by the iterator and listIterator methods. If the value of this field changes unexpectedly, the iterator (or list iterator) will throw a ConcurrentModificationException in response to the next, remove, previous, set or add operations. This provides fail-fast behavior, rather than non-deterministic behavior in the face of concurrent modification during iteration.
 
@@ -143,8 +143,8 @@ newEntitys.addAll(entities);
 tableData.getValue().clear();
 tableData.getValue().addAll(newEntitys);
 ```
-&emsp;&emsp;这样的话，newEntitys就是一个ArrayList的对象而不是SubList的对象了。该情况也是第一次遇到，网上其他解释基本上都是第一种情况（即使用迭代器）发生。其实无论是第一种情况还是第二种情况，本质都是因为原集合的modCount被修改，导致与SubList的modCount或者是迭代器的expectedModCount不同导致的。
+这样的话，newEntitys就是一个ArrayList的对象而不是SubList的对象了。该情况也是第一次遇到，网上其他解释基本上都是第一种情况（即使用迭代器）发生。其实无论是第一种情况还是第二种情况，本质都是因为原集合的modCount被修改，导致与SubList的modCount或者是迭代器的expectedModCount不同导致的。
 
 
-&emsp;&emsp;欢迎关注个人公众号：
+欢迎关注个人公众号：
 ![个人公号](./2018-04-16-Java集合ArrayList中modCount详解及subList函数要点/个人公号.jpg)

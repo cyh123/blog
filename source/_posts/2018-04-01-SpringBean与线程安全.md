@@ -33,5 +33,5 @@ categories: SpringBoot
 &ensp;&ensp;&ensp;&ensp;有状态的Bean，多线程环境下不安全，那么适合用Prototype原型模式。Prototype: 每次对bean的请求都会创建一个新的Bean实例。
 
 
-&emsp;&emsp;欢迎关注个人公众号：
+欢迎关注个人公众号：
 ![个人公号](./2018-04-01-SpringBean与线程安全/个人公号.jpg)
