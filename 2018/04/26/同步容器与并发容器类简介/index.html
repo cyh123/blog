@@ -86,15 +86,15 @@
 <meta property="og:site_name" content="记录每一次进步">
 <meta property="og:description" content="同步容器类&emsp;&emsp;同步容器类包括Vector和HashTable，二者都是早期JDK的一部分，此外还包括在JDK1.2当中添加的一些功能相似的类，这些同步的封装类是由Collections.synchronizedXxx等工厂方法创建的。这些类实现线程安全的方式是：将它们的状态封装起来，并对每个公有方法都进行同步，使得每次都只有一个线程能够访问容器的状态。相较于并行容器，同步容器的">
 <meta property="og:locale">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-23-%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E5%8C%85%E8%A3%85%E5%87%BD%E6%95%B0.PNG">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-23-%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-23-%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/04/26/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E5%8C%85%E8%A3%85%E5%87%BD%E6%95%B0.PNG">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/04/26/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/04/26/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg">
 <meta property="article:published_time" content="2018-04-26T20:28:58.000Z">
-<meta property="article:modified_time" content="2026-02-10T09:14:44.182Z">
+<meta property="article:modified_time" content="2026-02-11T15:41:22.002Z">
 <meta property="article:author" content="yunhai.chen">
 <meta property="article:tag" content="java并发编程 容器">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cyh123.github.io/blog/.io//2018-04-23-%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E5%8C%85%E8%A3%85%E5%87%BD%E6%95%B0.PNG">
+<meta name="twitter:image" content="https://cyh123.github.io/blog/2018/04/26/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E5%8C%85%E8%A3%85%E5%87%BD%E6%95%B0.PNG">
 
 
 
@@ -413,7 +413,7 @@
       
         <h1 id="同步容器类"><a href="#同步容器类" class="headerlink" title="同步容器类"></a>同步容器类</h1><p>&emsp;&emsp;同步容器类包括Vector和HashTable，二者都是早期JDK的一部分，此外还包括在JDK1.2当中添加的一些功能相似的类，这些同步的封装类是由Collections.synchronizedXxx等工厂方法创建的。这些类实现线程安全的方式是：将它们的状态封装起来，并对每个公有方法都进行同步，使得每次都只有一个线程能够访问容器的状态。相较于并行容器，同步容器的实现原理其实很简单，就是对普通容器做了一层封装，并实现容器的每一个方法，在方法上实现同步。比如通过Collections类的工厂方法将一个普通的List封装成一个同步容器：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; List&lt;T&gt; <span class="title function_">synchronizedList</span><span class="params">(List&lt;T&gt; list)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (list <span class="keyword">instanceof</span> RandomAccess ?</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">SynchronizedRandomAccessList</span>&lt;&gt;(list) :</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">SynchronizedList</span>&lt;&gt;(list));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;其他包装函数<br><img src="/blog/.io//2018-04-23-%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E5%8C%85%E8%A3%85%E5%87%BD%E6%95%B0.PNG" alt="同步容器包装函数"></p>
+<p>&emsp;&emsp;其他包装函数<br><img src="/blog/2018/04/26/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E5%8C%85%E8%A3%85%E5%87%BD%E6%95%B0.PNG" alt="同步容器包装函数"></p>
 <h2 id="同步容器类的问题"><a href="#同步容器类的问题" class="headerlink" title="同步容器类的问题"></a>同步容器类的问题</h2><p>&emsp;&emsp;在并发编程当中，虽然同步容器类是线程安全的，但是在某些情况下可能需要额外的客户端加锁来保护复合操作。如下面一段代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title function_">getLast</span><span class="params">(Vector list)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">lastIndex</span> <span class="operator">=</span> list.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> list.get(lastIndex);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">deleteLast</span><span class="params">(Vector list)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">lastIndex</span> <span class="operator">=</span> list.size() - <span class="number">1</span>;</span><br><span class="line">    list.remove(lastIndex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;上述两个函数中，虽然Vector是线程安全的，但是获取Vector大小与获取&#x2F;删除之间没有锁保护，当获得Vector大笑之后，如另外一个线程删除了Vector中的最末尾位置的元素，则每个函数的最后一句代码执行将报错。因此，对于复合操作，需要在符合操作上用锁来保证操作的原子性：</p>
@@ -426,7 +426,7 @@
 <li>并发容器定义了一些线程安全的复合操作。</li>
 <li>并发容器在迭代时，可以不封闭在synchronized中。但是未必每次看到的都是”最新的、当前的”数据。如果说将迭代操作包装在synchronized中，可以达到”串行”的并发安全性，那么并发容器的迭代达到了”脏读”。</li>
 </ol>
-<p>&emsp;&emsp;可以通过下图简单了解concurrent中关于容器类的接口和类：<br><img src="/blog/.io//2018-04-23-%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png" alt="并发容器继承关系"></p>
+<p>&emsp;&emsp;可以通过下图简单了解concurrent中关于容器类的接口和类：<br><img src="/blog/2018/04/26/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png" alt="并发容器继承关系"></p>
 <h2 id="两个接口"><a href="#两个接口" class="headerlink" title="两个接口"></a>两个接口</h2><ul>
 <li><p>ConcurrentMap<br>该接口定义Map的原子操作：putIfAbsent、remove、replace</p>
 </li>
@@ -461,7 +461,7 @@
 <h4 id="LinkedTransferQueue"><a href="#LinkedTransferQueue" class="headerlink" title="LinkedTransferQueue"></a>LinkedTransferQueue</h4><p>&emsp;&emsp;使用链表实现的无界阻塞TransferQueue，当有消费者正在等待接受元素时，队列可以通过transfer()方法把生产者传入的元素立即传给消费者。</p>
 <h4 id="LinkedBlockingDeque"><a href="#LinkedBlockingDeque" class="headerlink" title="LinkedBlockingDeque"></a>LinkedBlockingDeque</h4><p>&emsp;&emsp;使用链表实现的双向阻塞队列，可以在队列的两端进行插入和移除元素。</p>
 <h3 id="其他-等补充"><a href="#其他-等补充" class="headerlink" title="其他(等补充)"></a>其他(等补充)</h3><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&emsp;&emsp;因此，在使用容器进行开发时，我们有三种选择，第一种是使用普通的容器，二是使用同步容器，三是使用并发容器。在容器的选择上，还是需要我们根据具体的业务需要，选择合适的容器来实现业务功能。</p>
-<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/.io//2018-04-23-%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/2018/04/26/%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB%E7%AE%80%E4%BB%8B/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
 
       
     </div>

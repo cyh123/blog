@@ -86,20 +86,20 @@
 <meta property="og:site_name" content="记录每一次进步">
 <meta property="og:description" content="&emsp;&emsp;Java虚拟机除了上一篇文章当中提到的内存管理外，另外一个重要的知识便是垃圾收集。在进行收集垃圾之前，我们首先要考虑一下三个问题：  哪些内存需要回收 什么时候回收 如何回收  哪些内存是垃圾 &emsp;&emsp;一块内存是垃圾，也就是说在该内存上的对象已经不再使用了，需要去进行回收，那么，如何来判别对象是否已经不再用了，需要进行回收呢？这里有两个方法：  引用计数算法">
 <meta property="og:locale">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/GC.jpg">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/SerialNew.png">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/ParNew.png">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/SerialOld.png">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/ParallelOld.png">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/CMS%E6%94%B6%E9%9B%86%E5%99%A8.png">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/G1.png">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/GC.jpg">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/SerialNew.png">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/ParNew.png">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/SerialOld.png">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/ParallelOld.png">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/CMS%E6%94%B6%E9%9B%86%E5%99%A8.png">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/G1.png">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg">
 <meta property="article:published_time" content="2018-04-08T15:50:55.000Z">
-<meta property="article:modified_time" content="2026-02-10T09:14:44.179Z">
+<meta property="article:modified_time" content="2026-02-11T15:41:21.998Z">
 <meta property="article:author" content="yunhai.chen">
 <meta property="article:tag" content="java虚拟机 垃圾回收">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cyh123.github.io/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/GC.jpg">
+<meta name="twitter:image" content="https://cyh123.github.io/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/GC.jpg">
 
 
 
@@ -449,7 +449,7 @@
 <li>分代收集算法<br>&emsp;&emsp;将内存分成新生代和老生代，对不同的代使用不同的收集算法</li>
 </ul>
 <p>当前商业虚拟机的垃圾收集都采用“分代收集”算法。</p>
-<h1 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h1><p>&emsp;&emsp;如果说收集算法是内存回收的方法论，那么垃圾收集器就是内存回收的具体实现。Java虚拟机规范中没有对垃圾和搜集其应该如何实现做规定，因此不同的厂商和不同版本的虚拟机所提供的垃圾收集器都可能会有很大的差别。这里讨论的收集器是基于JDK1.7 Update14之后的HotSpot虚拟机器。<br><img src="/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/GC.jpg" alt="GC 分类"><br>&emsp;&emsp;上图展示了7种作用于不同分代的收集器，如果两个收集器之间存在连线，就说明它们可以搭配使用。虚拟机所处的区域，则表示它是属于新生代收集器还是老年代收集器。</p>
+<h1 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h1><p>&emsp;&emsp;如果说收集算法是内存回收的方法论，那么垃圾收集器就是内存回收的具体实现。Java虚拟机规范中没有对垃圾和搜集其应该如何实现做规定，因此不同的厂商和不同版本的虚拟机所提供的垃圾收集器都可能会有很大的差别。这里讨论的收集器是基于JDK1.7 Update14之后的HotSpot虚拟机器。<br><img src="/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/GC.jpg" alt="GC 分类"><br>&emsp;&emsp;上图展示了7种作用于不同分代的收集器，如果两个收集器之间存在连线，就说明它们可以搭配使用。虚拟机所处的区域，则表示它是属于新生代收集器还是老年代收集器。</p>
 <h2 id="几个概念"><a href="#几个概念" class="headerlink" title="几个概念"></a>几个概念</h2><h3 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h3><ul>
 <li>并行（Parallel）：指多条垃圾收集线程并行工作，但此时用户线程仍然处于等待状态。</li>
 <li>并发（Concurrent）：指用户线程与垃圾收集线程同时执行（但不一定是并行的，可能会交替执行），用户程序在继续运行。而垃圾收集程序运行在另一个CPU上。</li>
@@ -458,12 +458,12 @@
 <li>新生代GC（Minor GC）：指发生在新生代的垃圾收集动作，因为Java对象大多都具备朝生夕灭的特性，所以Minor GC非常频繁，一般回收速度也比较快。具体原理见上一篇文章。</li>
 <li>老年代GC（Major GC &#x2F; Full GC）：指发生在老年代的GC，出现了Major GC，经常会伴随至少一次的Minor GC（但非绝对的，在Parallel Scavenge收集器的收集策略里就有直接进行Major GC的策略选择过程）。Major GC的速度一般会比Minor GC慢10倍以上。</li>
 </ul>
-<h2 id="新生代收集器"><a href="#新生代收集器" class="headerlink" title="新生代收集器"></a>新生代收集器</h2><h3 id="Serial收集器"><a href="#Serial收集器" class="headerlink" title="Serial收集器"></a>Serial收集器</h3><p>&emsp;&emsp;Serial收集器是最基本、发展历史最悠久的新生代收集器，也是原理最简单的收集器。它是一个采用复制算法的单线程收集器，只会使用一个CPU或一条收集线程去完成垃圾收集工作，更重要的是它在进行垃圾收集时，必须暂停其他所有的工作线程，直至Serial收集器收集结束为止。<br><img src="/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/SerialNew.png" alt="SerialNew收集器"><br>该收集器目前是HotSpot虚拟机运行在Client模式下的默认的新生代收集器。它也有着优于其他收集器的地方：简单而高效（与其他收集器的单线程相比），对于限定单个CPU的环境来说，Serial收集器由于没有线程交互的开销，专心做垃圾收集自然可以获得更高的单线程收集效率。</p>
-<h3 id="ParNew-收集器"><a href="#ParNew-收集器" class="headerlink" title="ParNew 收集器"></a>ParNew 收集器</h3><p>&emsp;&emsp;ParNew收集器就是Serial收集器的多线程版本，它也是一个新生代收集器。除了使用多线程进行垃圾收集外，其余行为包括Serial收集器可用的所有控制参数、收集算法（复制算法）、Stop The World、对象分配规则、回收策略等与Serial收集器完全相同。<br><img src="/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/ParNew.png" alt="ParNew收集器"><br>该虚拟机是许多运行在Server模式下的虚拟机中首选的新生代收集器，其中有一个与性能无关的重要原因是，除了Serial收集器外，目前只有它能和CMS收集器（Concurrent Mark Sweep）配合工作。它默认开启的收集线程数与CPU的数量相同，在CPU非常多的情况下可使用-XX:ParallerGCThreads参数设置。</p>
+<h2 id="新生代收集器"><a href="#新生代收集器" class="headerlink" title="新生代收集器"></a>新生代收集器</h2><h3 id="Serial收集器"><a href="#Serial收集器" class="headerlink" title="Serial收集器"></a>Serial收集器</h3><p>&emsp;&emsp;Serial收集器是最基本、发展历史最悠久的新生代收集器，也是原理最简单的收集器。它是一个采用复制算法的单线程收集器，只会使用一个CPU或一条收集线程去完成垃圾收集工作，更重要的是它在进行垃圾收集时，必须暂停其他所有的工作线程，直至Serial收集器收集结束为止。<br><img src="/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/SerialNew.png" alt="SerialNew收集器"><br>该收集器目前是HotSpot虚拟机运行在Client模式下的默认的新生代收集器。它也有着优于其他收集器的地方：简单而高效（与其他收集器的单线程相比），对于限定单个CPU的环境来说，Serial收集器由于没有线程交互的开销，专心做垃圾收集自然可以获得更高的单线程收集效率。</p>
+<h3 id="ParNew-收集器"><a href="#ParNew-收集器" class="headerlink" title="ParNew 收集器"></a>ParNew 收集器</h3><p>&emsp;&emsp;ParNew收集器就是Serial收集器的多线程版本，它也是一个新生代收集器。除了使用多线程进行垃圾收集外，其余行为包括Serial收集器可用的所有控制参数、收集算法（复制算法）、Stop The World、对象分配规则、回收策略等与Serial收集器完全相同。<br><img src="/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/ParNew.png" alt="ParNew收集器"><br>该虚拟机是许多运行在Server模式下的虚拟机中首选的新生代收集器，其中有一个与性能无关的重要原因是，除了Serial收集器外，目前只有它能和CMS收集器（Concurrent Mark Sweep）配合工作。它默认开启的收集线程数与CPU的数量相同，在CPU非常多的情况下可使用-XX:ParallerGCThreads参数设置。</p>
 <h3 id="Parallel-Scavenge-收集器"><a href="#Parallel-Scavenge-收集器" class="headerlink" title="Parallel Scavenge 收集器"></a>Parallel Scavenge 收集器</h3><p>&emsp;&emsp;Parallel Scavenge收集器也是一个并行的多线程新生代收集器，它也使用复制算法。Parallel Scavenge收集器的特点是它的关注点与其他收集器不同，CMS等收集器的关注点是尽可能缩短垃圾收集时用户线程的停顿时间，而Parallel Scavenge收集器的目标是达到一个可控制的吞吐量。停顿时间越短就越适合需要与用户交互的程序，良好的响应速度能提升用户体验。而高吞吐量则可以高效率地利用CPU时间，尽快完成程序的运算任务，主要适合在后台运算而不需要太多交互的任务。</p>
 <p>&emsp;&emsp;Parallel Scavenge收集器除了会显而易见地提供可以精确控制吞吐量的参数，还提供了一个参数-XX:+UseAdaptiveSizePolicy，这是一个开关参数，打开参数后，就不需要手工指定新生代的大小（-Xmn）、Eden和Survivor区的比例（-XX:SurvivorRatio）、晋升老年代对象年龄（-XX:PretenureSizeThreshold）等细节参数了，虚拟机会根据当前系统的运行情况收集性能监控信息，动态调整这些参数以提供最合适的停顿时间或者最大的吞吐量，这种方式称为GC自适应的调节策略（GC Ergonomics）。自适应调节策略也是Parallel Scavenge收集器与ParNew收集器的一个重要区别。</p>
-<h2 id="老年代收集器"><a href="#老年代收集器" class="headerlink" title="老年代收集器"></a>老年代收集器</h2><h3 id="Serial-Old收集器"><a href="#Serial-Old收集器" class="headerlink" title="Serial Old收集器"></a>Serial Old收集器</h3><p>&emsp;&emsp;Serial Old 是 Serial收集器的老年代版本，它同样是一个单线程收集器，使用“标记-整理”（Mark-Compact）算法。收集器的主要意义也是在于给Client模式下的虚拟机使用。Serial Old收集器的工作过程如图所示：<br><img src="/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/SerialOld.png" alt="SerialOld收集器"></p>
-<h3 id="Parallel-Old收集器"><a href="#Parallel-Old收集器" class="headerlink" title="Parallel Old收集器"></a>Parallel Old收集器</h3><p>&emsp;&emsp;Parallel Old收集器是Parallel Scavenge收集器的老年代版本，使用多线程和“标记-整理”算法。Parallel Old收集器的工作过程如图所示：<br><img src="/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/ParallelOld.png" alt="Parallel Old收集器"></p>
+<h2 id="老年代收集器"><a href="#老年代收集器" class="headerlink" title="老年代收集器"></a>老年代收集器</h2><h3 id="Serial-Old收集器"><a href="#Serial-Old收集器" class="headerlink" title="Serial Old收集器"></a>Serial Old收集器</h3><p>&emsp;&emsp;Serial Old 是 Serial收集器的老年代版本，它同样是一个单线程收集器，使用“标记-整理”（Mark-Compact）算法。收集器的主要意义也是在于给Client模式下的虚拟机使用。Serial Old收集器的工作过程如图所示：<br><img src="/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/SerialOld.png" alt="SerialOld收集器"></p>
+<h3 id="Parallel-Old收集器"><a href="#Parallel-Old收集器" class="headerlink" title="Parallel Old收集器"></a>Parallel Old收集器</h3><p>&emsp;&emsp;Parallel Old收集器是Parallel Scavenge收集器的老年代版本，使用多线程和“标记-整理”算法。Parallel Old收集器的工作过程如图所示：<br><img src="/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/ParallelOld.png" alt="Parallel Old收集器"></p>
 <h3 id="CMS收集器"><a href="#CMS收集器" class="headerlink" title="CMS收集器"></a>CMS收集器</h3><p>&emsp;&emsp;CMS（Concurrent Mark Sweep）收集器是一种以获取最短回收停顿时间为目标的收集器，它非常符合那些集中在互联网站或者B&#x2F;S系统的服务端上的Java应用，这些应用都非常重视服务的响应速度。从名字上（“Mark Sweep”）就可以看出它是基于“标记-清除”算法实现的。<br>&emsp;&emsp;CMS收集器工作的整个流程分为以下4个步骤:</p>
 <ul>
 <li>初始标记（CMS initial mark）：仅仅只是标记一下GC Roots能直接关联到的对象，速度很快，需要“Stop The World”。</li>
@@ -471,7 +471,7 @@
 <li>重新标记（CMS remark）：为了修正并发标记期间因用户程序继续运作而导致标记产生变动的那一部分对象的标记记录，这个阶段的停顿时间一般会比初始标记阶段稍长一些，但远比并发标记的时间短。此阶段也需要“Stop The World”。</li>
 <li>并发清除（CMS concurrent sweep）</li>
 </ul>
-<p>&emsp;&emsp;CMS收集器的工作过程如图所示：<br><img src="/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/CMS%E6%94%B6%E9%9B%86%E5%99%A8.png" alt="CMS收集器"></p>
+<p>&emsp;&emsp;CMS收集器的工作过程如图所示：<br><img src="/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/CMS%E6%94%B6%E9%9B%86%E5%99%A8.png" alt="CMS收集器"></p>
 <p>优点</p>
 <p>CMS是一款优秀的收集器，它的主要优点在名字上已经体现出来了：并发收集、低停顿，因此<code>CMS收集器也被称为并发低停顿收集器</code>（Concurrent Low Pause Collector）。</p>
 <p>缺点</p>
@@ -493,7 +493,7 @@
 <li>初始标记（Initial Marking） 仅仅只是标记一下GC Roots 能直接关联到的对象，并且修改TAMS（Nest Top Mark Start）的值，让下一阶段用户程序并发运行时，能在正确可以的Region中创建对象，此阶段需要停顿线程，但耗时很短。</li>
 <li>并发标记（Concurrent Marking） 从GC Root 开始对堆中对象进行可达性分析，找到存活对象，此阶段耗时较长，但可与用户程序并发执行。</li>
 <li>最终标记（Final Marking） 为了修正在并发标记期间因用户程序继续运作而导致标记产生变动的那一部分标记记录，虚拟机将这段时间对象变化记录在线程的Remembered Set Logs里面，最终标记阶段需要把Remembered Set Logs的数据合并到Remembered Set中，这阶段需要停顿线程，但是可并行执行。</li>
-<li>筛选回收（Live Data Counting and Evacuation） 首先对各个Region中的回收价值和成本进行排序，根据用户所期望的GC 停顿是时间来制定回收计划。此阶段其实也可以做到与用户程序一起并发执行，但是因为只回收一部分Region，时间是用户可控制的，而且停顿用户线程将大幅度提高收集效率，流程图如下：<br><img src="/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/G1.png" alt="G1收集器"></li>
+<li>筛选回收（Live Data Counting and Evacuation） 首先对各个Region中的回收价值和成本进行排序，根据用户所期望的GC 停顿是时间来制定回收计划。此阶段其实也可以做到与用户程序一起并发执行，但是因为只回收一部分Region，时间是用户可控制的，而且停顿用户线程将大幅度提高收集效率，流程图如下：<br><img src="/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/G1.png" alt="G1收集器"></li>
 </ul>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>根据上述几种垃圾收集器的工作原理及工作区域，进行一个归总：</p>
 <table>
@@ -567,7 +567,7 @@
 <blockquote>
 <p>参考资料 : <a href="https://book.douban.com/subject/24722612/">深入理解Java虚拟机（第2版）</a></p>
 </blockquote>
-<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/.io//2018-04-08-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/2018/04/08/java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
 
       
     </div>

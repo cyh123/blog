@@ -86,14 +86,14 @@
 <meta property="og:site_name" content="记录每一次进步">
 <meta property="og:description" content="概述&emsp;&emsp;开发当中一直都有在使用函数式编程，尤其是在Stream类时，今天就来对jdk8中的函数式编程来做一个学习汇总。&emsp;&emsp;我们最常用的面向对象编程（Java）属于命令式编程（Imperative Programming）这种编程范式。常见的编程范式还有逻辑式编程（Logic Programming），函数式编程（Functional Programming）">
 <meta property="og:locale">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-09-09-JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3.PNG">
-<meta property="og:image" content="https://cyh123.github.io/blog/.io//2018-09-09-JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3.PNG">
+<meta property="og:image" content="https://cyh123.github.io/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg">
 <meta property="article:published_time" content="2018-09-09T13:12:31.000Z">
-<meta property="article:modified_time" content="2026-02-10T09:14:44.187Z">
+<meta property="article:modified_time" content="2026-02-11T15:41:22.006Z">
 <meta property="article:author" content="yunhai.chen">
 <meta property="article:tag" content="java基础 编程语言">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cyh123.github.io/blog/.io//2018-09-09-JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3.PNG">
+<meta name="twitter:image" content="https://cyh123.github.io/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3.PNG">
 
 
 
@@ -433,13 +433,13 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">Predicate<T></T></td>
+<td align="center">Predicate<T></td>
 <td align="center">T</td>
 <td align="center">boolean</td>
 <td align="center">用于判别一个对象。比如求一个人是否为男性</td>
 </tr>
 <tr>
-<td align="center">Consumer<T></T></td>
+<td align="center">Consumer<T></td>
 <td align="center">T</td>
 <td align="center">void</td>
 <td align="center">用于接收一个对象进行处理但没有返回，比如接收一个人并打印他的名字</td>
@@ -451,25 +451,25 @@
 <td align="center">转换一个对象为不同类型的对象</td>
 </tr>
 <tr>
-<td align="center">Supplier<T></T></td>
+<td align="center">Supplier<T></td>
 <td align="center">None</td>
 <td align="center">T</td>
 <td align="center">提供一个对象</td>
 </tr>
 <tr>
-<td align="center">UnaryOperator<T></T></td>
+<td align="center">UnaryOperator<T></td>
 <td align="center">T</td>
 <td align="center">T</td>
 <td align="center">接收对象并返回同类型的对象</td>
 </tr>
 <tr>
-<td align="center">BinaryOperator<T></T></td>
+<td align="center">BinaryOperator<T></td>
 <td align="center">(T, T)</td>
 <td align="center">T</td>
 <td align="center">接收两个同类型的对象，并返回一个原类型对象</td>
 </tr>
 </tbody></table>
-<p>除此之外，还有其他一些很多的函数接口，这些接口都在java.util.function包下<br><img src="/blog/.io//2018-09-09-JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3.PNG" alt="函数接口"><br>&emsp;&emsp;任意点开一个接口，我们都可以发现，该接口只会有一个抽象函数，0个或者多个default函数。<br>&emsp;&emsp;在大多数场景中，我们使用函数接口进行编程主要是在Stream中，打开Stream的类可以发现，该类的方法参数很多都是使用到了函数接口,以Stream类foreach为例：</p>
+<p>除此之外，还有其他一些很多的函数接口，这些接口都在java.util.function包下<br><img src="/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3.PNG" alt="函数接口"><br>&emsp;&emsp;任意点开一个接口，我们都可以发现，该接口只会有一个抽象函数，0个或者多个default函数。<br>&emsp;&emsp;在大多数场景中，我们使用函数接口进行编程主要是在Stream中，打开Stream的类可以发现，该类的方法参数很多都是使用到了函数接口,以Stream类foreach为例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        List&lt;String&gt; stringList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        stringList.add(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        stringList.add(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">        stringList.stream().forEach((value) -&gt; &#123;</span><br><span class="line">            System.out.println(value);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;其实质是：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        List&lt;String&gt; stringList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        stringList.add(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        stringList.add(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">        Consumer&lt;String&gt; stringConsumer = (value) -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;value is : &quot;</span> + value);</span><br><span class="line">        &#125;;</span><br><span class="line">        stringList.stream().forEach(stringConsumer);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -485,7 +485,7 @@
 
 <h2 id="类名-new"><a href="#类名-new" class="headerlink" title="类名::new"></a>类名::new</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Person</span> <span class="variable">newPerson</span> <span class="operator">=</span> Person.createPerson(Person::<span class="keyword">new</span>);</span><br></pre></td></tr></table></figure>
 
-<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/.io//2018-09-09-JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
 
       
     </div>
