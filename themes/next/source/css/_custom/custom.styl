@@ -10,8 +10,9 @@
   }
 
 // 正文段落统一首行缩进（包括标题后的第一段）
-.post-body p {
-  text-indent: 2em;
+.post-body > p,
+.posts-expand .post-body > p {
+  text-indent: 2em !important;
   margin: 0 0 1em;
   line-height: 1.9;
   text-align: justify;
