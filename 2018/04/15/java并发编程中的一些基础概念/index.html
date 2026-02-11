@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="&emsp;&emsp;博主在学习并发编程的过程当中，使用的书籍是《Java并发编程实战》这本书，但阅读下来，只能说本书的内容是很适合学习的，但是不知道是因为原版英语图书本身的写作问题，还是译者的翻译问题，本书的第一部分——基础知识 阅读起来难以理解。书中使用了大量的并发编程领域的专业词汇，由于本书不是很好阅读，这是博主半年后第二次尝试阅读该书，终于理解了书中内容，尤其是第一部分。为了方便后续的学">
+<meta name="description" content="博主在学习并发编程的过程当中，使用的书籍是《Java并发编程实战》这本书，但阅读下来，只能说本书的内容是很适合学习的，但是不知道是因为原版英语图书本身的写作问题，还是译者的翻译问题，本书的第一部分——基础知识 阅读起来难以理解。书中使用了大量的并发编程领域的专业词汇，由于本书不是很好阅读，这是博主半年后第二次尝试阅读该书，终于理解了书中内容，尤其是第一部分。为了方便后续的学习，在这里先把第一部分的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java并发编程中的一些基础概念">
 <meta property="og:url" content="https://cyh123.github.io/blog/2018/04/15/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/index.html">
 <meta property="og:site_name" content="记录每一次进步">
-<meta property="og:description" content="&emsp;&emsp;博主在学习并发编程的过程当中，使用的书籍是《Java并发编程实战》这本书，但阅读下来，只能说本书的内容是很适合学习的，但是不知道是因为原版英语图书本身的写作问题，还是译者的翻译问题，本书的第一部分——基础知识 阅读起来难以理解。书中使用了大量的并发编程领域的专业词汇，由于本书不是很好阅读，这是博主半年后第二次尝试阅读该书，终于理解了书中内容，尤其是第一部分。为了方便后续的学">
+<meta property="og:description" content="博主在学习并发编程的过程当中，使用的书籍是《Java并发编程实战》这本书，但阅读下来，只能说本书的内容是很适合学习的，但是不知道是因为原版英语图书本身的写作问题，还是译者的翻译问题，本书的第一部分——基础知识 阅读起来难以理解。书中使用了大量的并发编程领域的专业词汇，由于本书不是很好阅读，这是博主半年后第二次尝试阅读该书，终于理解了书中内容，尤其是第一部分。为了方便后续的学习，在这里先把第一部分的">
 <meta property="og:locale">
 <meta property="og:image" content="https://cyh123.github.io/blog/2018/04/15/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/%E7%AB%9E%E6%80%81%E6%9D%A1%E4%BB%B6.png">
 <meta property="og:image" content="https://cyh123.github.io/blog/2018/04/15/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.png">
 <meta property="og:image" content="https://cyh123.github.io/blog/2018/04/15/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg">
 <meta property="article:published_time" content="2018-04-15T12:53:43.000Z">
-<meta property="article:modified_time" content="2026-02-11T15:53:32.398Z">
+<meta property="article:modified_time" content="2026-02-11T15:59:38.476Z">
 <meta property="article:author" content="yunhai.chen">
 <meta property="article:tag" content="java并发编程">
 <meta name="twitter:card" content="summary">
@@ -411,37 +411,37 @@
       
 
       
-        <p>&emsp;&emsp;博主在学习并发编程的过程当中，使用的书籍是<a href="https://book.douban.com/subject/10484692/">《Java并发编程实战》</a>这本书，但阅读下来，只能说本书的内容是很适合学习的，但是不知道是因为原版英语图书本身的写作问题，还是译者的翻译问题，本书的第一部分——基础知识 阅读起来难以理解。书中使用了大量的并发编程领域的专业词汇，由于本书不是很好阅读，这是博主半年后第二次尝试阅读该书，终于理解了书中内容，尤其是第一部分。为了方便后续的学习，在这里先把第一部分的内容梳理一下，对几个重要的关键词汇做一些解释。</p>
-<h1 id="线程安全性"><a href="#线程安全性" class="headerlink" title="线程安全性"></a>线程安全性</h1><p>&emsp;&emsp;当多个线程访问某个类时，不管运行时环境采用何种调度方式或者这些线程将如何交替执行，并且在主调代码中不需要任何额外的同步或协同，这个类都能表现出正确的行为，那么就称这个类是线程安全的。</p>
-<h1 id="不变性"><a href="#不变性" class="headerlink" title="不变性"></a>不变性</h1><p>&emsp;&emsp;书中在介绍不变性时讲的是不可变对象，但是在书中很多地方提到的却是不变性条件，其实不变性和不可变对象是两回事。所谓的不可变性条件，是指<code>在程序执行过程或部分过程中，可始终被假定成立的条件</code>。而不可变对象则是一种实例对象。</p>
-<h1 id="不可变对象"><a href="#不可变对象" class="headerlink" title="不可变对象"></a>不可变对象</h1><p>&emsp;&emsp;要使一个对象成为不可变对象，需要满足以下三个条件：</p>
+        <p>博主在学习并发编程的过程当中，使用的书籍是<a href="https://book.douban.com/subject/10484692/">《Java并发编程实战》</a>这本书，但阅读下来，只能说本书的内容是很适合学习的，但是不知道是因为原版英语图书本身的写作问题，还是译者的翻译问题，本书的第一部分——基础知识 阅读起来难以理解。书中使用了大量的并发编程领域的专业词汇，由于本书不是很好阅读，这是博主半年后第二次尝试阅读该书，终于理解了书中内容，尤其是第一部分。为了方便后续的学习，在这里先把第一部分的内容梳理一下，对几个重要的关键词汇做一些解释。</p>
+<h1 id="线程安全性"><a href="#线程安全性" class="headerlink" title="线程安全性"></a>线程安全性</h1><p>当多个线程访问某个类时，不管运行时环境采用何种调度方式或者这些线程将如何交替执行，并且在主调代码中不需要任何额外的同步或协同，这个类都能表现出正确的行为，那么就称这个类是线程安全的。</p>
+<h1 id="不变性"><a href="#不变性" class="headerlink" title="不变性"></a>不变性</h1><p>书中在介绍不变性时讲的是不可变对象，但是在书中很多地方提到的却是不变性条件，其实不变性和不可变对象是两回事。所谓的不可变性条件，是指<code>在程序执行过程或部分过程中，可始终被假定成立的条件</code>。而不可变对象则是一种实例对象。</p>
+<h1 id="不可变对象"><a href="#不可变对象" class="headerlink" title="不可变对象"></a>不可变对象</h1><p>要使一个对象成为不可变对象，需要满足以下三个条件：</p>
 <ul>
 <li>对象创建后其状态就不能修改</li>
 <li>对象的所有与都是final类型的</li>
 <li>对象被正确地创建了（在对象的创建期间，this引用没有逸出）。</li>
 </ul>
-<h1 id="事实不可变对象"><a href="#事实不可变对象" class="headerlink" title="事实不可变对象"></a>事实不可变对象</h1><p>&emsp;&emsp;如果对象从技术上来看是可变的，但其状态在对象被创建后就不会再变化，那么把这种对象成为<code>“事实不可变对象”</code>。事实不可变对象不需要满足不可变对喜爱那个的前两个条件。</p>
-<h1 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h1><p>&emsp;&emsp;一段代码或者一句代码包含多个操作，这些操作要么全部执行，要么全都不执行，称为原子性。</p>
-<h1 id="竞态条件"><a href="#竞态条件" class="headerlink" title="竞态条件"></a>竞态条件</h1><p>&emsp;&emsp;在并发编程中，由于操作不具备原子性，因此由于不恰当的执行时序而出现不正确的结果。最常见的竞态条件：</p>
+<h1 id="事实不可变对象"><a href="#事实不可变对象" class="headerlink" title="事实不可变对象"></a>事实不可变对象</h1><p>如果对象从技术上来看是可变的，但其状态在对象被创建后就不会再变化，那么把这种对象成为<code>“事实不可变对象”</code>。事实不可变对象不需要满足不可变对喜爱那个的前两个条件。</p>
+<h1 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h1><p>一段代码或者一句代码包含多个操作，这些操作要么全部执行，要么全都不执行，称为原子性。</p>
+<h1 id="竞态条件"><a href="#竞态条件" class="headerlink" title="竞态条件"></a>竞态条件</h1><p>在并发编程中，由于操作不具备原子性，因此由于不恰当的执行时序而出现不正确的结果。最常见的竞态条件：</p>
 <ol>
-<li><p>先检测后执行<br><img src="/blog/2018/04/15/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/%E7%AB%9E%E6%80%81%E6%9D%A1%E4%BB%B6.png" alt="竞态条件"><br>&emsp;&emsp;对于main线程，如果文件a不存在，则创建文件a，但是在判断文件a不存在之后，Task线程创建了文件a，这时候先前的判断结果已经失效，（main线程的执行依赖了一个错误的判断结果）此时文件a已经存在了，但是main线程还是会继续创建文件a，导致Task线程创建的文件a被覆盖、文件中的内容丢失等等问题。</p>
+<li><p>先检测后执行<br><img src="/blog/2018/04/15/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/%E7%AB%9E%E6%80%81%E6%9D%A1%E4%BB%B6.png" alt="竞态条件"><br>对于main线程，如果文件a不存在，则创建文件a，但是在判断文件a不存在之后，Task线程创建了文件a，这时候先前的判断结果已经失效，（main线程的执行依赖了一个错误的判断结果）此时文件a已经存在了，但是main线程还是会继续创建文件a，导致Task线程创建的文件a被覆盖、文件中的内容丢失等等问题。</p>
 </li>
 <li><p>延迟初始化（典型即为单例）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ObjFactory</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> Obj instance;  </span><br><span class="line">      </span><br><span class="line">    <span class="keyword">public</span> Obj <span class="title function_">getInstance</span><span class="params">()</span>&#123;  </span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="literal">null</span>)&#123;  </span><br><span class="line">            instance = <span class="keyword">new</span> <span class="title class_">Obj</span>();  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
-<p><img src="/blog/2018/04/15/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.png" alt="单例模式"><br>&emsp;&emsp;线程a和线程b同时执行getInstance()，线程a看到instance为空，创建了一个新的Obj对象，此时线程b也需要判断instance是否为空，此时的instance是否为空取决于不可预测的时序：包括线程a创建Obj对象需要多长时间以及线程的调度方式，如果b检测时，instance为空，那么b也会创建一个instance对象。因此，使用单例模式必须在判断instance &#x3D;&#x3D; null之前加锁。顺带一提，之所以在加锁前需要再判断一次instance &#x3D;&#x3D; null，是为了防止在instance已经创建的情况下，线程无谓地获取锁导致的开销。该单例的创建方式称为<code>双重检查锁定</code>。</p>
+<p><img src="/blog/2018/04/15/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.png" alt="单例模式"><br>线程a和线程b同时执行getInstance()，线程a看到instance为空，创建了一个新的Obj对象，此时线程b也需要判断instance是否为空，此时的instance是否为空取决于不可预测的时序：包括线程a创建Obj对象需要多长时间以及线程的调度方式，如果b检测时，instance为空，那么b也会创建一个instance对象。因此，使用单例模式必须在判断instance &#x3D;&#x3D; null之前加锁。顺带一提，之所以在加锁前需要再判断一次instance &#x3D;&#x3D; null，是为了防止在instance已经创建的情况下，线程无谓地获取锁导致的开销。该单例的创建方式称为<code>双重检查锁定</code>。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ObjFactory</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> Obj instance;  </span><br><span class="line">      </span><br><span class="line">    <span class="keyword">public</span> Obj <span class="title function_">getInstance</span><span class="params">()</span>&#123;  </span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="literal">null</span>)&#123;</span><br><span class="line">            synchronous(ObjFactory.class) &#123;</span><br><span class="line">                <span class="keyword">if</span>(instance == <span class="literal">null</span>) &#123;</span><br><span class="line">                    instance = <span class="keyword">new</span> <span class="title class_">Obj</span>();</span><br><span class="line">                &#125; </span><br><span class="line">            &#125; </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure></li>
 </ol>
-<h1 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h1><p>&emsp;&emsp;所谓的可见性，我们可以简单的理解为线程能够看到某一个变量的最新值。如果一个变量是不可见的，则线程可能会获取到一个失效值，导致程序出项意想不到的错误。例如：</p>
+<h1 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h1><p>所谓的可见性，我们可以简单的理解为线程能够看到某一个变量的最新值。如果一个变量是不可见的，则线程可能会获取到一个失效值，导致程序出项意想不到的错误。例如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">NoVisibility</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">boolean</span> ready;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">ReaderThread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">while</span>(!ready) &#123;</span><br><span class="line">            Thread.<span class="keyword">yield</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.printLn(number);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">main</span>(String[] args) &#123;</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">ReaderThread</span>().start;</span><br><span class="line">    number = <span class="number">42</span>;</span><br><span class="line">    ready = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>NoVosobility可能会持续循环下去，因为读线程可能永远都看不到ready的值。一种更奇怪的现象是，NoVisibility可能会输出0，因为读线程可能看到了写入ready的值，但却没有看到之后写入的number的值，产生该问题的原因的Java编译器、处理器以及运行时可能的对操作的执行顺序<code>重排序</code>导致的。<br>为了使其他线程看到ready的最新值，需要将ready变量用volatile关键字进行修饰。关于volatile关键字的底层原理机制，将在后面一篇文章做专门的介绍。</p>
-<h1 id="发布和逸出"><a href="#发布和逸出" class="headerlink" title="发布和逸出"></a>发布和逸出</h1><p>&emsp;&emsp;<code>“发布”</code>一个对象的意思是指，是对象能够在当前作用域之外的代码中使用。反之，当某个不应该发布的对象被发布时，就称为<code>“逸出”</code>。<br>发布一个对象的安全方式：</p>
+<h1 id="发布和逸出"><a href="#发布和逸出" class="headerlink" title="发布和逸出"></a>发布和逸出</h1><p><code>“发布”</code>一个对象的意思是指，是对象能够在当前作用域之外的代码中使用。反之，当某个不应该发布的对象被发布时，就称为<code>“逸出”</code>。<br>发布一个对象的安全方式：</p>
 <ol>
 <li>在静态初始化函数中初始化一个对象的引用</li>
 <li>将对象的引用保存到volatile类型的域中或AtomicReference对象中。</li>
 <li>将对象的引用保存到某个正确构造的对喜爱那个的final类型域中</li>
 <li>将对象的引用保存到一个由锁保护的域中</li>
 </ol>
-<p>&emsp;&emsp;而对象的发布方式，则取决于它的可见性：</p>
+<p>而对象的发布方式，则取决于它的可见性：</p>
 <ol>
 <li>不可变对象可通过任意方式来发布。</li>
 <li>事实不可变对象必须通过安全方式来发布。</li>
@@ -449,10 +449,10 @@
 </ol>
 <p>两种逃逸的情况：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThisEscape</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ThisEscape</span><span class="params">(EventSource source)</span> &#123;</span><br><span class="line">        source.registerListener(</span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">EventListener</span> &#123;</span><br><span class="line">                <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onEvent</span><span class="params">(Event e)</span> &#123;</span><br><span class="line">                    doSomething(e);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;该例子当中，在ThisEscape的构造函数还没有退出时，this引用隐式地逸出到了匿名内部类中。</p>
-<p>&emsp;&emsp;第二种逸出方式是，在构造函数中调用了一个可改写的实例方法（既不是私有方法，也不是终结方法）。更具体地说，就是在创建子类的过程当中，首先会调用父类的构造方法进行父类数据的构造，如果在父类的构造方法中调用了被子类重载的方法，相当于还没有构造完全的父类引用，逃逸到了子类的重构方法代码中了。</p>
-<p>&emsp;&emsp;关于并发编程中的一些术语就先介绍到这里，上述的几个术语基本上就是并发编程中的重点概念，在下一节当中，将讨论如何实现线程安全类。</p>
-<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/2018/04/15/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+<p>该例子当中，在ThisEscape的构造函数还没有退出时，this引用隐式地逸出到了匿名内部类中。</p>
+<p>第二种逸出方式是，在构造函数中调用了一个可改写的实例方法（既不是私有方法，也不是终结方法）。更具体地说，就是在创建子类的过程当中，首先会调用父类的构造方法进行父类数据的构造，如果在父类的构造方法中调用了被子类重载的方法，相当于还没有构造完全的父类引用，逃逸到了子类的重构方法代码中了。</p>
+<p>关于并发编程中的一些术语就先介绍到这里，上述的几个术语基本上就是并发编程中的重点概念，在下一节当中，将讨论如何实现线程安全类。</p>
+<p>欢迎关注个人公众号：<br><img src="/blog/2018/04/15/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
 
       
     </div>

@@ -409,8 +409,8 @@
       
         
           
-          &emsp;&emsp;由于在开发过程当中需要获取线程执行的结果，故使用到了Java并发工具包java.util.concurrent下的Future类，最终通过Future的get来获取到线程执行的结果。这里我们来简单解析下，Future的实现原理及使用方式。
-&emsp;&emsp;Java提供
+          由于在开发过程当中需要获取线程执行的结果，故使用到了Java并发工具包java.util.concurrent下的Future类，最终通过Future的get来获取到线程执行的结果。这里我们来简单解析下，Future的实现原理及使用方式。
+Java提供了两个自定义线程的底层接口，一个是Runnabl
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -579,10 +579,10 @@
       
         
           
-          ELK&emsp;&emsp;ELK是由Elasticsearch、Logstash、Kibana三部分组成：
+          ELKELK是由Elasticsearch、Logstash、Kibana三部分组成：
 
 Elasticsearch是个开源分布式搜索引擎，它的特点有：分布式，零配置，自动发现，索引自动分片，索引副本机制，restful风格接口，多数据源，自动搜索负载等。
-Logstash是
+Logstash是一个完全开源的工具，他可
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -751,10 +751,11 @@ Logstash是
       
         
           
-          &emsp;&emsp;在讲解Spring中使用事务管理之前，首先让我们来看下什么是事务。
-数据库事务&emsp;&emsp;一个数据库事务通常包含了一个序列的对数据库的读&#x2F;写操作。它的存在包含有以下两个目的：
+          在讲解Spring中使用事务管理之前，首先让我们来看下什么是事务。
+数据库事务一个数据库事务通常包含了一个序列的对数据库的读&#x2F;写操作。它的存在包含有以下两个目的：
 
-为数据库操作序列提供了一个从失败中恢复到正常状态的方法，同时提供了数据库即使
+为数据库操作序列提供了一个从失败中恢复到正常状态的方法，同时提供了数据库即使在异常状态下仍能保持一致性的方法。
+当多个应用程
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -923,7 +924,7 @@ Logstash是
       
         
           
-          &emsp;&emsp;在使用JpaRepository接口进行数据的删除操作过程中发现，当首先使用自定义的deleteBy方法删除某一数据实体，然后再对该数据实体（删除ID的值）进行save时（deleteBy和save的调用是在同一个事务当中且为连续的调用），会发生数据库错误，根据log，知道是
+          在使用JpaRepository接口进行数据的删除操作过程中发现，当首先使用自定义的deleteBy方法删除某一数据实体，然后再对该数据实体（删除ID的值）进行save时（deleteBy和save的调用是在同一个事务当中且为连续的调用），会发生数据库错误，根据log，知道是违反了唯一键约束。说明d
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1092,7 +1093,7 @@ Logstash是
       
         
           
-          概况&emsp;&emsp;线程池，从字面含义来看，是指管理一组同构工作线程的资源池。线程池是与工作队列密切相关的，其中在工作队列中保存了所有等待执行的任务。工作者线程的任务很简单：从工作队列中获取一个任务，执行任务，然后返回线程池并等待下一个任务。在上一节当中，我们介绍了同步容器及并发容器相关的知
+          概况线程池，从字面含义来看，是指管理一组同构工作线程的资源池。线程池是与工作队列密切相关的，其中在工作队列中保存了所有等待执行的任务。工作者线程的任务很简单：从工作队列中获取一个任务，执行任务，然后返回线程池并等待下一个任务。在上一节当中，我们介绍了同步容器及并发容器相关的知识，在最后，我们讲到了阻
           ...
           <!--noindex-->
           <div class="post-button text-center">

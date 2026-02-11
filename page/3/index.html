@@ -409,7 +409,7 @@
       
         
           
-          同步容器类&emsp;&emsp;同步容器类包括Vector和HashTable，二者都是早期JDK的一部分，此外还包括在JDK1.2当中添加的一些功能相似的类，这些同步的封装类是由Collections.synchronizedXxx等工厂方法创建的。这些类实现线程安全的方式是：将它们的状态封装起
+          同步容器类同步容器类包括Vector和HashTable，二者都是早期JDK的一部分，此外还包括在JDK1.2当中添加的一些功能相似的类，这些同步的封装类是由Collections.synchronizedXxx等工厂方法创建的。这些类实现线程安全的方式是：将它们的状态封装起来，并对每个公有方法都进
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -752,9 +752,11 @@ groovy -ver
       
         
           
-          &emsp;&emsp;如果当多个线程访问同一个可变的状态变量时没有使用合适的同步，那么程序就会出现错误。有三中方式可以修复这个问题：
+          如果当多个线程访问同一个可变的状态变量时没有使用合适的同步，那么程序就会出现错误。有三中方式可以修复这个问题：
 
-不在线程之间共享该状态变量&emsp;&emsp;采用线程封闭技术，实现状态变量不在线程之间进行共享。线程封闭技术有三个实现原理：&emsp;&emsp;1. A
+不在线程之间共享该状态变量采用线程封闭技术，实现状态变量不在线程之间进行共享。线程封闭技术有三个实现原理：
+
+Ad-hoc线程封闭其实就是维护线程封闭性的职责完全由程序实现来承担，该方式
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -923,8 +925,8 @@ groovy -ver
       
         
           
-          &emsp;&emsp;因为一次在项目开发中使用ArrayList的过程中，发生了ConcurrentModificationException异常，于是查询了相关资料，对发生该异常的原因记录一下。
-&emsp;&emsp;所谓的ConcurrentModificationException翻译过来
+          因为一次在项目开发中使用ArrayList的过程中，发生了ConcurrentModificationException异常，于是查询了相关资料，对发生该异常的原因记录一下。
+所谓的ConcurrentModificationException翻译过来就是并发修改异常，网上大部分该异常出现的原因，都
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1093,7 +1095,7 @@ groovy -ver
       
         
           
-          &emsp;&emsp;博主在学习并发编程的过程当中，使用的书籍是《Java并发编程实战》这本书，但阅读下来，只能说本书的内容是很适合学习的，但是不知道是因为原版英语图书本身的写作问题，还是译者的翻译问题，本书的第一部分——基础知识 阅读起来难以理解。书中使用了大量的并发编程领域的专业词汇，由于本书
+          博主在学习并发编程的过程当中，使用的书籍是《Java并发编程实战》这本书，但阅读下来，只能说本书的内容是很适合学习的，但是不知道是因为原版英语图书本身的写作问题，还是译者的翻译问题，本书的第一部分——基础知识 阅读起来难以理解。书中使用了大量的并发编程领域的专业词汇，由于本书不是很好阅读，这是博主半
           ...
           <!--noindex-->
           <div class="post-button text-center">

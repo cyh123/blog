@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="&emsp;&emsp;在讲解Spring中使用事务管理之前，首先让我们来看下什么是事务。 数据库事务&emsp;&emsp;一个数据库事务通常包含了一个序列的对数据库的读&#x2F;写操作。它的存在包含有以下两个目的：  为数据库操作序列提供了一个从失败中恢复到正常状态的方法，同时提供了数据库即使在异常状态下仍能保持一致性的方法。 当多个应用程序在并发访问数据库时，可以在这些应用程序之间提供一个">
+<meta name="description" content="在讲解Spring中使用事务管理之前，首先让我们来看下什么是事务。 数据库事务一个数据库事务通常包含了一个序列的对数据库的读&#x2F;写操作。它的存在包含有以下两个目的：  为数据库操作序列提供了一个从失败中恢复到正常状态的方法，同时提供了数据库即使在异常状态下仍能保持一致性的方法。 当多个应用程序在并发访问数据库时，可以在这些应用程序之间提供一个隔离方法，以防止彼此的操作互相干扰。当事务被提交">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring事务处理">
 <meta property="og:url" content="https://cyh123.github.io/blog/2018/05/14/Spring%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="记录每一次进步">
-<meta property="og:description" content="&emsp;&emsp;在讲解Spring中使用事务管理之前，首先让我们来看下什么是事务。 数据库事务&emsp;&emsp;一个数据库事务通常包含了一个序列的对数据库的读&#x2F;写操作。它的存在包含有以下两个目的：  为数据库操作序列提供了一个从失败中恢复到正常状态的方法，同时提供了数据库即使在异常状态下仍能保持一致性的方法。 当多个应用程序在并发访问数据库时，可以在这些应用程序之间提供一个">
+<meta property="og:description" content="在讲解Spring中使用事务管理之前，首先让我们来看下什么是事务。 数据库事务一个数据库事务通常包含了一个序列的对数据库的读&#x2F;写操作。它的存在包含有以下两个目的：  为数据库操作序列提供了一个从失败中恢复到正常状态的方法，同时提供了数据库即使在异常状态下仍能保持一致性的方法。 当多个应用程序在并发访问数据库时，可以在这些应用程序之间提供一个隔离方法，以防止彼此的操作互相干扰。当事务被提交">
 <meta property="og:locale">
 <meta property="og:image" content="https://cyh123.github.io/blog/2018/05/14/Spring%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg">
 <meta property="article:published_time" content="2018-05-14T19:11:57.000Z">
-<meta property="article:modified_time" content="2026-02-11T15:53:32.401Z">
+<meta property="article:modified_time" content="2026-02-11T15:59:38.480Z">
 <meta property="article:author" content="yunhai.chen">
 <meta property="article:tag" content="Spring 事务">
 <meta name="twitter:card" content="summary">
@@ -409,35 +409,35 @@
       
 
       
-        <p>&emsp;&emsp;在讲解Spring中使用事务管理之前，首先让我们来看下什么是事务。</p>
-<h1 id="数据库事务"><a href="#数据库事务" class="headerlink" title="数据库事务"></a>数据库事务</h1><p>&emsp;&emsp;一个数据库事务通常包含了一个序列的对数据库的读&#x2F;写操作。它的存在包含有以下两个目的：</p>
+        <p>在讲解Spring中使用事务管理之前，首先让我们来看下什么是事务。</p>
+<h1 id="数据库事务"><a href="#数据库事务" class="headerlink" title="数据库事务"></a>数据库事务</h1><p>一个数据库事务通常包含了一个序列的对数据库的读&#x2F;写操作。它的存在包含有以下两个目的：</p>
 <ol>
 <li>为数据库操作序列提供了一个从失败中恢复到正常状态的方法，同时提供了数据库即使在异常状态下仍能保持一致性的方法。</li>
-<li>当多个应用程序在并发访问数据库时，可以在这些应用程序之间提供一个隔离方法，以防止彼此的操作互相干扰。<br>&emsp;&emsp;当事务被提交给了DBMS（数据库管理系统），则DBMS（数据库管理系统）需要确保该事务中的所有操作都成功完成且其结果被永久保存在数据库中，如果事务中有的操作没有成功完成，则事务中的所有操作都需要被<code>回滚</code>，回到事务执行前的状态;同时，该事务对数据库或者其他事务的执行无影响，所有的事务都好像在独立的运行。</li>
+<li>当多个应用程序在并发访问数据库时，可以在这些应用程序之间提供一个隔离方法，以防止彼此的操作互相干扰。<br>当事务被提交给了DBMS（数据库管理系统），则DBMS（数据库管理系统）需要确保该事务中的所有操作都成功完成且其结果被永久保存在数据库中，如果事务中有的操作没有成功完成，则事务中的所有操作都需要被<code>回滚</code>，回到事务执行前的状态;同时，该事务对数据库或者其他事务的执行无影响，所有的事务都好像在独立的运行。</li>
 </ol>
-<h2 id="事务的四个特性"><a href="#事务的四个特性" class="headerlink" title="事务的四个特性"></a>事务的四个特性</h2><p>&emsp;&emsp;数据库事务拥有以下四个特性，习惯上被称之为ACID特性:</p>
+<h2 id="事务的四个特性"><a href="#事务的四个特性" class="headerlink" title="事务的四个特性"></a>事务的四个特性</h2><p>数据库事务拥有以下四个特性，习惯上被称之为ACID特性:</p>
 <ol>
 <li>原子性（Atomicity）：事务作为一个整体被执行，包含在其中的对数据库的操作要么全部被执行，要么都不执行。事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</li>
 <li>一致性（Consistency）：事务应确保数据库的状态从一个一致状态转变为另一个一致状态。一致状态的含义是数据库中的数据应满足完整性约束。拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性。</li>
 <li>隔离性（Isolation）：多个事务并发执行时，一个事务的执行不应影响其他事务的执行。当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。即要达到这么一种效果：对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行。</li>
 <li>持久性（Durability）：持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。</li>
 </ol>
-<h2 id="事务的隔离"><a href="#事务的隔离" class="headerlink" title="事务的隔离"></a>事务的隔离</h2><p>&emsp;&emsp;当多个线程都开启事务操作数据库中的数据时，数据库系统要能进行隔离操作，以保证各个线程获取数据的准确性，在介绍数据库提供的各种隔离级别之前，我们先看看如果不考虑事务的隔离性，会发生的几种问题：</p>
-<h3 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h3><p>&emsp;&emsp;脏读就是指当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中，这时，另外一个事务也访问这个数据，然后使用了这个数据。</p>
-<h3 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h3><p>&emsp;&emsp;是指在一个事务内，多次读同一数据。在这个事务还没有结束时，另外一个事务也访问该同一数据。那么，在第一个事务中的两 次读数据之间，由于第二个事务的修改，那么第一个事务两次读到的的数据可能是不一样的。</p>
-<h3 id="虚读-幻读"><a href="#虚读-幻读" class="headerlink" title="虚读(幻读)"></a>虚读(幻读)</h3><p>&emsp;&emsp;是指当事务不是独立执行时发生的一种现象，例如第一个事务对一个表中的数据进行了修改，这种修改涉及到表中的全部数据行。 同时，第二个事务也修改这个表中的数据，这种修改是向表中插入一行新数据。那么，以后就会发生操作第一个事务的用户发现表中还有没有修改的数据行，就好象 发生了幻觉一样。</p>
-<h3 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h3><p>&emsp;&emsp;数据库为我们提供的四种隔离级别：</p>
+<h2 id="事务的隔离"><a href="#事务的隔离" class="headerlink" title="事务的隔离"></a>事务的隔离</h2><p>当多个线程都开启事务操作数据库中的数据时，数据库系统要能进行隔离操作，以保证各个线程获取数据的准确性，在介绍数据库提供的各种隔离级别之前，我们先看看如果不考虑事务的隔离性，会发生的几种问题：</p>
+<h3 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h3><p>脏读就是指当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中，这时，另外一个事务也访问这个数据，然后使用了这个数据。</p>
+<h3 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h3><p>是指在一个事务内，多次读同一数据。在这个事务还没有结束时，另外一个事务也访问该同一数据。那么，在第一个事务中的两 次读数据之间，由于第二个事务的修改，那么第一个事务两次读到的的数据可能是不一样的。</p>
+<h3 id="虚读-幻读"><a href="#虚读-幻读" class="headerlink" title="虚读(幻读)"></a>虚读(幻读)</h3><p>是指当事务不是独立执行时发生的一种现象，例如第一个事务对一个表中的数据进行了修改，这种修改涉及到表中的全部数据行。 同时，第二个事务也修改这个表中的数据，这种修改是向表中插入一行新数据。那么，以后就会发生操作第一个事务的用户发现表中还有没有修改的数据行，就好象 发生了幻觉一样。</p>
+<h3 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h3><p>数据库为我们提供的四种隔离级别：</p>
 <ol>
 <li>Serializable (串行化)：可避免脏读、不可重复读、幻读的发生</li>
 <li>Repeatable read (可重复读)：可避免脏读、不可重复读的发生</li>
 <li>Read committed (读已提交)：可避免脏读的发生</li>
 <li>Read uncommitted (读未提交)：最低级别，任何情况都无法保证</li>
 </ol>
-<h2 id="Spring中事务级别"><a href="#Spring中事务级别" class="headerlink" title="Spring中事务级别"></a>Spring中事务级别</h2><p>&emsp;&emsp;在SpringBoot中，要使用事务，方法很简单，这里我们以Jpa为例</p>
+<h2 id="Spring中事务级别"><a href="#Spring中事务级别" class="headerlink" title="Spring中事务级别"></a>Spring中事务级别</h2><p>在SpringBoot中，要使用事务，方法很简单，这里我们以Jpa为例</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Transactional(rollbackFor = Exception.class)</span><br><span class="line">public interface FdmtMoItemRepository extends JpaRepository&lt;FdmtMoItem, Integer&gt; &#123;</span><br><span class="line">    void deleteByItemIdIn(List&lt;Long&gt; itemIds);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;在定义的interface中，需要为类或者函数上加上@Transactional注解。打开@Transactional直接的源代码：</p>
+<p>在定义的interface中，需要为类或者函数上加上@Transactional注解。打开@Transactional直接的源代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@Target(&#123;ElementType.METHOD, ElementType.TYPE&#125;)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">@Inherited</span><br><span class="line">@Documented</span><br><span class="line">public @interface Transactional &#123;</span><br><span class="line">    @AliasFor(&quot;transactionManager&quot;)</span><br><span class="line">	String value() default &quot;&quot;;</span><br><span class="line"></span><br><span class="line">    @AliasFor(&quot;value&quot;)</span><br><span class="line">	String transactionManager() default &quot;&quot;;</span><br><span class="line"></span><br><span class="line">    Propagation propagation() default Propagation.REQUIRED;</span><br><span class="line"></span><br><span class="line">    Isolation isolation() default Isolation.DEFAULT;</span><br><span class="line"></span><br><span class="line">    int timeout() default TransactionDefinition.TIMEOUT_DEFAULT;</span><br><span class="line"></span><br><span class="line">    boolean readOnly() default false;</span><br><span class="line"></span><br><span class="line">    Class&lt;? extends Throwable&gt;[] rollbackFor() default &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    String[] rollbackForClassName() default &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    Class&lt;? extends Throwable&gt;[] noRollbackFor() default &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    String[] noRollbackForClassName() default &#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;在注解中，上述函数的作用分别是：</p>
+<p>在注解中，上述函数的作用分别是：</p>
 <ol>
 <li>value transactionManager 用于设置事务管理器的名字</li>
 <li>propagation 设置事务的传播机制。也就是，但需要进行事务操作的时候：<ul>
@@ -465,7 +465,7 @@
 <li>noRollbackFor 设置发生什么异常的情况下不回滚</li>
 <li>noRollbackForClassName 设置当发生对应名字的异常时进行不回滚</li>
 </ol>
-<p>&emsp;&emsp;欢迎关注个人公众号：<br><img src="/blog/2018/05/14/Spring%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+<p>欢迎关注个人公众号：<br><img src="/blog/2018/05/14/Spring%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
 
       
     </div>
