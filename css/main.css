@@ -1384,7 +1384,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #eb2aff;
+  background: #5b6667;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2918,4 +2918,12 @@ header.header {
 }
 .sub-menu .menu-item {
   display: inline-block;
+}
+/* Homepage list mode: show titles/meta only, hide full post bodies. */
+.index .post-body,
+.index .post-footer {
+  display: none;
+}
+.index .post-header {
+  margin-bottom: 0;
 }
