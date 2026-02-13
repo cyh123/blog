@@ -1,85 +1,27 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cyh123.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"সার্চ করা হচ্ছে...","empty":"আমরা উক্ত অনুসন্ধানের জন্য কোন ফলাফল খুঁজে পাইনি: ${query}","hits_time":"${hits} টি ফলাফল ${time} মিলিসেকেন্ড এ পাওয়া গেছে","hits":"${hits} টি ফলাফল পাওয়া গেছে"},"path":"/blog/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js" defer></script>
 
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="yunhai.chen的个人博客">
+    <meta name="description" content="yunhai.chen的个人博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="记录每一次进步">
 <meta property="og:url" content="https://cyh123.github.io/blog/index.html">
@@ -90,40 +32,13 @@
 <meta name="twitter:card" content="summary">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
+<link rel="canonical" href="https://cyh123.github.io/blog/">
 
 
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-Hans","comments":"","permalink":"","path":"index.html","title":""}</script>
 
-  <link rel="canonical" href="https://cyh123.github.io/blog/"/>
-
-
-
-
-
-  <title>记录每一次进步</title>
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>记录每一次进步</title>
   
 
 
@@ -133,1864 +48,908 @@
 
 
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+<script src="/blog/js/utils.js" defer></script><script src="/blog/js/motion.js" defer></script><script src="/blog/js/sidebar.js" defer></script><script src="/blog/js/next-boot.js" defer></script>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/blog/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/blog/js/third-party/fancybox.js" defer></script>
+
+
 
   
-  
-    
-  
 
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"jtQLIeV6jE3JEz552dDc8drD-gzGzoHsz","app_key":"ntTvuVT0T22Vn198alyrXuKA","security":true,"betterPerformance":false}</script>
+  <script src="/blog/js/third-party/statistics/lean-analytics.js" defer></script>
 
-    <div class="custom-logo-site-title">
-      <a href="/blog/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">记录每一次进步</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="নেভিগেশন বারের দৃশ্যমানতা টগল করুন" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-      
-        <p class="site-subtitle">工作生活中的每一次坑，都是程序员的一块勋章</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">记录每一次进步</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">工作生活中的每一次坑，都是程序员的一块勋章</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="সার্চ" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
+
 
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-主页">
-          <a href="/blog/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            主页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-关于">
-          <a href="/blog/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-标签">
-          <a href="/blog/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/blog/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-归档">
-          <a href="/blog/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a></li><li class="menu-item menu-item-关于"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-标签"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-分类"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-归档"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>সার্চ
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cyh123.github.io/blog/blog/2018/10/14/SpringCloud%E7%AE%80%E4%BB%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记录每一次进步">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/10/14/SpringCloud%E7%AE%80%E4%BB%8B/" itemprop="url">Spring Cloud简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-14T10:11:52+00:00">
-                2018-10-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Spring/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2018/10/14/SpringCloud%E7%AE%80%E4%BB%8B/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/10/14/SpringCloud%E7%AE%80%E4%BB%8B/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/blog/2018/10/14/SpringCloud%E7%AE%80%E4%BB%8B/" class="leancloud_visitors" data-flag-title="Spring Cloud简介">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="সার্চ করা হচ্ছে..." spellcheck="false"
+                type="search" class="search-input">
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          现在去看很多公司的招聘信息，都会发现越来越多的公司都有对SpringCloud的要求，自己目前所在公司的一部分业务也是建立在Spring Cloud上的。今天开始，将单独开设一个SpringCloud主题，讲解Spring Cloud的使用。在使用了一段时间的SpringBoot之后，我们会想，如果
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2018/10/14/SpringCloud%E7%AE%80%E4%BB%8B/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cyh123.github.io/blog/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记录每一次进步">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/" itemprop="url">DispatcherServlet解析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-13T21:55:53+00:00">
-                2018-09-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/spring/" itemprop="url" rel="index">
-                    <span itemprop="name">spring</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/" class="leancloud_visitors" data-flag-title="DispatcherServlet解析">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          有朋友说，你搞了这么久Java，怎么天天写的都是Java基础，现在流行微服务啊～分布式啊～恩。。。主要还是要学习的内容太多了，感觉写个一年半载也写不完，不过为了与时俱进，后面也会偶尔写点这方面的内容，就以SpringCloud全家桶作为主要介绍对象，感兴趣的朋友们快快提前关注啊～～～好了，下面进入正
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
+      </div>
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
 
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cyh123.github.io/blog/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记录每一次进步">
-    </span>
-
-    
-      <header class="post-header">
-
+</header>
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" itemprop="url">JDK8函数式编程</a></h1>
-        
+  
+  <aside class="sidebar">
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-09T13:12:31+00:00">
-                2018-09-09
-              </time>
-            
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          সূচীপত্র
+        </li>
+        <li class="sidebar-nav-overview">
+          সারাংশ
+        </li>
+      </ul>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">Java基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="leancloud_visitors" data-flag-title="JDK8函数式编程">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          概述开发当中一直都有在使用函数式编程，尤其是在Stream类时，今天就来对jdk8中的函数式编程来做一个学习汇总。我们最常用的面向对象编程（Java）属于命令式编程（Imperative Programming）这种编程范式。常见的编程范式还有逻辑式编程（Logic Programming），函数式
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cyh123.github.io/blog/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记录每一次进步">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="url">Tomcat服务器结构浅析（一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T10:34:46+00:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Tomcat/" itemprop="url" rel="index">
-                    <span itemprop="name">Tomcat</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="Tomcat服务器结构浅析（一）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          最近有点懒，博客更新少，补上一篇之前的欠债。。。这篇博客内容基于《Tomcat架构解析》,这里把Tomcat主要的结构介绍了下，更详细的内容大家可以参考该书。
-Tomcat是全世界最著名的基于Java语言的轻量级应用服务器，是一款完全开源免费的Servlet容器实现。同时，它支持HTML，JS等静态
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cyh123.github.io/blog/blog/2018/08/11/AOP%E4%BB%8B%E7%BB%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记录每一次进步">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/08/11/AOP%E4%BB%8B%E7%BB%8D/" itemprop="url">AOP基础————动态代理简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T14:52:28+00:00">
-                2018-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Spring/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2018/08/11/AOP%E4%BB%8B%E7%BB%8D/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/08/11/AOP%E4%BB%8B%E7%BB%8D/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/blog/2018/08/11/AOP%E4%BB%8B%E7%BB%8D/" class="leancloud_visitors" data-flag-title="AOP基础————动态代理简介">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          AOP最为Spring的一大核心卖点，在开发当中经常使用到。对于切面、切点的定义我们可能很熟悉，但是对于实现该技术的底层技术细节，却知之甚少。利用周末的时间，博主将AOP的底层实现细节研究了一下，在此做为记录。
-AOPAOP是Aspect Oriented Programing的简称，可译为“面向切
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2018/08/11/AOP%E4%BB%8B%E7%BB%8D/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" href="/blog/page/2/">›</a>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="yunhai.chen"
+      src="/blog/images/me.jpg">
+  <p class="site-author-name" itemprop="name">yunhai.chen</p>
+  <div class="site-description" itemprop="description">yunhai.chen的个人博客</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">পোস্ট এর তালিকা</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">ক্যাটাগরি এর তালিকা</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">ট্যাগ এর তালিকা</span>
+      </div>
   </nav>
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cyh123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cyh123" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/9581306/yunhai" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;9581306&#x2F;yunhai" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/blog/images/me.jpg"
-                alt="" />
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/blog/archives">
-              
-                  <span class="site-state-item-count">22</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">13</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">20</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/cyh123" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://stackoverflow.com/users/9581306/yunhai" target="_blank" title="StackOverflow">
-                      
-                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
         </div>
-      </section>
-
-      
-
-      
-
+      </div>
     </div>
+
+    
   </aside>
 
 
-        
-      </div>
-    </main>
+    </div>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2026</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">yunhai.chen</span>
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cyh123.github.io/blog/2018/10/14/SpringCloud%E7%AE%80%E4%BB%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/me.jpg">
+      <meta itemprop="name" content="yunhai.chen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记录每一次进步">
+      <meta itemprop="description" content="yunhai.chen的个人博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 记录每一次进步">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2018/10/14/SpringCloud%E7%AE%80%E4%BB%8B/" class="post-title-link" itemprop="url">Spring Cloud简介</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">প্রকাশিত হয়েছে</span>
+
+      <time title="তৈরি করা হয়েছেঃ 2018-10-14 10:11:52" itemprop="dateCreated datePublished" datetime="2018-10-14T10:11:52+00:00">2018-10-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">শ্রেনী</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+        </span>
+    </span>
 
   
+    <span id="/blog/2018/10/14/SpringCloud%E7%AE%80%E4%BB%8B/" class="post-meta-item leancloud_visitors" data-flag-title="Spring Cloud简介" title="ভিউ">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">ভিউঃ </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valineঃ </span>
+  
+    <a title="valine" href="/blog/2018/10/14/SpringCloud%E7%AE%80%E4%BB%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/10/14/SpringCloud%E7%AE%80%E4%BB%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>现在去看很多公司的招聘信息，都会发现越来越多的公司都有对SpringCloud的要求，自己目前所在公司的一部分业务也是建立在Spring Cloud上的。今天开始，将单独开设一个SpringCloud主题，讲解Spring Cloud的使用。<br>在使用了一段时间的SpringBoot之后，我们会想，如果说SpringBoot的思想是将大型的Web服务拆分为低耦合、高内聚的微服务的话，当拆分出来的微服务较多后，如果来（分布式环境或非分布式环境）有效地管理这些微服务，以及各微服务如何与其他微服务进行交互便成了问题。如果是最原始的方案，当某一个微服务需要调用其他微服务的时候，需要知道其他微服务的地址信息，以及接口信息。但是当系统内部的微服务关系错综复杂时，难道一个微服务的地址更改之后，需要修改并重新其他相关联的服务吗？这样的管理方式便不再合适。而Spring Cloud从技术架构上降低了对大型系统构建的要求，使我们以非常低的成本（技术或者硬件）搭建一套高效、分布式、容错的平台。</p>
+<h1 id="Spring-Cloud"><a href="#Spring-Cloud" class="headerlink" title="Spring Cloud"></a>Spring Cloud</h1><p>Spring Cloud是一系列框架的有序集合。它利用Spring Boot的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用Spring Boot的开发风格做到一键启动和部署。Spring并没有重复制造轮子，它只是将目前各家公司开发的比较成熟、经得起实际考验的服务框架组合起来，通过Spring Boot风格进行再封装屏蔽掉了复杂的配置和实现原理，最终给开发者留出了一套简单易懂、易部署和易维护的分布式系统开发工具包。<br><img src="/blog/2018/10/14/SpringCloud%E7%AE%80%E4%BB%8B/SpringCloud%E6%9E%B6%E6%9E%84.png" alt="SpringCloud架构"><br>当一个Web请求到来时，系统内部的调用过程如下：</p>
+<ol>
+<li>外部或者内部的非Spring Cloud项目都统一通过API网关（Zuul）来访问内部服务.</li>
+<li>网关接收到请求后，从注册中心（Eureka）获取可用服务</li>
+<li>由Ribbon进行均衡负载后，分发到后端的具体实例</li>
+<li>微服务之间通过Feign进行通信处理业务</li>
+<li>Hystrix负责处理服务超时熔断</li>
+<li>Turbine监控服务间的调用和熔断相关指标</li>
+</ol>
+<p>在上图中可以看到，整个系统是由许多微服务组成的。微服务是可以独立部署、水平扩展、独立访问（或者有独立的数据库）的服务单元，Spring Cloud就是这些微服务的大管家，采用了微服务这种架构之后，项目的数量会非常多，Spring Cloud做为大管家需要管理好这些微服务，自然需要很多小弟来帮忙。如上图中出现的Spring Cloud Config、Spring Cloud Sleuth、Spring Cloud Eureka、Spring Cloud Zuul、Spring Cloud Hystrix等等以外，还包含且不限于Spring Cloud Bus、Spring Cloud for Cloud Foundry、Spring Cloud Cluster、Spring Cloud Consul、Spring Cloud Security、Spring Cloud Data Flow、Spring Cloud Stream、Spring Cloud Task、Spring Cloud Zookeeper、Spring Cloud Connectors、Spring Cloud Starters、Spring Cloud CLI。每一个微服务都有其独一无二的作用。</p>
+<h2 id="Spring-Cloud-与-Spring-Boot"><a href="#Spring-Cloud-与-Spring-Boot" class="headerlink" title="Spring Cloud 与 Spring Boot"></a>Spring Cloud 与 Spring Boot</h2><p>Spring Boot 是 Spring 的一套快速配置脚手架，可以基于Spring Boot 快速开发单个微服务，Spring Cloud是一个基于Spring Boot实现的云应用开发工具；Spring Boot专注于快速、方便集成的单个微服务个体，Spring Cloud关注全局的服务治理框架；Spring Boot使用了默认大于配置的理念，很多集成方案已经帮你选择好了，能不配置就不配置，Spring Cloud很大的一部分是基于Spring Boot来实现，可以不基于Spring Boot吗？不可以。</p>
+<p>Spring Boot可以离开Spring Cloud独立使用开发项目，但是Spring Cloud离不开Spring Boot，属于依赖的关系。</p>
+<h2 id="Spring-Cloud的优势"><a href="#Spring-Cloud的优势" class="headerlink" title="Spring Cloud的优势"></a>Spring Cloud的优势</h2><p>微服务的框架那么多比如：dubbo、Kubernetes，为什么就要使用Spring Cloud的呢？</p>
+<ul>
+<li>产出于spring大家族，spring在企业级开发框架中无人能敌，来头很大，可以保证后续的更新、完善。</li>
+<li>有Spring Boot 这个独立干将可以省很多事，大大小小的活Spring Boot都搞的挺不错。</li>
+<li>作为一个微服务治理的大家伙，考虑的很全面，几乎服务治理的方方面面都考虑到了，方便开发开箱即用。</li>
+<li>Spring Cloud 活跃度很高，教程很丰富，遇到问题很容易找到解决方案</li>
+<li>轻轻松松几行代码就完成了熔断、均衡负载、服务中心的各种平台功能<br>Spring Cloud对于中小型互联网公司来说是一种福音，因为这类公司往往没有实力或者没有足够的资金投入去开发自己的分布式系统基础设施，使用Spring Cloud一站式解决方案能在从容应对业务发展的同时大大减少开发成本。同时，随着近几年微服务架构和Docker容器概念的火爆，也会让Spring Cloud在未来越来越“云”化的软件开发风格中立有一席之地，我目前所在的公司很多服务就是建立在微服务及容器云上的，这极大地方便了我们开发人员的开发效率，同时也减轻了运维人员的工作。</li>
+</ul>
+<p>网上关于个Spring Cloud微服务组件的文章及书籍很多，但是很多知识只是停留在如何使用的阶段。在后面的文章当中，我将在讲解Spring Cloud各微服务功能的同时，深入去解析器内部原理，以达到知其然而知其所以然的目的。作为一个爱钻牛角尖的程序员，这也是我为什么还要写这个系列的原因。</p>
+<p>欢迎关注个人公众号：<br><img src="/blog/images/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 </div>
 
 
 
 
-
-        
-
+    
 
 
+<div class="post-block">
+  
+  
 
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cyh123.github.io/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/me.jpg">
+      <meta itemprop="name" content="yunhai.chen">
+    </span>
 
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记录每一次进步">
+      <meta itemprop="description" content="yunhai.chen的个人博客">
+    </span>
 
-        
-      </div>
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 记录每一次进步">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/" class="post-title-link" itemprop="url">DispatcherServlet解析</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">প্রকাশিত হয়েছে</span>
+
+      <time title="তৈরি করা হয়েছেঃ 2018-09-13 21:55:53" itemprop="dateCreated datePublished" datetime="2018-09-13T21:55:53+00:00">2018-09-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">শ্রেনী</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/" class="post-meta-item leancloud_visitors" data-flag-title="DispatcherServlet解析" title="ভিউ">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">ভিউঃ </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valineঃ </span>
+  
+    <a title="valine" href="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>有朋友说，你搞了这么久Java，怎么天天写的都是Java基础，现在流行微服务啊～分布式啊～恩。。。主要还是要学习的内容太多了，感觉写个一年半载也写不完，不过为了与时俱进，后面也会偶尔写点这方面的内容，就以SpringCloud全家桶作为主要介绍对象，感兴趣的朋友们快快提前关注啊～～～好了，下面进入正题～<br>在《Tomcat服务器结构浅析（一）》中我们介绍到Web请求在到达Tomcat服务器后，经过一层层容器地查找以及地址的匹配，最后请求被交由Servlet进行处理：<br><img src="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/Tomcat%E8%AF%B7%E6%B1%82%E5%A4%84%E7%90%86.PNG" alt="Tomcat请求处理"><br>在SpringMVC框架中，占据核心位置的便是DispatcherServlet。在下面的内容中，让我们来看一下，SpringMVC是如何通过DispatcherServlet来处理请求的。</p>
+<h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><p>Servlet（Server Applet），全称Java Servlet。是用Java编写的服务器端程序。其主要功能在于交互式地浏览和修改数据，生成动态Web内容。狭义的Servlet是指Java语言实现的一个接口，广义的Servlet是指任何实现了这个Servlet接口的类，一般情况下，人们将Servlet理解为后者。<br>Servlet运行于支持Java的应用服务器中。从实现上讲，Servlet可以响应任何类型的请求，但绝大多数情况下Servlet只用来扩展基于HTTP协议的Web服务器。<br>最早支持Servlet标准的是JavaSoft的Java Web Server。此后，一些其它的基于Java的Web服务器开始支持标准的Servlet。<br>一个Web请求的过程如下：</p>
+<ol>
+<li>WEB服务器接收一个用户请求；</li>
+<li>WEB服务器将请求转交给WEB服务器关联的Servlet容器；</li>
+<li>Servlet容器找到对应的Servlet并执行这个Servlet；</li>
+<li>Servlet容器将处理结果返回给WEB服务器；</li>
+<li>WEB服务器把结果送回用户；<br>而在Servlet处理请求的过程当中，又是怎样的一个流程呢？</li>
+</ol>
+<h2 id="Servlet生命周期"><a href="#Servlet生命周期" class="headerlink" title="Servlet生命周期"></a>Servlet生命周期</h2><p>Servlet的生命（周期）是由容器管理的，换句话说，Servlet程序员不能用代码控制其生命。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Servlet</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(ServletConfig config)</span> <span class="keyword">throws</span> ServletException;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> ServletConfig <span class="title function_">getServletConfig</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(ServletRequest req, ServletResponse res)</span></span><br><span class="line">            <span class="keyword">throws</span> ServletException, IOException;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getServletInfo</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">destroy</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>加载和实例化：<br>时机取决于web.xml的定义，如果是比较原始的开发方式（通过配置文件定义Servlet），如果有<load-on-startup>x</load-on-startup>则在容器启动时，反之则在第一次针对这个Servlet的请求发生时。</p>
+</li>
+<li><p>初始化：<br>实例化后会立马进行初始化。也就是执行init方法。</p>
+</li>
+<li><p>请求处理：<br>初始化后，Servlet就可以接受请求了。基本方式是执行Servlet接口中的service方法。</p>
+</li>
+<li><p>终止服务：<br>容器会在合适的时候销毁某个Servlet对象，这个策略取决于容器的开发者&#x2F;商。在容器关闭的时候Servlet对象一定会被销毁。<br>Servlet对象被销毁时，destroy方法会被调用。</p>
+</li>
+</ol>
+<p>当一个请求到达Servlet后，该Servlet的service方法将会得到调用，而具体的业务逻辑，就可以通过该方法来实现了。</p>
+<h1 id="DispatcherServlet"><a href="#DispatcherServlet" class="headerlink" title="DispatcherServlet"></a>DispatcherServlet</h1><p>接下来，开始讲解今天的主角——<code>DispatcherServlet</code>。首先，还是让我们来看一看，DispatcherServlet的类继承图：<br><img src="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/DispatcherServlet%E7%BB%A7%E6%89%BF%E5%9B%BE.PNG" alt="DispatcherServlet继承图"></p>
+<h2 id="DispatcherServlet调用链"><a href="#DispatcherServlet调用链" class="headerlink" title="DispatcherServlet调用链"></a>DispatcherServlet调用链</h2><p>Aware类主要是提供了一个能够响应容器各阶段变化的机制，在这里不是我们关注的重点，因此，我们主要来看Servlet部分的继承树。从图中我们可以看到，DispatcherServlet的祖先之一便是Servlet接口。在Servlet生命周期部分，我们提到，请求是通过Servlet的service来进行处理的，可是在DispatcherServlet中，我们并不能找到该函数的定义。其实，service方法是被定义在其父类FrameworkServlet中的，而FrameworkServlet重写了父类HttpServlet的service方法。HttpServlet的service方法定义如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span></span><br><span class="line">        <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">method</span> <span class="operator">=</span> req.getMethod();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (method.equals(METHOD_GET)) &#123;</span><br><span class="line">            <span class="type">long</span> <span class="variable">lastModified</span> <span class="operator">=</span> getLastModified(req);</span><br><span class="line">            <span class="keyword">if</span> (lastModified == -<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="comment">// servlet doesn&#x27;t support if-modified-since, no reason</span></span><br><span class="line">                <span class="comment">// to go through further expensive logic</span></span><br><span class="line">                doGet(req, resp);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="type">long</span> ifModifiedSince;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    ifModifiedSince = req.getDateHeader(HEADER_IFMODSINCE);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IllegalArgumentException iae) &#123;</span><br><span class="line">                    <span class="comment">// Invalid date header - proceed as if none was set</span></span><br><span class="line">                    ifModifiedSince = -<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (ifModifiedSince &lt; (lastModified / <span class="number">1000</span> * <span class="number">1000</span>)) &#123;</span><br><span class="line">                    <span class="comment">// If the servlet mod time is later, call doGet()</span></span><br><span class="line">                    <span class="comment">// Round down to the nearest second for a proper compare</span></span><br><span class="line">                    <span class="comment">// A ifModifiedSince of -1 will always be less</span></span><br><span class="line">                    maybeSetLastModified(resp, lastModified);</span><br><span class="line">                    doGet(req, resp);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    resp.setStatus(HttpServletResponse.SC_NOT_MODIFIED);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(METHOD_HEAD)) &#123;</span><br><span class="line">            <span class="type">long</span> <span class="variable">lastModified</span> <span class="operator">=</span> getLastModified(req);</span><br><span class="line">            maybeSetLastModified(resp, lastModified);</span><br><span class="line">            doHead(req, resp);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(METHOD_POST)) &#123;</span><br><span class="line">            doPost(req, resp);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(METHOD_PUT)) &#123;</span><br><span class="line">            doPut(req, resp);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(METHOD_DELETE)) &#123;</span><br><span class="line">            doDelete(req, resp);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(METHOD_OPTIONS)) &#123;</span><br><span class="line">            doOptions(req,resp);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(METHOD_TRACE)) &#123;</span><br><span class="line">            doTrace(req,resp);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//</span></span><br><span class="line">            <span class="comment">// Note that this means NO servlet supports whatever</span></span><br><span class="line">            <span class="comment">// method was requested, anywhere on this server.</span></span><br><span class="line">            <span class="comment">//</span></span><br><span class="line"></span><br><span class="line">            <span class="type">String</span> <span class="variable">errMsg</span> <span class="operator">=</span> lStrings.getString(<span class="string">&quot;http.method_not_implemented&quot;</span>);</span><br><span class="line">            Object[] errArgs = <span class="keyword">new</span> <span class="title class_">Object</span>[<span class="number">1</span>];</span><br><span class="line">            errArgs[<span class="number">0</span>] = method;</span><br><span class="line">            errMsg = MessageFormat.format(errMsg, errArgs);</span><br><span class="line"></span><br><span class="line">            resp.sendError(HttpServletResponse.SC_NOT_IMPLEMENTED, errMsg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>其主要是根据请求的不同，将请求交由不同的处理函数来处理。而FrameworkServlet重写的service方法则很简单：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span><br><span class="line">			<span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line"></span><br><span class="line">		<span class="type">HttpMethod</span> <span class="variable">httpMethod</span> <span class="operator">=</span> HttpMethod.resolve(request.getMethod());</span><br><span class="line">		<span class="keyword">if</span> (HttpMethod.PATCH == httpMethod || httpMethod == <span class="literal">null</span>) &#123;</span><br><span class="line">			processRequest(request, response);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">super</span>.service(request, response);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>当请求是PATCH请求或者无法获取到请求方法类型时，则直接调用processRequest处理请求，否则，有父类HttpServlet的service来处理，而通过上面我们知道HttpServlet的service主要是根据方法类型，调用了不同的请求处理方法。比如，如果是一个Get请求，则调用的doGet方法，如果是Post请求，则调用的是doPost方法。而这几个方法在FrameworkServlet中被重载，以doGet为例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span><br><span class="line">			<span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line"></span><br><span class="line">		processRequest(request, response);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，请求最终还是交由processRequest函数处理。processRequest是一个final方法，不能被子类重载，在该方法中，调用了doService方法，而DispatcherServlet实现了doService方法，到此，请求最终进入到DispatcherServlet中被消费。在doService中，除了设置请求的属性及一些简单的操作外，主要是调用了doDispatch方法来处理请求的。</p>
+<h2 id="DispatcherServlet几个重要成员"><a href="#DispatcherServlet几个重要成员" class="headerlink" title="DispatcherServlet几个重要成员"></a>DispatcherServlet几个重要成员</h2><p>在介绍DispatcherServlet处理请求的流程前，让我们先来认识几个DispatcherServlet类重要的几大组件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 文件上传组件</span></span><br><span class="line">   <span class="comment">/** MultipartResolver used by this servlet */</span></span><br><span class="line"><span class="keyword">private</span> MultipartResolver multipartResolver;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 资源定位组件</span></span><br><span class="line"><span class="comment">/** LocaleResolver used by this servlet */</span></span><br><span class="line"><span class="keyword">private</span> LocaleResolver localeResolver;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 主题解析组件</span></span><br><span class="line"><span class="comment">/** ThemeResolver used by this servlet */</span></span><br><span class="line"><span class="keyword">private</span> ThemeResolver themeResolver;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 处理器映射器组件集合</span></span><br><span class="line"><span class="comment">/** List of HandlerMappings used by this servlet */</span></span><br><span class="line"><span class="keyword">private</span> List&lt;HandlerMapping&gt; handlerMappings;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 处理器适配器组件集合</span></span><br><span class="line"><span class="comment">/** List of HandlerAdapters used by this servlet */</span></span><br><span class="line"><span class="keyword">private</span> List&lt;HandlerAdapter&gt; handlerAdapters;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 异常处理解析器集合</span></span><br><span class="line"><span class="comment">/** List of HandlerExceptionResolvers used by this servlet */</span></span><br><span class="line"><span class="keyword">private</span> List&lt;HandlerExceptionResolver&gt; handlerExceptionResolvers;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 视图名解析器</span></span><br><span class="line"><span class="comment">/** RequestToViewNameTranslator used by this servlet */</span></span><br><span class="line"><span class="keyword">private</span> RequestToViewNameTranslator viewNameTranslator;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 重定向及FlashMap存储组件</span></span><br><span class="line"><span class="comment">/** FlashMapManager used by this servlet */</span></span><br><span class="line"><span class="keyword">private</span> FlashMapManager flashMapManager;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 视图解析组件集合</span></span><br><span class="line"><span class="comment">/** List of ViewResolvers used by this servlet */</span></span><br><span class="line"><span class="keyword">private</span> List&lt;ViewResolver&gt; viewResolvers;</span><br></pre></td></tr></table></figure>
+
+<p>SpringMVC定义了一套默认的组件实现类，也就是说，即使在Spring容器中没有显示定义组件，DisoatcherServlet也会装配好一套可用的默认组件，在org&#x2F;springframework&#x2F;web&#x2F;servlet类路径下有一个DispatcherServlet.properties配置文件，内容如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># Default implementation classes <span class="keyword">for</span> DispatcherServlet<span class="string">&#x27;s strategy interfaces.</span></span><br><span class="line"><span class="string"># Used as fallback when no matching beans are found in the DispatcherServlet context.</span></span><br><span class="line"><span class="string"># Not meant to be customized by application developers.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">org.springframework.web.servlet.LocaleResolver=org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">org.springframework.web.servlet.ThemeResolver=org.springframework.web.servlet.theme.FixedThemeResolver</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">org.springframework.web.servlet.HandlerMapping=org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,\</span></span><br><span class="line"><span class="string">	org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">org.springframework.web.servlet.HandlerAdapter=org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,\</span></span><br><span class="line"><span class="string">	org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,\</span></span><br><span class="line"><span class="string">	org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">org.springframework.web.servlet.HandlerExceptionResolver=org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver,\</span></span><br><span class="line"><span class="string">	org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver,\</span></span><br><span class="line"><span class="string">	org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">org.springframework.web.servlet.RequestToViewNameTranslator=org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">org.springframework.web.servlet.ViewResolver=org.springframework.web.servlet.view.InternalResourceViewResolver</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">org.springframework.web.servlet.FlashMapManager=org.springframework.web.servlet.support.SessionFlashMapManager</span></span><br></pre></td></tr></table></figure>
+<p>如果我们希望采用非默认类型的组件，则只需要在Spring配置文件中配置自定义的组件Bean即可。SpringMVC一旦发现上下文中有用户自定义的组件，就不会使用默认的组件了。</p>
+<h2 id="doDispatch方法"><a href="#doDispatch方法" class="headerlink" title="doDispatch方法"></a>doDispatch方法</h2><p>接下来，我们来看下doDispatch方法是如何处理一个Web请求的。首先是一个处理路径图：<br><img src="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/DispatcherServlet%E8%AF%B7%E6%B1%82%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B.jpg" alt="DispatcherServlet请求处理流程"><br>下面，让我们以上面的图为参照，来解析一下doDispatch函数的处理逻辑</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doDispatch</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">		<span class="type">HttpServletRequest</span> <span class="variable">processedRequest</span> <span class="operator">=</span> request;</span><br><span class="line">		<span class="type">HandlerExecutionChain</span> <span class="variable">mappedHandler</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">		<span class="type">boolean</span> <span class="variable">multipartRequestParsed</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取异步请求处理管理器，当业务逻辑复杂（或者其他原因），为了避免请求线程阻塞，需要委托给另一个线程的时候会使用该处理器来处理请求</span></span><br><span class="line">		<span class="type">WebAsyncManager</span> <span class="variable">asyncManager</span> <span class="operator">=</span> WebAsyncUtils.getAsyncManager(request);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="type">ModelAndView</span> <span class="variable">mv</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">			<span class="type">Exception</span> <span class="variable">dispatchException</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">// 检查是否为文件上传请求，如果是的话则将request包装为一个MultipartHttpServletRequest（继承自HttpServletRequest）请求</span></span><br><span class="line">				processedRequest = checkMultipart(request);</span><br><span class="line"></span><br><span class="line">                <span class="comment">//若与原始请求不同，说明是一个文件上传请求，否则为一个普通的请求</span></span><br><span class="line">				multipartRequestParsed = (processedRequest != request);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 根据请求，获取处理器请求执行链，否则该请求不能被应用处理</span></span><br><span class="line">				<span class="comment">// Determine handler for the current request.</span></span><br><span class="line">				mappedHandler = getHandler(processedRequest);</span><br><span class="line">				<span class="keyword">if</span> (mappedHandler == <span class="literal">null</span> || mappedHandler.getHandler() == <span class="literal">null</span>) &#123;</span><br><span class="line">					noHandlerFound(processedRequest, response);</span><br><span class="line">					<span class="keyword">return</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 获取处理器适配器</span></span><br><span class="line">				<span class="comment">// Determine handler adapter for the current request.</span></span><br><span class="line">				<span class="type">HandlerAdapter</span> <span class="variable">ha</span> <span class="operator">=</span> getHandlerAdapter(mappedHandler.getHandler());</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 如果是GET或者HEAD请求，调用HandlerAdapter.getLastModified方法看看目标Controller方法在对于该请求有没有可用的lastModified逻辑，如果有的话就使用ServletWebRequest.checkNotModified逻辑判断当前lastModfied值和http header的上次缓存值，如果还没有过期就设置304头并且返回并结束整个请求流程。否则继续。</span></span><br><span class="line">				<span class="comment">// Process last-modified header, if supported by the handler.</span></span><br><span class="line">				<span class="type">String</span> <span class="variable">method</span> <span class="operator">=</span> request.getMethod();</span><br><span class="line">				<span class="type">boolean</span> <span class="variable">isGet</span> <span class="operator">=</span> <span class="string">&quot;GET&quot;</span>.equals(method);</span><br><span class="line">				<span class="keyword">if</span> (isGet || <span class="string">&quot;HEAD&quot;</span>.equals(method)) &#123;</span><br><span class="line">					<span class="type">long</span> <span class="variable">lastModified</span> <span class="operator">=</span> ha.getLastModified(request, mappedHandler.getHandler());</span><br><span class="line">					<span class="keyword">if</span> (logger.isDebugEnabled()) &#123;</span><br><span class="line">						logger.debug(<span class="string">&quot;Last-Modified value for [&quot;</span> + getRequestUri(request) + <span class="string">&quot;] is: &quot;</span> + lastModified);</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span> (<span class="keyword">new</span> <span class="title class_">ServletWebRequest</span>(request, response).checkNotModified(lastModified) &amp;&amp; isGet) &#123;</span><br><span class="line">						<span class="keyword">return</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 处理请求前，先调用处理器执行链前置方法，内部主要是调用了拦截器的前置方法</span></span><br><span class="line">				<span class="keyword">if</span> (!mappedHandler.applyPreHandle(processedRequest, response)) &#123;</span><br><span class="line">					<span class="keyword">return</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 使用处理器适配器来处理请求并返回模型视图对象</span></span><br><span class="line">				<span class="comment">// Actually invoke the handler.</span></span><br><span class="line">				mv = ha.handle(processedRequest, response, mappedHandler.getHandler());</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 检查异步处理是否已经开始了，如果开始了则目前的线程不再继续处理该请求，直接返回</span></span><br><span class="line">				<span class="keyword">if</span> (asyncManager.isConcurrentHandlingStarted()) &#123;</span><br><span class="line">					<span class="keyword">return</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 如果模型视图对象不为null且存在视图，则设置该视图的名字</span></span><br><span class="line">				applyDefaultViewName(processedRequest, mv);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 处理请求后，调用处理器执行链后置方法，内部主要是调用了拦截器的后置方法</span></span><br><span class="line">				mappedHandler.applyPostHandle(processedRequest, response, mv);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">				dispatchException = ex;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span> (Throwable err) &#123;</span><br><span class="line">				<span class="comment">// As of 4.3, we&#x27;re processing Errors thrown from handler methods as well,</span></span><br><span class="line">				<span class="comment">// making them available for @ExceptionHandler methods and other scenarios.</span></span><br><span class="line">				dispatchException = <span class="keyword">new</span> <span class="title class_">NestedServletException</span>(<span class="string">&quot;Handler dispatch failed&quot;</span>, err);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 处理请求分发处理结果，如处理异常，解析视图内容等</span></span><br><span class="line">			processDispatchResult(processedRequest, response, mappedHandler, mv, dispatchException);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">			triggerAfterCompletion(processedRequest, response, mappedHandler, ex);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (Throwable err) &#123;</span><br><span class="line">			triggerAfterCompletion(processedRequest, response, mappedHandler,</span><br><span class="line">					<span class="keyword">new</span> <span class="title class_">NestedServletException</span>(<span class="string">&quot;Handler processing failed&quot;</span>, err));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">// 如果异步请求处理管理器已开始处理该请求，则调用处理器执行链的回调函数，其内部主要是调用了AsyncHandlerInterceptor类型的拦截器</span></span><br><span class="line">			<span class="keyword">if</span> (asyncManager.isConcurrentHandlingStarted()) &#123;</span><br><span class="line">				<span class="comment">// Instead of postHandle and afterCompletion</span></span><br><span class="line">				<span class="keyword">if</span> (mappedHandler != <span class="literal">null</span>) &#123;</span><br><span class="line">					mappedHandler.applyAfterConcurrentHandlingStarted(processedRequest, response);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//关闭由于文件上传请求导致的打开的资源</span></span><br><span class="line">				<span class="comment">// Clean up any resources used by a multipart request.</span></span><br><span class="line">				<span class="keyword">if</span> (multipartRequestParsed) &#123;</span><br><span class="line">					cleanupMultipart(processedRequest);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>在多数的场景到中，我们编写控制器，使用@RestController注解对控制器进行注解，使用@GetMapping注解标注函数，dispatcherServlet的重点，就在如何将请求分发到具体的Controller中的方法中。<br>通过上面源码的讲解可以看出，其重点就在于通过请求获取处理器执行链HandlerExecutionChain（其内部主要是对处理该请求的对象方法的封装及处理器拦截器的包装）及处理器适配器HandlerAdapter。接下来我们看下获取处理器执行链HandlerExecutionChain的getHandler方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> HandlerExecutionChain <span class="title function_">getHandler</span><span class="params">(HttpServletRequest request)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">		<span class="keyword">for</span> (HandlerMapping hm : <span class="built_in">this</span>.handlerMappings) &#123;</span><br><span class="line">			<span class="keyword">if</span> (logger.isTraceEnabled()) &#123;</span><br><span class="line">				logger.trace(</span><br><span class="line">						<span class="string">&quot;Testing handler map [&quot;</span> + hm + <span class="string">&quot;] in DispatcherServlet with name &#x27;&quot;</span> + getServletName() + <span class="string">&quot;&#x27;&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="type">HandlerExecutionChain</span> <span class="variable">handler</span> <span class="operator">=</span> hm.getHandler(request);</span><br><span class="line">			<span class="keyword">if</span> (handler != <span class="literal">null</span>) &#123;</span><br><span class="line">				<span class="keyword">return</span> handler;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>其主要的逻辑是通过处理器映射器来解析请求，并返回正确的HandlerExecutionChain,HandlerMapping接口如下：<br><img src="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/HandlerMapping%E7%BB%A7%E6%89%BF%E5%9B%BE.PNG" alt="HandlerMapping继承图"><br>上述的几个实现类通过不同的策略，将请求的路径映射到对应的处理器上。当我们访问由@RestController标注的类下的接口时（此处以ConfigController下的list接口为例），其最终便是由RequestMappingHandlerMapping解析的出了HandlerExecutionChain，通过断点可以看到：<br><img src="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/HandlerExecutionChain%E7%BB%93%E6%9E%84.png" alt="HandlerExecutionChain结构"><br>该处理器执行链中已经包含了处理该请求的接口的一些信息，后续的工作便是使用该接口处理请求。而这些工作都是通过处理器适配器HandlerAdapter来完成。接下来看一下HandlerAdapter的继承图：<br><img src="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/HandlerAdapter%E7%BB%A7%E6%89%BF%E5%9B%BE.PNG" alt="DispatcherServlet请求处理流程"><br>上述请求获取到的处理器对应的适配器便是RequestMappingHandlerAdapter<br><img src="/blog/2018/09/13/DispatcherServlet%E8%A7%A3%E6%9E%90/%E8%8E%B7%E5%8F%96HandlerAdapter.PNG" alt="获取HandlerAdapter"><br>之后，便是执行HandlerExecutionChain中拦截器的前置方法，通过适配器执行处理器对请求的处理过程并返回模型视图对象，再执行HandlerExecutionChain中拦截器的后置方法。最后，便是根据处理器对请求的处理情况，对结果进行最终的解析，方法processDispatchResult：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * Handle the result of handler selection and handler invocation, which is</span></span><br><span class="line"><span class="comment">	 * either a ModelAndView or an Exception to be resolved to a ModelAndView.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">processDispatchResult</span><span class="params">(HttpServletRequest request, HttpServletResponse response,</span></span><br><span class="line"><span class="params">			HandlerExecutionChain mappedHandler, ModelAndView mv, Exception exception)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">		<span class="type">boolean</span> <span class="variable">errorView</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (exception != <span class="literal">null</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (exception <span class="keyword">instanceof</span> ModelAndViewDefiningException) &#123;</span><br><span class="line">				logger.debug(<span class="string">&quot;ModelAndViewDefiningException encountered&quot;</span>, exception);</span><br><span class="line">				mv = ((ModelAndViewDefiningException) exception).getModelAndView();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="type">Object</span> <span class="variable">handler</span> <span class="operator">=</span> (mappedHandler != <span class="literal">null</span> ? mappedHandler.getHandler() : <span class="literal">null</span>);</span><br><span class="line">				mv = processHandlerException(request, response, handler, exception);</span><br><span class="line">				errorView = (mv != <span class="literal">null</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Did the handler return a view to render?</span></span><br><span class="line">		<span class="keyword">if</span> (mv != <span class="literal">null</span> &amp;&amp; !mv.wasCleared()) &#123;</span><br><span class="line">			render(mv, request, response);</span><br><span class="line">			<span class="keyword">if</span> (errorView) &#123;</span><br><span class="line">				WebUtils.clearErrorRequestAttributes(request);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> (logger.isDebugEnabled()) &#123;</span><br><span class="line">				logger.debug(<span class="string">&quot;Null ModelAndView returned to DispatcherServlet with name &#x27;&quot;</span> + getServletName() +</span><br><span class="line">						<span class="string">&quot;&#x27;: assuming HandlerAdapter completed request handling&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (WebAsyncUtils.getAsyncManager(request).isConcurrentHandlingStarted()) &#123;</span><br><span class="line">			<span class="comment">// Concurrent handling started during a forward</span></span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (mappedHandler != <span class="literal">null</span>) &#123;</span><br><span class="line">			mappedHandler.triggerAfterCompletion(request, response, <span class="literal">null</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>从注释中可以看出，该方法便是根据处理器处理结果是抛出异常还是返回模型视图对象，对结果进一步做了处理。若处理器返回了模型视图对象，对视图的渲染，便是在该函数中通过调用render函数来完成的。由于对标注了@RestController的控制器，其返回的模型视图对象是null，故不会进行渲染，在这里也就不再将视图渲染的内容展开来讲了。</p>
+<p>至此，DispatcherServlet主要的工作大致就分析完了。想要自己一探究竟的朋友，可以自己写一个小接口，通过断点走一边流程，相信会对DispatcherServlet有更深入的理解～～</p>
+<p>欢迎关注个人公众号：<br><img src="/blog/images/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
     </footer>
+  </article>
+</div>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+
+
 
     
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cyh123.github.io/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/me.jpg">
+      <meta itemprop="name" content="yunhai.chen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记录每一次进步">
+      <meta itemprop="description" content="yunhai.chen的个人博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 记录每一次进步">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="post-title-link" itemprop="url">JDK8函数式编程</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">প্রকাশিত হয়েছে</span>
+
+      <time title="তৈরি করা হয়েছেঃ 2018-09-09 13:12:31" itemprop="dateCreated datePublished" datetime="2018-09-09T13:12:31+00:00">2018-09-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">শ্রেনী</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="post-meta-item leancloud_visitors" data-flag-title="JDK8函数式编程" title="ভিউ">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">ভিউঃ </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valineঃ </span>
+  
+    <a title="valine" href="/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>开发当中一直都有在使用函数式编程，尤其是在Stream类时，今天就来对jdk8中的函数式编程来做一个学习汇总。<br>我们最常用的面向对象编程（Java）属于命令式编程（Imperative Programming）这种编程范式。常见的编程范式还有逻辑式编程（Logic Programming），函数式编程（Functional Programming）。函数式编程作为一种编程范式，在科学领域，是一种编写计算机程序数据结构和元素的方式，它把计算过程当做是数学函数的求值，而避免更改状态和可变数据。</p>
+<h1 id="Lambda-表达式的形式"><a href="#Lambda-表达式的形式" class="headerlink" title="Lambda 表达式的形式"></a>Lambda 表达式的形式</h1><p>在介绍函数式编程之前，让我们来看一下jdk8中提供的Lambda表达式的五种形式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1.</span><br><span class="line">Runnable noArguments = () -&gt; System.out.println(&quot;Hello World&quot;);</span><br><span class="line"></span><br><span class="line">2.</span><br><span class="line">ActionListener oneArgument = event -&gt; System.out.println(&quot;button clicked&quot;);</span><br><span class="line"></span><br><span class="line">3.</span><br><span class="line">Runnable multiStatement = () -&gt; &#123;</span><br><span class="line">    System.out.print(&quot;Hello&quot;);</span><br><span class="line">    System.out.println(&quot; World&quot;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">4.</span><br><span class="line">BinaryOperator&lt;Long&gt; add = (x, y) -&gt; x + y;</span><br><span class="line"></span><br><span class="line">5.</span><br><span class="line">BinaryOperator&lt;Long&gt; addExplicit = (Long x, Long y) -&gt; x + y;</span><br></pre></td></tr></table></figure>
+<p>1中所示的 Lambda表达式不包含参数,使用空括号 () 表示没有参数。该 Lambda 表达式 实现了 Runnable 接口,该接口也只有一个 run 方法,没有参数,且返回类型为void。2中所示的Lambda表达式包含且只包含一个参数,可省略参数的括号。Lambda表达式的主体不仅可以是一个表达式,而且也可以是一段代码块,使用大括号 ({})将代码块括起来,如3所示。该代码块和普通方法遵循的规则别无二致,可以用返回或抛出异常来退出。只有一行代码的Lambda表达式也可使用大括号,用以明确Lambda表达式从何处开始、到哪里结束。Lambda表达式也可以表示包含多个参数的方法,如4所示。这时就有必要思考怎样去阅读该Lambda 表达式。这行代码并不是将两个数字相加,而是创建了一个函数,用来计算两个数字相加的结果。变量add的类型是BinaryOperator。当需要限定使用该Lambda表达式的使用范围，比如说只能传递Long型的参数时，则可以将参数具体化为Long型，如5。<br>我们以Spring中创建一个自定义的事件监听器为例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">ApplicationListener</span>&lt;E <span class="keyword">extends</span> <span class="title class_">ApplicationEvent</span>&gt; <span class="keyword">extends</span> <span class="title class_">EventListener</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * Handle an application event.</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> event the event to respond to</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">onApplicationEvent</span><span class="params">(E event)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ApplicationListener 只有一个抽象方法：actionPerformed，被用来表示行为:接受一个参数，返回空。当我们要自定义一个自己的ApplicationListener时，可以通过匿名内部列的形式实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">log</span> <span class="operator">=</span> LoggerFactory.getLogger(App.class);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(App.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ApplicationListener <span class="title function_">newApplicationListener</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;create a ApplicationListener&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ApplicationListener</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onApplicationEvent</span><span class="params">(ApplicationEvent event)</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;process event&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，还可以使用上文提到的Lambda表达式的形式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">log</span> <span class="operator">=</span> LoggerFactory.getLogger(App.class);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(App.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ApplicationListener <span class="title function_">newApplicationListener</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;create a ApplicationListener&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> event -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;process event&quot;</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一个限制是，<code>函数接口里面只能有一个抽象方法</code>。</p>
+<h1 id="函数接口"><a href="#函数接口" class="headerlink" title="函数接口"></a>函数接口</h1><p>其实在上一节当中，我们已经使用了函数接口。jdk中为我们提供了@FunctionalInterface注解，该注解的作用是，当我们对一个接口进行标注时，编译器会检查该接口是否只用一个抽象方法。也就是说，即使我们的接口不标注该注解，只要满足接口只有一个抽象函数的要求，就是一个函数接口。ApplicationListener就是一个函数接口。</p>
+<p>JDK8中提供了一组常用的核心函数接口：</p>
+<table>
+<thead>
+<tr>
+<th align="center">接口</th>
+<th align="center">参数</th>
+<th align="center">返回类型</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Predicate<T></td>
+<td align="center">T</td>
+<td align="center">boolean</td>
+<td align="center">用于判别一个对象。比如求一个人是否为男性</td>
+</tr>
+<tr>
+<td align="center">Consumer<T></td>
+<td align="center">T</td>
+<td align="center">void</td>
+<td align="center">用于接收一个对象进行处理但没有返回，比如接收一个人并打印他的名字</td>
+</tr>
+<tr>
+<td align="center">Function&lt;T, R&gt;</td>
+<td align="center">T</td>
+<td align="center">R</td>
+<td align="center">转换一个对象为不同类型的对象</td>
+</tr>
+<tr>
+<td align="center">Supplier<T></td>
+<td align="center">None</td>
+<td align="center">T</td>
+<td align="center">提供一个对象</td>
+</tr>
+<tr>
+<td align="center">UnaryOperator<T></td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">接收对象并返回同类型的对象</td>
+</tr>
+<tr>
+<td align="center">BinaryOperator<T></td>
+<td align="center">(T, T)</td>
+<td align="center">T</td>
+<td align="center">接收两个同类型的对象，并返回一个原类型对象</td>
+</tr>
+</tbody></table>
+<p>除此之外，还有其他一些很多的函数接口，这些接口都在java.util.function包下<br><img src="/blog/2018/09/09/JDK8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3.PNG" alt="函数接口"><br>任意点开一个接口，我们都可以发现，该接口只会有一个抽象函数，0个或者多个default函数。<br>在大多数场景中，我们使用函数接口进行编程主要是在Stream中，打开Stream的类可以发现，该类的方法参数很多都是使用到了函数接口,以Stream类foreach为例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        List&lt;String&gt; stringList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        stringList.add(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        stringList.add(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">        stringList.stream().forEach((value) -&gt; &#123;</span><br><span class="line">            System.out.println(value);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>其实质是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        List&lt;String&gt; stringList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        stringList.add(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        stringList.add(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">        Consumer&lt;String&gt; stringConsumer = (value) -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;value is : &quot;</span> + value);</span><br><span class="line">        &#125;;</span><br><span class="line">        stringList.stream().forEach(stringConsumer);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h1><p>在使用Stream的过程中，我们也许还会见到下面这种情况：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">log</span> <span class="operator">=</span> LoggerFactory.getLogger(App.class);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        List&lt;Integer&gt; list = Lists.newArrayList(<span class="number">3</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">maxInt</span> <span class="operator">=</span> list.stream()</span><br><span class="line">                .max(Integer::compareTo)</span><br><span class="line">                .get();</span><br><span class="line">        assertEquals(maxInt, <span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">        List&lt;Integer&gt; list2 = Lists.newArrayList(-<span class="number">3</span>, <span class="number">5</span>, -<span class="number">2</span>, <span class="number">9</span>, -<span class="number">1</span>);</span><br><span class="line">        assertEquals(list2.stream().map(Math::abs).allMatch(e -&gt; e &gt; <span class="number">0</span>), <span class="literal">true</span>);</span><br><span class="line">        </span><br><span class="line">        Comparator&lt;Person&gt; comparator = <span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;Person&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(Person o1, Person o2)</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> o1.getAge().compareTo(o2.getAge());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        List&lt;Person&gt; PersonList = Lists.newArrayList(<span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;teny&quot;</span>,<span class="number">23</span>), <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;tome&quot;</span>,<span class="number">55</span>));</span><br><span class="line">        <span class="type">Person</span> <span class="variable">minAgePerson</span> <span class="operator">=</span> PersonList.stream()</span><br><span class="line">                .min(comparator::compare)</span><br><span class="line">                .get();</span><br><span class="line">        assertEquals(minAgePerson.getAge(), <span class="number">23</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">Person</span> <span class="variable">newPerson</span> <span class="operator">=</span> Person.createPerson(Person::<span class="keyword">new</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">        <span class="keyword">private</span> String name;</span><br><span class="line">        <span class="keyword">private</span> Integer age;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> Person <span class="title function_">createPerson</span><span class="params">(Supplier&lt;Person&gt; supplier)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> supplier.get();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.name = <span class="string">&quot;&quot;</span>;</span><br><span class="line">            <span class="built_in">this</span>.age = -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, Integer age)</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.name = name;</span><br><span class="line">            <span class="built_in">this</span>.age = age;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> Integer <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> age;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Integer::compareTo</code>也是属于Java8引入的新特性，叫做方法引用（Method References），其实就是 (int1, int2) -&gt; int1.compareTo(int2) 的简写。<br>引用方法有下面几种方式</p>
+<h2 id="对象引用-实例方法名"><a href="#对象引用-实例方法名" class="headerlink" title="对象引用::实例方法名"></a>对象引用::实例方法名</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Comparator&lt;Person&gt; comparator = <span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;Person&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(Person o1, Person o2)</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> o1.getAge().compareTo(o2.getAge());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        List&lt;Person&gt; PersonList = Lists.newArrayList(<span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;teny&quot;</span>,<span class="number">23</span>), <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;tome&quot;</span>,<span class="number">55</span>));</span><br><span class="line">        <span class="type">Person</span> <span class="variable">minAgePerson</span> <span class="operator">=</span> PersonList.stream()</span><br><span class="line">                .min(comparator::compare)</span><br><span class="line">                .get();</span><br><span class="line">        assertEquals(minAgePerson.getAge(), <span class="number">23</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="类名-静态方法名"><a href="#类名-静态方法名" class="headerlink" title="类名::静态方法名"></a>类名::静态方法名</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list2 = Lists.newArrayList(-<span class="number">3</span>, <span class="number">5</span>, -<span class="number">2</span>, <span class="number">9</span>, -<span class="number">1</span>);</span><br><span class="line">        assertEquals(list2.stream().map(Math::abs).allMatch(e -&gt; e &gt; <span class="number">0</span>), <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="类名-实例方法名"><a href="#类名-实例方法名" class="headerlink" title="类名::实例方法名"></a>类名::实例方法名</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list = Lists.newArrayList(<span class="number">3</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">maxInt</span> <span class="operator">=</span> list.stream()</span><br><span class="line">                .max(Integer::compareTo)</span><br><span class="line">                .get();</span><br><span class="line">        assertEquals(maxInt, <span class="number">9</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="类名-new"><a href="#类名-new" class="headerlink" title="类名::new"></a>类名::new</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Person</span> <span class="variable">newPerson</span> <span class="operator">=</span> Person.createPerson(Person::<span class="keyword">new</span>);</span><br></pre></td></tr></table></figure>
+
+<p>欢迎关注个人公众号：<br><img src="/blog/images/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cyh123.github.io/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/me.jpg">
+      <meta itemprop="name" content="yunhai.chen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记录每一次进步">
+      <meta itemprop="description" content="yunhai.chen的个人博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 记录每一次进步">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-title-link" itemprop="url">Tomcat服务器结构浅析（一）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">প্রকাশিত হয়েছে</span>
+
+      <time title="তৈরি করা হয়েছেঃ 2018-09-02 10:34:46" itemprop="dateCreated datePublished" datetime="2018-09-02T10:34:46+00:00">2018-09-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">শ্রেনী</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Tomcat/" itemprop="url" rel="index"><span itemprop="name">Tomcat</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-meta-item leancloud_visitors" data-flag-title="Tomcat服务器结构浅析（一）" title="ভিউ">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">ভিউঃ </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valineঃ </span>
+  
+    <a title="valine" href="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>最近有点懒，博客更新少，补上一篇之前的欠债。。。这篇博客内容基于《Tomcat架构解析》,这里把Tomcat主要的结构介绍了下，更详细的内容大家可以参考该书。</p>
+<p>Tomcat是全世界最著名的基于Java语言的轻量级应用服务器，是一款完全开源免费的Servlet容器实现。同时，它支持HTML，JS等静态资源的处理，因此也可作为轻量级的WEB服务器来使用。在以前的WEB开发当中，我们主要通过将程序打包，将打包文件放到webapps下来进行访问，而在使用SpringBoot作为开发框架的情况下，由于SpringBoot已内嵌Tomcat，不需要将打包文件放在特定的文件夹下，而是直接运行程序即可。这篇博客第一部分内容将介绍Tomcat的整体架构，第二部分介绍SpringBoot内嵌Tomcat的实现。</p>
+<h1 id="Tomcat总体架构"><a href="#Tomcat总体架构" class="headerlink" title="Tomcat总体架构"></a>Tomcat总体架构</h1><p>首先，让我们来看一张图：<br><img src="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/Tomcat%E6%80%BB%E4%BD%93%E6%9E%B6%E6%9E%84.PNG" alt="Tomcat应用服务器"><br>Tomcat总体的设计便是围绕着这张图来的。下面我们依次对上图中的各个部分做一下介绍。</p>
+<h2 id="Lifecycle-接口"><a href="#Lifecycle-接口" class="headerlink" title="Lifecycle 接口"></a>Lifecycle 接口</h2><p>该接口主要定义了容器整个生命周期过程中的各个阶段</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Lifecycle</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> <span class="keyword">throws</span> LifecycleException;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">()</span> <span class="keyword">throws</span> LifecycleException;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">stop</span><span class="params">()</span> <span class="keyword">throws</span> LifecycleException;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">destroy</span><span class="params">()</span> <span class="keyword">throws</span> LifecycleException;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addLifecycleListener</span><span class="params">(LifecycleListener listener)</span>;</span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该接口包含了容器初始化，开始，停止，销毁等过程。其实现类的各个组件在容器的工作过程当中需要做的工作，即在这几个函数中来完成。</p>
+<h2 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h2><p>表示整个Servlet容器，因此Tomcat运行环境中只有唯一一个Server实例。在该接口的唯一实现类StandardServer中，除了表示Service的一个对象数组外，主要是一些关于Tomcat的属性，比如port，address等。该容器的这些属性，可以通过properties文件或者yaml文件进行配置（比如端口通过server.port&#x3D;8080进行配置），或者是原来的开发方式，通过Server.xml进行配置。</p>
+<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>Service表示一个或者多个Connector的集合，这些Connector共享同一个Container（即Engine）来处理其请求。在同一个Tomcat实例内可以包含任意多个Service实例，它们彼此独立。Service其实是作为Tomcat中接收请求，以及处理请求的容器的纽带存在的。tomcat中的实现类StandardService有以下几个重要的属性：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StandardService</span> <span class="keyword">extends</span> <span class="title class_">LifecycleMBeanBase</span> <span class="keyword">implements</span> <span class="title class_">Service</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">Server</span> <span class="variable">server</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">protected</span> Connector connectors[] = <span class="keyword">new</span> <span class="title class_">Connector</span>[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">private</span> <span class="type">Engine</span> <span class="variable">engine</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">final</span> <span class="type">Mapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Mapper</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>server表示其所属Server，Engine作为处理该service中Connector的容器。Mapper可以看作是映射器，要来处理请求地址到处理该请求的容器及Servlet的映射。</p>
+<h2 id="Engine"><a href="#Engine" class="headerlink" title="Engine"></a>Engine</h2><p>在Tomcat中，Engine为最高层级的容器对象。尽管Engine不是直接处理请求的容器，却是获取目标容器的入口。</p>
+<h2 id="Host"><a href="#Host" class="headerlink" title="Host"></a>Host</h2><p>Host 作为一类容器，表示Servlet引擎(Engine) 中的虚拟机， 与一个服务器的网络名有关，如域名等。客户端可以使用这个网络名连接服务器，这个名称必须要在DNS服务器上注册</p>
+<h2 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h2><p>Context作为一类容器，用于表示ServetContext ，在Servlet规范中， 一个ServletContext表示一个独立的Web应用</p>
+<h2 id="Wrapper"><a href="#Wrapper" class="headerlink" title="Wrapper"></a>Wrapper</h2><p>Wrapper作为一类容器， 用于表示Web应用中定义的Servlet（其实是对Servlet进行了一层封装）。</p>
+<h2 id="Connector"><a href="#Connector" class="headerlink" title="Connector"></a>Connector</h2><p>表示Tomcat中的链接器，其主要作用是监听并转化Socket请求，并交由Container处理。其实就是对不同协议及协议处理器进行的封装。下面是我们需要关注的几个属性域：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Connector</span> <span class="keyword">extends</span> <span class="title class_">LifecycleMBeanBase</span> &#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="type">Service</span> <span class="variable">service</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">final</span> ProtocolHandler protocolHandler;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Service是其父容器，ProtocolHandler表示协议处理器</p>
+<h2 id="ProtocolHandler"><a href="#ProtocolHandler" class="headerlink" title="ProtocolHandler"></a>ProtocolHandler</h2><p>ProtocolHandler表示协议处理器,是一个接口，其实现类有以下几种：<br><img src="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/ProtocolHandler%E7%BB%A7%E6%89%BF%E5%B1%82%E6%AC%A1.PNG" alt="ProtocolHandler继承层次"><br>从图中我们大概能够猜到，其中的每一个实现类，其实都代表着一种I&#x2F;O协议的处理过程，我们以同步非阻塞I&#x2F;O的处理器Http11NioProtocol为例，其最初继承于抽象类AbstractProtocol，它的定义如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">AbstractProtocol</span>&lt;S&gt; <span class="keyword">implements</span> <span class="title class_">ProtocolHandler</span>,</span><br><span class="line">        MBeanRegistration &#123;</span><br><span class="line">            <span class="keyword">private</span> <span class="keyword">final</span> AbstractEndpoint&lt;S&gt; endpoint;</span><br><span class="line">            <span class="keyword">private</span> Handler&lt;S&gt; handler;</span><br><span class="line">            <span class="keyword">private</span> <span class="keyword">final</span> Set&lt;Processor&gt; waitingProcessors =  Collections.newSetFromMap(<span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;Processor, Boolean&gt;());</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>AbstractEndpoint代表的是协议端点，比如，Nio使用的是NioEndpoint类，即为nio的实现逻辑，对nio类型的Socket进行监听， Handler作为AbstractEndpoint接收到I&#x2F;O后，用来处理I&#x2F;O的处理器。</p>
+<h1 id="请求处理过程"><a href="#请求处理过程" class="headerlink" title="请求处理过程"></a>请求处理过程</h1><p>当我们的浏览器或者是其他工具发起一个Http请求时候，Tomcat的整个处理过程如下：<br><img src="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/Tomcat%E8%AF%B7%E6%B1%82%E5%A4%84%E7%90%86.PNG" alt="Tomcat请求处理"><br>从一开始的Endpoint监听到Http请求后，调用Processor进行处理，Process调用CoyoteAdapter进行处理，CoyoteAdapter通过Mapper获取到处理该请求的顶级容器Engine，通过一层层的查找，最终获取到处理该请求的Wrapper，经过Tomcat中定义的一系列过滤器（Filter）后，最终由Servlet（在SpringMVC中，便是被DispatcherServlet）进行了消费。Tomcat整个处理的流程便是这样的。</p>
+<h1 id="SpringBoot内嵌Tomcat"><a href="#SpringBoot内嵌Tomcat" class="headerlink" title="SpringBoot内嵌Tomcat"></a>SpringBoot内嵌Tomcat</h1><p>再完成了Tomcat简单的解析之后，我们还要问，在启动SpringBoot应用的过程当中，是如何启动Tomcat的呢？在Tomcat中，其已经为我们提供了一个表示其实例的Tomcat类，通过查找，我们知道，该类的实例是在TomcatEmbeddedServletContainerFactory类的getEmbeddedServletContainer函数中被创建的。启动一个简单的SpringBoot应用，通过断点，我们能够看到它被调用的路径：<br><img src="/blog/2018/09/02/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84%E6%B5%85%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/Tomcat%E5%90%AF%E5%8A%A8.PNG" alt="Tomcat启动"><br>从上图可知，到Springboot应用刷新容器的时候，会在该过程当中创建Tomcat的实例，我们来下看下函数的实现过程:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TomcatEmbeddedServletContainerFactory</span></span><br><span class="line">		<span class="keyword">extends</span> <span class="title class_">AbstractEmbeddedServletContainerFactory</span> <span class="keyword">implements</span> <span class="title class_">ResourceLoaderAware</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> EmbeddedServletContainer <span class="title function_">getEmbeddedServletContainer</span><span class="params">(</span></span><br><span class="line"><span class="params">			ServletContextInitializer... initializers)</span> &#123;</span><br><span class="line">            <span class="comment">// 创建Tomcat的实例</span></span><br><span class="line">		<span class="type">Tomcat</span> <span class="variable">tomcat</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Tomcat</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 为Tomcat设置应用的根目录</span></span><br><span class="line">		<span class="type">File</span> <span class="variable">baseDir</span> <span class="operator">=</span> (<span class="built_in">this</span>.baseDirectory != <span class="literal">null</span> ? <span class="built_in">this</span>.baseDirectory</span><br><span class="line">				: createTempDir(<span class="string">&quot;tomcat&quot;</span>));</span><br><span class="line">		tomcat.setBaseDir(baseDir.getAbsolutePath());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 根据Springboot使用的I/O协议，创建Connector，默认的协议是`String DEFAULT_PROTOCOL = &quot;org.apache.coyote.http11.Http11NioProtocol`,及NIO协议（同步非常阻塞）</span></span><br><span class="line">		<span class="type">Connector</span> <span class="variable">connector</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Connector</span>(<span class="built_in">this</span>.protocol);</span><br><span class="line">        <span class="comment">// 为Service添加Connector，若Tomcat还没有Service，则getService函数中会创建</span></span><br><span class="line">		tomcat.getService().addConnector(connector);</span><br><span class="line">		customizeConnector(connector);</span><br><span class="line">		tomcat.setConnector(connector);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 通过配置autoDeploy禁止虚拟主机自动部署Web应用</span></span><br><span class="line">		tomcat.getHost().setAutoDeploy(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 配置Tomcat的顶级容器Engine</span></span><br><span class="line">		configureEngine(tomcat.getEngine());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 添加额外的自定义协议的Connector</span></span><br><span class="line">		<span class="keyword">for</span> (Connector additionalConnector : <span class="built_in">this</span>.additionalTomcatConnectors) &#123;</span><br><span class="line">			tomcat.getService().addConnector(additionalConnector);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 配置虚拟主机Host，其内会进一步初始化Host的字容器</span></span><br><span class="line">		prepareContext(tomcat.getHost(), initializers);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 对Tomcat进行包装，返回TomcatEmbeddedServletContainer的实例</span></span><br><span class="line">		<span class="keyword">return</span> getTomcatEmbeddedServletContainer(tomcat);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>关于Tomcat的内容其实还有很多，只是由于时间限制，不能在这里更深入地讲解，若后期有机会，会继续更加深入地介绍Tomcat的各个组件，这篇内容就做为Tomcat容器系列的第一篇吧～</p>
+<p>欢迎关注个人公众号：<br><img src="/blog/images/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cyh123.github.io/blog/2018/08/11/AOP%E4%BB%8B%E7%BB%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/me.jpg">
+      <meta itemprop="name" content="yunhai.chen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记录每一次进步">
+      <meta itemprop="description" content="yunhai.chen的个人博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 记录每一次进步">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2018/08/11/AOP%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">AOP基础————动态代理简介</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">প্রকাশিত হয়েছে</span>
+
+      <time title="তৈরি করা হয়েছেঃ 2018-08-11 14:52:28" itemprop="dateCreated datePublished" datetime="2018-08-11T14:52:28+00:00">2018-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">শ্রেনী</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/blog/2018/08/11/AOP%E4%BB%8B%E7%BB%8D/" class="post-meta-item leancloud_visitors" data-flag-title="AOP基础————动态代理简介" title="ভিউ">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">ভিউঃ </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valineঃ </span>
+  
+    <a title="valine" href="/blog/2018/08/11/AOP%E4%BB%8B%E7%BB%8D/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/08/11/AOP%E4%BB%8B%E7%BB%8D/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>AOP最为Spring的一大核心卖点，在开发当中经常使用到。对于切面、切点的定义我们可能很熟悉，但是对于实现该技术的底层技术细节，却知之甚少。利用周末的时间，博主将AOP的底层实现细节研究了一下，在此做为记录。</p>
+<h1 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h1><p>AOP是Aspect Oriented Programing的简称，可译为“面向切面编程”。在业务实现过程当中，有很多横切面上的业务是存在共通之处的，比如，在每一个业务模块的入口，需要打印业务开始的日志信息，在完成业务后需要打印业务调用耗时，对于这些共通的业务，由于不能通过多态继承的方式来实现，会导致很多相似代码出现在不同的业务逻辑当中，AOP就是为了解决这些问题而存在的。下面让我们来一个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">ForumService</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">removeTopic</span><span class="params">(<span class="type">int</span> topidId)</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">createForum</span><span class="params">(Forum forum)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ForumServiceImpl</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> TransactionManager transManager;</span><br><span class="line">    <span class="keyword">private</span> PerformanceMotitor pmonitor;</span><br><span class="line">    <span class="keyword">private</span> TopicDao topicDao;</span><br><span class="line">    <span class="keyword">private</span> ForumDao forumDao;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">removeTopic</span><span class="params">(<span class="type">int</span> topidId)</span> &#123;</span><br><span class="line">        pmomitor.start();</span><br><span class="line">        transManager.beginTransaction();</span><br><span class="line">        topicDao.remove(topidId);</span><br><span class="line">        transManager.commit();</span><br><span class="line">        pmonitor.end();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">createForum</span><span class="params">(Forum forum)</span> &#123;</span><br><span class="line">        pmomitor.start();</span><br><span class="line">        transManager.beginTransaction();</span><br><span class="line">        forumDao.create(forum);</span><br><span class="line">        pmonitor.end();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在该类的两个方法中，存在共通的逻辑</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pmomitor.start();</span><br><span class="line">transManager.beginTransaction();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pmonitor.end();</span><br></pre></td></tr></table></figure>
+<p>若没有办法将这些共通的代码提炼出来，则会在业务逻辑中产生大量重新性的代码（该例子虽然可以提取公共逻辑到一个辅助函数中来解决，但是很多公共领域内如事务的开启与关闭并不是要业务逻辑所关心的，而是应该有基础的框架来为客户提供）。那么如何解决这种问题呢？其实最简单的方法便是在调用这些业务方法之前，对调用进行拦截，并执行公共的与业务无关的代码，然后再调用实际的业务逻辑。AOP就是基于这种思想来实现的。在设计模式当中，存在代理模式，而Spring中的AOP实现，便是基于这一设计模式来实现的。接下来让我们看一下，有关Spring中动态代理的一些相关介绍。</p>
+<h1 id="Spring-AOP的核心基础——动态代理"><a href="#Spring-AOP的核心基础——动态代理" class="headerlink" title="Spring AOP的核心基础——动态代理"></a>Spring AOP的核心基础——动态代理</h1><h2 id="JDK动态代理"><a href="#JDK动态代理" class="headerlink" title="JDK动态代理"></a>JDK动态代理</h2><p>从JDK1.3开始，Java为我们提供了动态代理技术，允许开发者在运行期间创建接口的动态代理实例。JDK的动态代理主要涉及到Java.lang.reflect中的两个类，一个是Proxy，一个是InvocationHander，InvocationHander是一个接口，可以通过该接口定义横切的公共逻辑，并通过反射机制来调用目标类的代码，动态地将横切逻辑与业务逻辑编织在一起。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PerformanceHandler</span> <span class="keyword">implements</span> <span class="title class_">InvocationHandler</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> &#123;</span><br><span class="line">        pmomitor.start();</span><br><span class="line">        transManager.beginTransaction();</span><br><span class="line">        <span class="type">Object</span> <span class="variable">obj</span> <span class="operator">=</span> method.invoke(target, args);</span><br><span class="line">        pmonitor.end();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ForumServiceTest</span> &#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">proxy</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">ForumService</span> <span class="variable">target</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ForumServiceImpl</span>();</span><br><span class="line">        <span class="type">PerformanceHandler</span> <span class="variable">handler</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PerformanceHandler</span>(target);</span><br><span class="line">        <span class="type">ForumService</span> <span class="variable">proxy</span> <span class="operator">=</span> Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), handler);</span><br><span class="line">        proxy.createForum(<span class="number">10</span>);</span><br><span class="line">        proxy.removeTopic(<span class="number">1012</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在上面代码中，我们定义了一个横向的切面逻辑PerformanceHandler，其实现了InvocationHandler。利用Proxy.newProxyInstance函数创建出一个目标对象的代理对象proxy，当调用代理对象的createForum及removeTopic函数时，便会先执行pmomitor.start()和transManager.beginTransaction()，之后才执行目标对象真是的业务逻辑，最后执行pmonitor.end()。如此，也就完成了公共逻辑的提取。让我们看一下InvocationHandler接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">InvocationHandler</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span><br><span class="line">        <span class="keyword">throws</span> Throwable;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该接口只有一个接口方法，参数分别为proxy——需要代理的目标对象，method——被拦截的目标对象的方法，args——方法参数。以及Proxy.newProxyInstance:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title function_">newProxyInstance</span><span class="params">(ClassLoader loader,</span></span><br><span class="line"><span class="params">                                          Class&lt;?&gt;[] interfaces,</span></span><br><span class="line"><span class="params">                                          InvocationHandler h)</span> &#123;</span><br><span class="line">                                              ...</span><br><span class="line">                                          &#125;</span><br></pre></td></tr></table></figure>
+<p>对于函数的逻辑暂时无需关心，重点是该函数的入参，loader——目标类的类加载器，interfaces——目标类实现的接口列表，h——调用处理器的实例。</p>
+<h2 id="CGLib-动态代理"><a href="#CGLib-动态代理" class="headerlink" title="CGLib 动态代理"></a>CGLib 动态代理</h2><p>使用JDK的动态代理有一个限制，即它只能为接口创建代理实例，从Proxy的newProxyInstance方法入参就可以看出，第二个入参interfaces就是需要代理实例实现的接口列表。那么，对于不是interfaces的下接口的实例函数，是否就没有办法实现动态代理呢？CGLib作为一个替代者，填补了这项空缺。<br>CGLib采用底层的字节码技术，可以为一个类生成子类，在子类中采用方法拦截的技术拦截所有父类方法的调用并顺势织入横切逻辑，下面是采用CGLib技术编写的一个可以为任何类织入相关逻辑的代理对象的代理创建器。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CglibProxy</span> <span class="keyword">implements</span> <span class="title class_">MethodInterceptor</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">Enhancer</span> <span class="variable">enhancer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Enhancer</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">getProxy</span><span class="params">(Class clazz)</span> &#123;</span><br><span class="line">        <span class="comment">//通过字节码技术动态创建子类实例</span></span><br><span class="line">        enhancer.setSuperClass(clazz);</span><br><span class="line">        enhancer.setCallback(<span class="built_in">this</span>);</span><br><span class="line">        <span class="keyword">return</span> enhancer.create();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">intercept</span><span class="params">(Object obj, Method method, Object[] args, MethodProxy proxy)</span> <span class="keyword">throws</span> Throwable &#123;</span><br><span class="line">        pmomitor.start();</span><br><span class="line">        transManager.beginTransaction();</span><br><span class="line">        <span class="type">Object</span> <span class="variable">result</span> <span class="operator">=</span> proxy.invokeSuper(obj, args);</span><br><span class="line">        pmonitor.end();</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ForumServiceTest</span> &#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">proxy</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">CglibProxy</span> <span class="variable">proxy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CglibProxy</span>();</span><br><span class="line">        <span class="type">ForumService</span> <span class="variable">forumServiceProxy</span> <span class="operator">=</span> (ForumService) proxy.getProxy(ForumServiceImpl.class)</span><br><span class="line">        forumServiceProxy.createForum(<span class="number">10</span>);</span><br><span class="line">        forumServiceProxy.removeTopic(<span class="number">1012</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，用户可以通过getProxy方法为一个类创建动态代理对象，无论这个类中的函数是否是从接口实现而来还是类本身的函数，当调用getProxy返回的对象时，横切逻辑都能得到执行。<br>基于以上两个简单的例子，让我们来看一下Spring中实现动态代理的逻辑。</p>
+<h2 id="Spring中代理的实现逻辑"><a href="#Spring中代理的实现逻辑" class="headerlink" title="Spring中代理的实现逻辑"></a>Spring中代理的实现逻辑</h2><p>在Spring中，动态代理的创建是在Bean实例化并初始化之后，调用的几个BeanPostProcessor中的进行的，这几个BeanPostProcessor后处理器分别是BeanNameAutoProxyCreator，DefaultAdvisorAutoProxyCreator以及AnnotationAwareAspectJAutoProxyCreator。这三个类都是AbstractAutoProxyCreator类的子类，在该抽象类中有一个保护方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> Object <span class="title function_">createProxy</span><span class="params">(Class&lt;?&gt; beanClass, <span class="meta">@Nullable</span> String beanName,</span></span><br><span class="line"><span class="params">			<span class="meta">@Nullable</span> Object[] specificInterceptors, TargetSource targetSource)</span> &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">this</span>.beanFactory <span class="keyword">instanceof</span> ConfigurableListableBeanFactory) &#123;</span><br><span class="line">			AutoProxyUtils.exposeTargetClass((ConfigurableListableBeanFactory) <span class="built_in">this</span>.beanFactory, beanName, beanClass);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="type">ProxyFactory</span> <span class="variable">proxyFactory</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ProxyFactory</span>();</span><br><span class="line">		proxyFactory.copyFrom(<span class="built_in">this</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (!proxyFactory.isProxyTargetClass()) &#123;</span><br><span class="line">			<span class="keyword">if</span> (shouldProxyTargetClass(beanClass, beanName)) &#123;</span><br><span class="line">				proxyFactory.setProxyTargetClass(<span class="literal">true</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				evaluateProxyInterfaces(beanClass, proxyFactory);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		Advisor[] advisors = buildAdvisors(beanName, specificInterceptors);</span><br><span class="line">		proxyFactory.addAdvisors(advisors);</span><br><span class="line">		proxyFactory.setTargetSource(targetSource);</span><br><span class="line">		customizeProxyFactory(proxyFactory);</span><br><span class="line"></span><br><span class="line">		proxyFactory.setFrozen(<span class="built_in">this</span>.freezeProxy);</span><br><span class="line">		<span class="keyword">if</span> (advisorsPreFiltered()) &#123;</span><br><span class="line">			proxyFactory.setPreFiltered(<span class="literal">true</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> proxyFactory.getProxy(getProxyClassLoader());</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>我们重点看ProxyFactory proxyFactory &#x3D; new ProxyFactory();该函数使用了一个代理工厂生成目标类的代理，而ProxyFactory类的getProxy方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Object <span class="title function_">getProxy</span><span class="params">(<span class="meta">@Nullable</span> ClassLoader classLoader)</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> createAopProxy().getProxy(classLoader);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>中我们看到其调用了ProxyFacory父类ProxyCreatorSupport中的createAopProxy方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">final</span> <span class="keyword">synchronized</span> AopProxy <span class="title function_">createAopProxy</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (!<span class="built_in">this</span>.active) &#123;</span><br><span class="line">			activate();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> getAopProxyFactory().createAopProxy(<span class="built_in">this</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>getAopProxyFactory放回的是一个AopProxyFactory接口的实例，而AopProxyFactory唯一的一个实例便是DefaultAopProxyFactory，其createAopProxy逻辑为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> AopProxy <span class="title function_">createAopProxy</span><span class="params">(AdvisedSupport config)</span> <span class="keyword">throws</span> AopConfigException &#123;</span><br><span class="line">		<span class="keyword">if</span> (config.isOptimize() || config.isProxyTargetClass() || hasNoUserSuppliedProxyInterfaces(config)) &#123;</span><br><span class="line">			Class&lt;?&gt; targetClass = config.getTargetClass();</span><br><span class="line">			<span class="keyword">if</span> (targetClass == <span class="literal">null</span>) &#123;</span><br><span class="line">				<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">AopConfigException</span>(<span class="string">&quot;TargetSource cannot determine target class: &quot;</span> +</span><br><span class="line">						<span class="string">&quot;Either an interface or a target is required for proxy creation.&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (targetClass.isInterface() || Proxy.isProxyClass(targetClass)) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">JdkDynamicAopProxy</span>(config);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ObjenesisCglibAopProxy</span>(config);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">JdkDynamicAopProxy</span>(config);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>从这个函数中我们可以看出，Spring使用了之前介绍的两种代理技术——JDK与CGLib，根据不同的条件，则会使用不同的代理技术来创建代理。其中，ObjenesisCglibAopProxy（继承自CglibAopProxy）使用类CgLib动态代理技术创建代理，而JdkDynamicAopProxy使用JDK动态代理技术创建代理。如果通过ProxyFactory的setInterfaces方法指定了目标接口进行代理，则ProxyFactory使用JdkDynamicAopProxy；如果是针对类的代理，则使用CglibAopProxy。此外，还可以通过ProxyFacory的setOptimize(true)方法让ProxyFactory启动优化代理方式，这样，针对接口的代理也会使用CglibAopProxy。</p>
+<p>至此，我们介绍了Spring中AOP实现的基础——动态代理的原理以及Spring对两种代理技术的集成。可以看出，JDK的动态代理是基于组合模式的，其代理对象持有一个目标类的实例。而CGLib则是利用字节码技术，基于继承实现的动态代理子类。本文没有介绍具体的AOP的使用方式，重点是介绍AOP的底层实现细节。由于AOP的使用方式介绍起来篇幅过大，有机会的话一定会好好总结下～</p>
+<p>欢迎关注个人公众号：<br><img src="/blog/images/%E4%B8%AA%E4%BA%BA%E5%85%AC%E5%8F%B7.jpg" alt="个人公号"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" title="পূর্ববর্তী পৃষ্ঠা" aria-label="পূর্ববর্তী পৃষ্ঠা" href="/blog/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">yunhai.chen</span>
+  </div>
+  <div class="powered-by"><a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> এর সাহায্যে চলছে
   </div>
 
-  
+    </div>
+  </footer>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="উপরে ফিরে যান">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({"enable":true,"appId":"jtQLIeV6jE3JEz552dDc8drD-gzGzoHsz","appKey":"ntTvuVT0T22Vn198alyrXuKA","serverURLs":null,"placeholder":"留下你的问题","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[]}, {
+      el: '#valine-comments',
+      path: "/blog/",
+      serverURLs: "https://jtqliev6.api.lncldglobal.com"
+    }));
+  }, window.Valine);
+});
 </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'jtQLIeV6jE3JEz552dDc8drD-gzGzoHsz',
-        appKey: 'ntTvuVT0T22Vn198alyrXuKA',
-        placeholder: '留下你的问题',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/blog/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("jtQLIeV6jE3JEz552dDc8drD-gzGzoHsz", "ntTvuVT0T22Vn198alyrXuKA");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-      
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("jtQLIeV6jE3JEz552dDc8drD-gzGzoHsz", "ntTvuVT0T22Vn198alyrXuKA");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-  
 </body>
 </html>
