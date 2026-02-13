@@ -404,4 +404,4 @@ protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Ex
 
 
 欢迎关注个人公众号：
-![个人公号](./2018-09-11-DispatcherServlet解析/个人公号.jpg)
+![个人公号](/images/个人公号.jpg)

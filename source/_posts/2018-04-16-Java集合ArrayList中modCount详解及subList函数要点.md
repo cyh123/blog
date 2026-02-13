@@ -147,4 +147,4 @@ tableData.getValue().addAll(newEntitys);
 
 
 欢迎关注个人公众号：
-![个人公号](./2018-04-16-Java集合ArrayList中modCount详解及subList函数要点/个人公号.jpg)
+![个人公号](/images/个人公号.jpg)

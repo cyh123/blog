@@ -85,9 +85,8 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: https://github.com/cyh123/blog.git
-  branch: gh-pages
+# Leancloud counter sync (for hexo-leancloud-counter-security)
+leancloud_counter_security:
+  enable_sync: true
+  app_id: jtQLIeV6jE3JEz552dDc8drD-gzGzoHsz
+  app_key: ntTvuVT0T22Vn198alyrXuKA

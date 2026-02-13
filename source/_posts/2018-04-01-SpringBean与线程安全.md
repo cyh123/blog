@@ -34,4 +34,4 @@ categories: SpringBoot
 
 
 欢迎关注个人公众号：
-![个人公号](./2018-04-01-SpringBean与线程安全/个人公号.jpg)
+![个人公号](/images/个人公号.jpg)
