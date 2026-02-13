@@ -1384,7 +1384,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #29da61;
+  background: #c26f61;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2929,4 +2929,8 @@ header.header {
 }
 .index .post-header {
   margin-bottom: 0;
+}
+/* Restore paragraph indentation in posts/pages. */
+.post-body p {
+  text-indent: 2em;
 }
