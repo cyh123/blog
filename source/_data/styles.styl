@@ -1,7 +1,11 @@
 /* Homepage list mode: show titles/meta only, hide full post bodies. */
 .index .post-body,
 .index .post-footer {
-  display: none;
+  display: none !important;
+}
+
+.index .post-body * {
+  display: none !important;
 }
 
 .index .post-header {
