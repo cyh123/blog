@@ -43,7 +43,3 @@ npm run server
 ```
 
 默认本地地址：`http://localhost:4000`
-
----
-
-如果你愿意，我还可以继续帮你把仓库名、`url/root` 按你的 GitHub 用户名直接改成可用的最终版本。
