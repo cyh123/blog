@@ -1,3 +1,14 @@
+<% if (page.category === '摄影') { %>
+<div class="photo-gallery">
+  <h1 class="category-title"><span>#</span> <%= page.category %></h1>
+  <div class="photo-grid">
+    <% page.posts.each(function(post){ %>
+      <%- partial('partial/photo-card', {post: post}) %>
+    <% }) %>
+  </div>
+  <%- partial('partial/pagination') %>
+</div>
+<% } else { %>
 <div class="archive">
   <h1 class="category-title"><span>#</span> <%= page.category %></h1>
   <% page.posts.each(function(post){ %>
@@ -10,3 +21,4 @@
   <% }) %>
   <%- partial('partial/pagination') %>
 </div>
+<% } %>

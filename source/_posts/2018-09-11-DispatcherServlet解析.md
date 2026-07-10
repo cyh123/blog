@@ -3,7 +3,7 @@ title: DispatcherServlet解析
 comments: true
 date: 2018-09-13 21:55:53
 tags: Servlet
-categories: spring
+categories: [技术, spring]
 ---
 有朋友说，你搞了这么久Java，怎么天天写的都是Java基础，现在流行微服务啊～分布式啊～恩。。。主要还是要学习的内容太多了，感觉写个一年半载也写不完，不过为了与时俱进，后面也会偶尔写点这方面的内容，就以SpringCloud全家桶作为主要介绍对象，感兴趣的朋友们快快提前关注啊～～～好了，下面进入正题～
 在《Tomcat服务器结构浅析（一）》中我们介绍到Web请求在到达Tomcat服务器后，经过一层层容器地查找以及地址的匹配，最后请求被交由Servlet进行处理：

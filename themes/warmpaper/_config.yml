@@ -3,10 +3,11 @@
 # Navigation menu
 menu:
   Home: /
-  Archives: /archives
-  Tags: /tags
-  Categories: /categories
-  About: /about
+  技术: /categories/技术
+  摄影: /categories/摄影
+  归档: /archives
+  标签: /tags
+  关于: /about
 
 # Table of Contents (right sidebar on post pages)
 toc:

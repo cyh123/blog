@@ -1,6 +1,22 @@
 <% if (theme.profile && page.current === 1) { %>
   <%- partial('partial/profile') %>
 <% } %>
+
+<% if (page.current === 1) { %>
+<div class="category-entrance">
+  <a class="category-card tech" href="<%- url_for('/categories/技术') %>">
+    <div class="category-card-icon">💻</div>
+    <h2 class="category-card-title">技术笔记</h2>
+    <p class="category-card-desc">Java、Spring、并发编程等技术文章</p>
+  </a>
+  <a class="category-card photo" href="<%- url_for('/categories/摄影') %>">
+    <div class="category-card-icon">📷</div>
+    <h2 class="category-card-title">摄影作品</h2>
+    <p class="category-card-desc">生活中的美好瞬间与光影记录</p>
+  </a>
+</div>
+<% } %>
+
 <div class="post-list">
   <% page.posts.each(function(post){ %>
     <%- partial('partial/post-card', {post: post}) %>
